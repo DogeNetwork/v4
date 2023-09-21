@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="/assets/img/doge.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/games.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/rightclick.css">
+  <link href="https://unpkg.com/movement.css/movement.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/323255fd4e.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    var pagetitle = "Gms | Doge";
+    var newTitle = "Gms | Doge";
+    
+    const storedTitle = localStorage.getItem('tabTitle');  
+if (storedTitle === "Home | Doge") {
+  localStorage.setItem('tabTitle', newTitle);
+} else if (storedTitle === "Gms | Doge") {
+  localStorage.setItem('tabTitle', newTitle);
+  document.title = "Gms | Doge";
+} else if (storedTitle === "Apps | Doge") {
+  localStorage.setItem('tabTitle', newTitle);
+} else if (storedTitle === "Loader | Doge") {
+  localStorage.setItem('tabTitle', newTitle);
+} else if (storedTitle === "404 | Doge") {
+  localStorage.setItem('tabTitle', newTitle);
+}
+else {
+  document.title = "My Drive - Google Drive";
+}
+
+    document.title = pagetitle;
+  </script>
+  <style>
+    input {
+      border-radius: 10px;
+      border-width: 0px;
+      text-align: center;
+      width: 300px;
+      height: 1px;
+      outline: none;
+      margin: 20px;
+      transition: 0.4s;
+    }
+
+    input:hover {
+      width: 520px;
+      transition: 0.4s;
+      border-radius: 10px;
+      opacity: 10px;
+      outline: none;
+    }
+  </style>
+  <script src="/assets/js/rightclick.js"></script>
+  <script src="/assets/js/cloakcheck.js"></script>
+  <script src="/assets/js/mobile.js"></script>
+  <title>Gms | Doge</title>
+  <script>
+
+  </script>
+</head>
+
+<body class="bg">
+  <div id="contextMenu" class="context-menu">
+    <div class="context-menu-item with-submenu" onclick="toggleSubmenu(event)">Tab Cloak</div>
+    <div class="context-submenu">
+      <div class="context-menu-item" onclick="tabCloak()">Enable</div>
+      <div class="context-menu-item" onclick="disableTabCloak()">Disable</div>
+    </div>
+    <div class="context-menu-item with-submenu" onclick="toggleSubmenu2(event)">Authentication</div>
+    <div class="context-submenu">
+      <div class="context-menu-item" onclick="enableLogin()">Enable Login</div>
+      <div class="context-menu-item" onclick="disableLogin()">Disable Login</div>
+    </div>
+    <div class="context-menu-item" onclick="openWindow()">About:Blank Cloak</div>
+    <div class="context-menu-item" onclick="visitLastSite()">Visit Last Site</div>
+  </div>
+
+  <nav id="mytopnav">
+    <br>
+    <a href="/gms/"><button class="button-6">Games</button></a>
+    <a href="/apps/"><button class="button-6">Apps</button></a>
+    <a href="/app"><button class="button-6">Home</button></a>
+  <p><img src="/assets/img/doge.jpg" style="width:22px;height:22px;"> Doge Unblocker</p>
+    
+
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </nav>
+
+
+  <div class="search-bar" style="display: flex; justify-content: center;">
+    <form id="searchForm" onsubmit="return false;">
+      <input id="searchApps" placeholder="Search Games" class="searchbar">
+    </form>
+  </div>
+  <div id="searchMessage" style="display: none;text-align: center;font-size: 30px;margin:20px;font-family:poppins;"></div>
+      <div class="search-results" style="display: flex; justify-content: center; flex-wrap: wrap;">
+        <div class="button-container">
+          <a href="geforce" class="square_btn">
+            <img src="/assets/img/geforcenow.png" class="rounded"><br>GeForce Now</img>
+          </a>
+          <a href="cmg" class="square_btn">
+            <img src="/assets/img/coolmathgames.png" class="rounded"><br>CoolMath</img>
+          </a>
+          <a href="crazygames" class="square_btn">
+            <img src="/assets/img/crazygames.png">Crazy Games</img>
+          </a>
+          </a>
+          <a href="1v1" class="square_btn">
+            <img src="/assets/img/1v1.png" class="rounded"><br></img>1v1.lol
+          </a>
+          <a href="slope" class="square_btn">
+            <img src="/assets/img/slope.png" class="rounded"><br>Slope</img>
+          </a>
+          <a href="jstris" class="square_btn">
+            <img src="/assets/img/jstris.png"><br>Jstris</img>
+          </a>
+          <a href="roblox" class="square_btn">
+            <img src="/assets/img/roblox.png" class="rounded"><br>Roblox</img>
+          </a>
+          <a href="p2048/" class="square_btn">
+            <img src="/assets/img/p2048.png" class="rounded"><br>Pokemon 2048</img>
+          </a>
+          <a href="subway/" class="square_btn">
+            <img src="/assets/img/subway.png" class="rounded"><br>Subway Surfers</img>
+          </a>
+        </div>
+      </div>
+  </div>
+  <script>
+    document.getElementById('searchApps').addEventListener('input', function(event) {
+      const query = this.value.toLowerCase();
+      const links = document.getElementsByClassName('search-results')[0].getElementsByTagName('a');
+      let foundResults = false;
+
+      for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+        const linkText = link.innerText.toLowerCase();
+
+        if (linkText.includes(query)) {
+          link.style.display = 'block';
+          foundResults = true;
+        } else {
+          link.style.display = 'none';
+        }
+      }
+
+      if (!foundResults) {
+        const message = document.getElementById('searchMessage');
+        message.innerText = 'No Results Found.';
+        message.style.display = 'block';
+      } else {
+        const message = document.getElementById('searchMessage');
+        message.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

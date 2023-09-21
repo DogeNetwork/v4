@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/rightclick.css">
+    <link href="https://unpkg.com/movement.css/movement.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="/assets/js/rightclick.js"></script>
+    <script src="/assets/js/cloakcheck.js"></script>
+
+    <title>Credits | Doge</title>
+</head>
+
+<body class="bg">
+    <div id="contextMenu" class="context-menu">
+        <div class="context-menu-item with-submenu" onclick="toggleSubmenu(event)">Tab Cloak</div>
+        <div class="context-submenu">
+          <div class="context-menu-item" onclick="tabCloak()">Enable</div>
+          <div class="context-menu-item" onclick="disableTabCloak()">Disable</div>
+        </div>
+        <div class="context-menu-item with-submenu" onclick="toggleSubmenu2(event)">Authentication</div>
+        <div class="context-submenu">
+          <div class="context-menu-item" onclick="enableLogin()">Enable Login</div>
+          <div class="context-menu-item" onclick="disableLogin()">Disable Login</div>
+        </div>
+        <div class="context-menu-item" onclick="openWindow()">About:Blank Cloak</div>
+        <div class="context-menu-item" onclick="visitLastSite()">Visit Last Site</div>
+      </div>
+
+    <nav id="mytopnav">
+        <br>
+        <a href="/gms/"><button class="button-6">Games</button></a>
+        <a href="/apps/"><button class="button-6">Apps</button></a>
+        <a href="/app"><button class="button-6">Home</button></a>
+        <p><img src="/assets/img/doge.jpg" style="width:22px;height:22px;"> Doge Unblocker</p>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <div class="centered">
+        <h1 style="font-family:poppins;">Credits</h1>
+        <p>Developers:</p>
+        <ul style="text-align: left;">
+            <li><a href="https://github.com/DerpmanDev">DerpmanDev (Owner)</a></li>
+            <li><a href="https://github.com/Russell2259">Russell2259</a></li>
+        </ul>
+        <p>All games belong to their respective owners</p>
+    </div>
+
+    <div class="footer">
+        <a href="/credits">Credits</a>
+        <a href="https://discord.gg/sWPHCdxCPU">Discord</a>
+    </div>
+</body>
+
+</html>

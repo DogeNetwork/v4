@@ -1,0 +1,265 @@
+@font-face {
+  font-family: mosk;
+  src: url(/assets/fonts/mosk.ttf);
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(/assets/fonts/poppins.ttf);
+}
+
+.button-6 {
+  align-items: right;
+  border: none;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-family: poppins;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1.25;
+  margin: -5px;
+  min-height: 3rem;
+  margin-left: 10px;
+  padding: 0px 10px;
+  margin-right: 20px;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+
+
+.button-6:hover {
+  border: transparent 2px rgba(255, 255, 255, 0.596);
+  background-color: rgba(255, 255, 255, 0.411);
+  border-radius: 5px;
+  padding: 0px 10px;
+  transition: 0.3s;
+}
+
+.button-6:active {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+  border-radius: 5px;
+}
+
+nav {
+  padding: 8px;
+  background-color: transparent;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+nav p {
+  font-family: poppins;
+}
+
+nav a {
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  margin: 8px;
+  font-family: poppins;
+}
+
+nav .icon {
+  display: none;
+  color: red;
+}
+
+input {
+  border: none;
+  padding: 20px;
+  width: 520px;
+  background-color: black;
+  color: white;
+  outline: none;
+  font-family: poppins;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 30px;
+  transition: 0.1s;
+  opacity: 70%;
+}
+
+input:hover {
+  width: 700px;
+}
+
+input:focus {
+  width: 700px;
+}
+
+input:active {
+  width: 720px;
+}
+
+
+nav.responsive a {
+  float: none;
+  display: block;
+  text-align: left;
+}
+
+
+h1 {
+  font-size: 45.5px;
+}
+
+.header {
+  font-family: mosk;
+  font-size: 25px;
+  color: white;
+  margin-left: 20px;
+  margin-top: 2px;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+#card1,
+#card2,
+#card3,
+#card4 {
+  outline: 3.5px solid #004be0;
+  text-align: center;
+  float: center;
+  width: 5.5%;
+  height: 150px;
+  color: white;
+  padding: 4.5rem;
+  border-radius: 5.5px;
+  transition: 0.5s;
+}
+
+#card1:hover,
+#card2:hover,
+#card3:hover,
+#card4:hover {
+  background-color: #004be0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#featured {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 45.5px;
+  display: grid;
+  grid-gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url('/assets/img/background.png');
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+p {
+  font-family: poppins;
+  color: white;
+  font-size: 25px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+a {
+  font-family: poppins;
+  color: white;
+  font-size: 17px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.searchbar {
+  height: 10px;
+  width: 500px;
+}
+
+.searchbar:hover {
+  width:700px;
+}
+
+
+@font-face {
+  font-family: 'mosk';
+  src: url('/assets/fonts/mosk.ttf');
+}
+
+.centered {
+  color: #fff;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+h1 {
+  font-size: 100px;
+  margin: 10px;
+}
+
+.footer {
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 20px;
+  font-size: 16px;
+  background-attachment: fixed;
+}
+
+
+.footer>a {
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+.footer>a:hover {
+  color: rgba(255, 255, 255, 0.466);
+  transition: 0.2s;
+}
