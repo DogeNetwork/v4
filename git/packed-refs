@@ -1,0 +1,10 @@
+# pack-refs with: peeled fully-peeled sorted 
+f00eacde037f751ffcb8a5e251aa9e5f1dde5abd refs/remotes/origin/Chloe-patch-2
+ebf4216c1c44396c1909efda458423e7690a652e refs/remotes/origin/Documentation
+9f7105d9fca3a86b8d9ad5fbf9760b532518faf1 refs/remotes/origin/chloedev1
+abfdb1f2e20924f879a6ccc96b2f90ca4d941208 refs/remotes/origin/commitinfo
+822894b2f74f897a3c9dc2c7ac4190d382cec7f0 refs/remotes/origin/dev
+5f0f6fc84f7a58305dc896a1b5e995c24728e1fb refs/remotes/origin/main
+d9fb003b321df0ad0de391d138dbd40c425dff83 refs/tags/0.7.1
+63a735814868f0a2c0411b18b8d6e03e84007ea0 refs/tags/v0.7.2
+27de615a528fdfbb9e93cd418dd46a3372764faa refs/tags/v0.7.3
