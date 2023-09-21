@@ -1,0 +1,51 @@
+body {
+  font-family: mosk;
+}
+
+.context-menu {
+  display: none;
+  font-family: poppins;
+  position: absolute;
+  background-color: #ffffff7e;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* Define the context menu items */
+.context-menu-item {
+  cursor: pointer;
+  font-family: poppins;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Add a line after each context menu item */
+.context-menu-item:not(:last-child) {
+  border-bottom: 1px solid rgb(143, 143, 143)7e;
+}
+
+/* Hover effect on menu options */
+.context-menu-item:hover {
+  background-color: rgb(146, 146, 146);
+}
+
+.context-submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  font-family: poppins;
+  min-width: 200px;
+  background-color: #ffffff7e;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 1;
+}
+.submenu-separator {
+  border-bottom: 1px solid rgb(207, 207, 207)7e;
+  margin: 4px 0;
+}

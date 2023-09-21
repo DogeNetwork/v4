@@ -1,0 +1,215 @@
+<html><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #262626;
+}
+
+
+nav .icon {
+display: none;
+}
+
+
+@media screen and (max-width: 555px) {
+nav a:not(:first-child) {display: none;}
+nav a.icon {
+float: right;
+display: block;
+}
+}
+
+@media screen and (max-width: 555px) {
+nav.responsive {position: relative;}
+nav.responsive .icon {
+position: absolute;
+right: 0;
+top: 0;
+}
+nav.responsive a {
+float: none;
+display: block;
+text-align: left;
+}
+}
+
+h1 {
+font-size: 40px;
+}
+input {
+
+width: 52.5%;
+padding: 20px 20px;
+margin: 10px 0;
+box-sizing: border-box;
+border: 1px black;
+border-radius: 10px;
+background-color: #141414;
+transition: 0.5s;
+}
+input[type=text] {
+transition: 0.5s;
+color: white; 
+
+
+}
+input:hover {
+-webkit-box-shadow: 0px 10px 35px 0px rgba(0,0,0,0.46); 
+box-shadow: 0px 10px 35px 0px rgba(0,0,0,0.46);
+transition: 0.5s;
+}
+#card1, #card2, #card3, #card4 {
+outline: 3.5px solid #004be0;
+text-align: center;
+floating: center;
+width: 5.5%;
+height: 150px;
+color: white;
+padding: 4.5rem;
+border-radius: 5.5px;
+transition: 0.5s;
+}
+
+#card1:hover, #card2:hover, #card3:hover, #card4:hover{
+background-color:  #004be0;
+cursor: pointer;
+transition: 0.5s;
+}
+#featured {
+max-width: 1000px;
+margin: 0 auto;
+margin-top: 45.5px;
+display: grid;
+grid-gap: 1rem;
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.clock {
+position: absolute;
+width: 350px;
+top: 98%;
+text-align: right;
+left: 25px;
+transform: translateX(-50%) translateY(-50%);
+color: #3d7eff;
+font-size: 25px;
+letter-spacing: 3px;
+}
+  @font-face{
+font-family: poppins;
+src: url(/assets/fonts/poppins.ttf);
+}
+.button-6 {
+align-items: center;
+background-color: #3A3A3A;
+border: 1px solid rgba(0, 0, 0, 0.1);
+border-color: #343434;
+border-radius: .25rem;
+box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+box-sizing: border-box;
+color: white;
+cursor: pointer;
+display: inline-flex;
+font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 16px;
+font-weight: 600;
+justify-content: center;
+line-height: 1.25;
+margin: 0;
+min-height: 3rem;
+padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+position: relative;
+text-decoration: none;
+transition: all 250ms;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+vertical-align: baseline;
+width: auto;
+}
+
+.button-6:hover,
+.button-6:focus {
+border-color: none;
+box-shadow: red;
+color: white;
+}
+
+.button-6:hover {
+transform: translateY(-1px);
+}
+
+.button-6:active {
+background-color: #3A3A3A;
+border-color: none;
+box-shadow: #3A3A3A 0 2px 4px;
+color: black;
+transform: translateY(0);
+}
+  </style>
+  <link href="https://unpkg.com/movement.css/movement.css" rel="stylesheet">
+  <style>@font-face{
+font-family: mosk;
+src: url(mosk.ttf);
+}</style>
+  <style>
+.bg {
+/* The image used */
+background-image: url("/assets/img/background.png");
+
+/* Full height */
+height: 100%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+  </style>
+
+  <style>.lds-dual-ring {
+display: inline-block;
+width: 120px;
+height: 120px;
+}
+.lds-dual-ring:after {
+content: " ";
+display: block;
+width: 100px;
+height: 100px;
+margin: 8px;
+border-radius: 50%;
+border: 10px solid #fff;
+border-color: #fff transparent #fff transparent;
+animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+</style><script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body class="bg">
+<br>
+<center>
+<nav style="padding:20px;margin:30px;">
+
+<br>
+<div class="lds-dual-ring"></div>
+
+<h1 style="font-family:poppins;color:white;">Loading site...</h1>
+<a href="app.html">
+
+</a>
+</nav></center>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</body></html>

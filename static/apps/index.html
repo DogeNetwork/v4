@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/games.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="/assets/img/doge.jpg">
+  <link rel="stylesheet" href="/assets/css/rightclick.css">
+  <link href="https://unpkg.com/movement.css/movement.css" rel="stylesheet">
+  <style>
+    input {
+      border-radius: 10px;
+      border-width: 0px;
+      text-align: center;
+      width: 300px;
+      height: 1px;
+      outline: none;
+      margin: 20px;
+      transition: 0.4s;
+    }
+
+    input:hover {
+      width: 520px;
+      transition: 0.4s;
+      border-radius: 10px;
+      opacity: 10px;
+      outline: none;
+    }
+  </style>
+  <script>
+    var pagetitle = "Apps | Doge";
+    var newTitle = "Apps | Doge";
+    
+    const storedTitle = localStorage.getItem('tabTitle');  
+if (storedTitle === "Home | Doge") {
+  localStorage.setItem('tabTitle', newTitle);
+} else if (storedTitle === "Gms | Doge") {
+  localStorage.setItem('tabTitle', newTitle);
+  document.title = "Gms | Doge";
+} else if (storedTitle === "Apps | Doge") {
+  localStorage.setItem('tabTitle', newTitle);
+} else if (storedTitle === "Loader | Doge") {
+  localStorage.setItem('tabTitle', newTitle);
+} else if (storedTitle === "404 | Doge") {
+  localStorage.setItem('tabTitle', newTitle);
+}
+else {
+  document.title = "My Drive - Google Drive";
+}
+
+    document.title = pagetitle;
+  </script>
+    <script src="/assets/js/rightclick.js"></script>
+  <script src="/assets/js/cloakcheck.js"></script>
+  <script src="/assets/js/mobile.js"></script>
+  <title>Apps | Doge</title>
+</head>
+
+<body class="bg">
+
+  <div id="contextMenu" class="context-menu">
+    <div class="context-menu-item with-submenu" onclick="toggleSubmenu(event)">Tab Cloak</div>
+    <div class="context-submenu">
+      <div class="context-menu-item" onclick="tabCloak()">Enable</div>
+      <div class="context-menu-item" onclick="disableTabCloak()">Disable</div>
+    </div>
+    <div class="context-menu-item with-submenu" onclick="toggleSubmenu2(event)">Authentication</div>
+    <div class="context-submenu">
+      <div class="context-menu-item" onclick="enableLogin()">Enable Login</div>
+      <div class="context-menu-item" onclick="disableLogin()">Disable Login</div>
+    </div>
+    <div class="context-menu-item" onclick="openWindow()">About:Blank Cloak</div>
+    <div class="context-menu-item" onclick="visitLastSite()">Visit Last Site</div>
+  </div>
+
+  <nav id="mytopnav">
+    <br>
+    <a href="/gms/"><button class="button-6">Games</button></a>
+    <a href="/apps/"><button class="button-6">Apps</button></a>
+    <a href="/app"><button class="button-6">Home</button></a>
+    <p><img src="/assets/img/doge.jpg" style="width:22px;height:22px;"> Doge Unblocker</p>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </nav>
+
+  <div class="search-bar" style="display: flex; justify-content: center;">
+    <form id="searchForm" onsubmit="return false;">
+      <input id="searchApps" placeholder="Search Apps" class="searchbar">
+    </form>
+  </div>
+
+  <div class="search-results" style="display: flex; justify-content: center; flex-wrap: wrap;">
+    <div id="searchMessage" style="display: none;text-align: center;font-size: 30px;margin:20px;font-family:poppins;"></div>
+    <a href="discord" class="square_btn">
+      <img src="/assets/img/discord.png"><br>Discord</img>
+    </a>
+    <a href="chatgpt" class="square_btn">
+      <img src="/assets/img/chatgpt.jpg"><br>ChatGPT</img>
+    </a>
+    <a href="youtube" class="square_btn">
+      <img src="/assets/img/youtube.png"><br>YouTube</img>
+    </a>
+    <a href="tiktok" class="square_btn">
+      <img src="/assets/img/tiktok.png"><br>TikTok</img>
+    </a>
+    <a href="spotify" class="square_btn">
+      <img src="/assets/img/spotify.png"><br>Spotify</img>
+    </a>
+    <a href="reddit" class="square_btn">
+      <img src="/assets/img/reddit.png"><br>Reddit</img>
+    </a>
+    <a href="pin" class="square_btn">
+      <img src="/assets/img/pinterest.png" class="rounded"><br>Pinterest</img>
+    </a>
+    <a href="/gms/geforce" class="square_btn">
+      <img src="/assets/img/geforcenow.png" class="rounded"><br>Geforce Now</img>
+    </a>
+    <a href="github" class="square_btn">
+      <img src="/assets/img/github.png"><br>GitHub</img>
+    </a>
+    <a href="ng" class="square_btn">
+      <img src="/assets/img/nowgg.png" class="rounded"><br>Now.GG</img>
+    </a>
+    <a href="chess" class="square_btn">
+      <img src="/assets/img/chess.png" class="rounded"><br>Chess.com</img>
+    </a>
+  </div>
+
+  <script src="/uv/uv.bundle.js"></script>
+  <script>
+    document.getElementById('searchApps').addEventListener('input', function(event) {
+      const query = this.value.toLowerCase();
+      const links = document.getElementsByClassName('search-results')[0].getElementsByTagName('a');
+      let foundResults = false;
+
+      for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+        const linkText = link.innerText.toLowerCase();
+
+        if (linkText.includes(query)) {
+          link.style.display = 'block';
+          foundResults = true;
+        } else {
+          link.style.display = 'none';
+        }
+      }
+
+      if (!foundResults) {
+        const message = document.getElementById('searchMessage');
+        message.innerText = 'No Results Found.';
+        message.style.display = 'block';
+      } else {
+        const message = document.getElementById('searchMessage');
+        message.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>
