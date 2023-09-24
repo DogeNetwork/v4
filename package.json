@@ -1,46 +1,20 @@
 {
-  "name": "doge",
+  "name": "wallpapers",
   "version": "4.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
   "scripts": {
-    "start": "node --max-http-header-size=50000 index",
-    "build:dev": "node esbuild.dev.js",
-    "build:prod": "node esbuild.prod.js",
-    "build": "node esbuild.prod.js",
-    "webpack": "echo 'Webpack building is no longer a supported build utility.'"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "LGPL-2.0-only",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@dynamic-pkg/mime": "^1.0.1",
-    "@dynamic-pkg/mutation": "^1.0.0",
-    "@tomphttp/bare-client": "^2.2.0-alpha",
-    "@tomphttp/bare-server-node": "^2.0.1",
-    "acorn": "^8.10.0",
-    "astring": "^1.8.6",
-    "chalk": "^5.3.0",
-    "cookie": "^0.5.0",
-    "domhandler": "^5.0.3",
-    "esbuild": "^0.19.0",
-    "express": "^4.18.2",
-    "git-commit-info": "^2.0.2",
-    "idb": "^7.0.2",
-    "open": "^9.1.0",
-    "parse5": "^7.1.2",
-    "path-browserify": "^1.0.1",
-    "set-cookie-parser": "^2.6.0"
-  },
-  "type": "module",
-  "devDependencies": {
-    "@types/cookie": "^0.5.1",
-    "@types/crypto-js": "^4.1.1",
-    "@types/mime-db": "^1.43.1",
-    "@types/path-browserify": "^1.0.0",
-    "@types/set-cookie-parser": "^2.4.2",
-    "execa": "^8.0.1",
-    "ts-node": "^10.8.1",
-    "typescript": "^5.1.6"
+    "@tomphttp/bare-server-node": "^1.2.6",
+    "express": "^4.18.2"
   }
 }
