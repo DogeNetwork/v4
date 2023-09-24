@@ -1,8 +1,8 @@
 import express from "express";
 import http from "node:http";
 import path from "node:path";
-import { createBareServer } from "@tomphttp/bare-server-node";
-// screw fastify i dont like it
+import createBareServer from "@tomphttp/bare-server-node";
+
 const __dirname = process.cwd();
 const server = http.createServer();
 const app = express(server);
