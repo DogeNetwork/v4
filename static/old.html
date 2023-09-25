@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="/resources/img/logo.png">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+	<link rel="stylesheet" href="resources/style.css">
+
+</head>
+<body>
+	<div id="modal-1" class="modal">
+
+		<div class="modal-inner">
+			<a class="js-close-modal">&times;</a>
+			<div class="modal-content">
+		  
+		  <h3>Information</h3>
+
+		<p id="settings-version"> Dynamic v#.#.# </p>
+		
+		<div class="settings-connected"> 
+			<div class="connectedindicator"> 
+		</div>
+		<div id="service-status">service online</div> 
+	</div>
+			</div><!-- .modal-content -->
+		</div><!-- .modal-inner -->
+	
+	</div><!-- .modal -->
+
+
+  <canvas></canvas>
+  <h1> Dynamic </h1>
+	<form action="/service/route" method="POST" id="uform">
+	  <input title="query" name="url" autocomplete="off" >
+	</form>
+  <div class="footer"> 
+    <div class="copyright"> Copyright Nebula Services 2023 </div>
+ </div>  
+
+<button class="js-modal" data-modal="modal-1">Information</button>
+
+  <script src="/resources/scripts/index.js"></script>
+  <script src="/resources/scripts/backdrop.js"></script>
+  <script src="/resources/scripts/notice.js"></script>
+  <script src="/resources/scripts/settings.js"></script>
+  
+
+
+</body>
+</html>
