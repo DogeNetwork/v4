@@ -1,0 +1,36 @@
+<html><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/doge.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/movement.css/movement.css" rel="stylesheet">
+    <script>
+          var pagetitle = "Apps | Doge";
+          var newTitle = "Apps | Doge";
+          
+          const storedTitle = localStorage.getItem('tabTitle');  
+          if (storedTitle === "Home | Doge") {
+        localStorage.setItem('tabTitle', newTitle);
+      } else if (storedTitle === "Gms | Doge") {
+        localStorage.setItem('tabTitle', newTitle);
+        document.title = "Gms | Doge";
+      } else if (storedTitle === "Apps | Doge") {
+        localStorage.setItem('tabTitle', newTitle);
+      } else {
+        document.title = "My Drive - Google Drive";
+      }
+      
+          document.title = pagetitle;
+        </script>
+          <script src="/assets/js/rightclick.js"></script>
+        <script src="/assets/js/cloakcheck.js"></script>
+        <script src="/assets/js/mobile.js"></script>
+    <style>@font-face{
+font-family: mosk;
+src: url(mosk.ttf);
+}</style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+ </head>
+ <script src="/uv/uv.bundle.js"></script>
+ <iframe src="app.html" style="position: fixed; inset: 0px; outline: none; border: none; height: 100%; width: 100%;"></iframe>
+</html>

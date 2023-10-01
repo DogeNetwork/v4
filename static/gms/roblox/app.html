@@ -1,0 +1,17 @@
+<head>
+    <meta name="robots" content="noindex">
+</head>
+<body>
+    <iframe src="/loading.html" style="position: fixed; inset: 0px; outline: none; border: none; height: 100%; width: 100%;"></iframe>
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/index.js"></script>
+    <script>
+        window.navigator.serviceWorker.register('/sw.js', {
+            scope: __uv$config.prefix
+        }).then(() => {
+            location.href=__uv$config.prefix + __uv$config.encodeUrl('https://nowgg.nl/play/roblox-corporation/5349/roblox');
+        });
+    </script>
+</body>
