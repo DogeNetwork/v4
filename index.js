@@ -22,6 +22,15 @@ app.get('/app', (req, res) => {
 app.get('/~', (req, res) => {
   res.sendFile(path.join(process.cwd(), './static/loader.html'));
 });
+app.get('/apps', (req, res) => {
+  res.sendFile(path.join(process.cwd(), './static/apps.html'));
+});
+app.get('/gms', (req, res) => {
+  res.sendFile(path.join(process.cwd(), './static/gms.html'));
+});
+app.get('/lessons', (req, res) => {
+  res.sendFile(path.join(process.cwd(), './static/agloader.html'));
+});
 app.get('/credits', (req, res) => {
   res.sendFile(path.join(process.cwd(), './static/credits.html'));
 });
