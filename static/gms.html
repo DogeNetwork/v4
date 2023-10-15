@@ -22,6 +22,12 @@
       margin: 20px;
     }
   </style>
+  <script>
+    window.navigator.serviceWorker
+    .register("/sw.js", {
+      scope: __uv$config.prefix,
+    })
+  </script>
   <script src="/assets/js/functions.js"></script>
   <script src="/assets/js/cloakcheck.js"></script>
   <script src="/assets/js/mobile.js"></script>

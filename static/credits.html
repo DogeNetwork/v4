@@ -22,6 +22,12 @@
         console.log('leaveconf disabled');
       }
     </script>
+    <script>
+      window.navigator.serviceWorker
+    .register("/sw.js", {
+      scope: __uv$config.prefix,
+    })
+    </script>
     <title>Credits | Doge</title>
 </head>
 <br>
