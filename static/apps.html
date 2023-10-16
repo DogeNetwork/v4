@@ -17,12 +17,6 @@
       margin: 20px;
     }
   </style>
-  <script>
-    window.navigator.serviceWorker
-    .register("/sw.js", {
-      scope: __uv$config.prefix,
-    })
-  </script>
     <script src="/assets/js/functions.js"></script>
   <script src="/assets/js/cloakcheck.js"></script>
   <script src="/assets/js/mobile.js"></script>
@@ -159,6 +153,12 @@
         document.getElementById('particles-js').remove();
     }
       </script>
+        <script>
+          window.navigator.serviceWorker
+          .register("/sw.js", {
+            scope: __uv$config.prefix,
+          })
+        </script>
       <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
       <script src="/assets/js/particles.js"></script>
 </body>
