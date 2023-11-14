@@ -39,7 +39,7 @@ function github() {
   location.href = '/lessons';
 }
 function ng() {
-  agU = Ultraviolet.codec.xor.encode('https://nowgg.nl');
+  agU = Ultraviolet.codec.xor.encode('https://now.gg/play/roblox-corporation/5349/roblox');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
@@ -144,4 +144,4 @@ function rBowl() {
   agU = Ultraviolet.codec.xor.encode('https://retro-bowl.net/main.html');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
-}
+}z
