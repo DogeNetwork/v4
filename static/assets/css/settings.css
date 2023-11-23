@@ -19,6 +19,7 @@ p {
     width: 400px;
     text-align: center;
     box-shadow: 0px 8px 11px 0px rgba(0,0,0,0.4);
+    border: 2px solid rgba(61, 61, 61, 0.466);
 }
 .settingscontainer p {
     margin-left: -5px;

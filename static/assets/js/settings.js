@@ -126,6 +126,27 @@ function docsCloak() {
 }
 function googleCloak() {
     localStorage.setItem('cloakedTitle', 'Google');
-    localStorage.setItem('cloakedIcon', 'https://google.com/favicon.ico');
+    localStorage.setItem('cloakedIcon', '/assets/img/google.ico');
     tabCloak();
+}
+
+function enableClickoffCloak() {
+    localStorage.setItem('clickoffCloak', 'enabled');
+    window.location.reload();
+}
+
+function disableClickoffCloak () {
+    localStorage.setItem('clickoffCloak', 'disabled');
+    window.location.reload();
+}
+
+var enableccButton = document.getElementById('ecc');
+var disableccButton = document.getElementById('dcc');
+var clickoffButtonCheck = localStorage.getItem('clickoffCloak')
+if (clickoffButtonCheck === 'disabled' || clickoffButtonCheck === '' || clickoffButtonCheck === null) {
+    disableccButton.disabled = true;
+    enableccButton.disabled = false;
+} else {
+    disableccButton.disabled = false;
+    enableccButton.disabled = true;
 }
