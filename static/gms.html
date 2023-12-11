@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="/assets/img/doge.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/games.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/rightclick.css">
+  <link href="https://unpkg.com/movement.css/movement.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/323255fd4e.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script>
+// tab clak
+  </script>
+  <style>
+    input {
+      border-radius: 10px;
+      margin: 20px;
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-6YEQ7Q0XRC');
+  </script>
+  <script src="/assets/js/functions.js"></script>
+  <script src="/assets/js/cloakcheck.js"></script>
+  <script src="/assets/js/mobile.js"></script>
+  <title>Doge | V4</title>
+  <script>
+
+  </script>
+</head>
+<br>
+<body>
+  <div id="particles-js"></div>
+  <div id="contextMenu" class="context-menu">
+    <div class="context-menu-item with-submenu" onclick="toggleSubmenu(event)"><i class="bi bi-backpack"></i> Tab Cloak</div>
+    <div class="context-submenu">
+      <div class="context-menu-item" onclick="tabCloak()">Enable</div>
+      <div class="context-menu-item" onclick="disableTabCloak()">Disable</div>
+    </div>
+    <div class="context-menu-item with-submenu" onclick="toggleSubmenu2(event)"><i class="bi bi-shield-lock"></i> Authentication</div>
+    <div class="context-submenu">
+      <div class="context-menu-item" onclick="enableLogin()">Enable Login</div>
+      <div class="context-menu-item" onclick="disableLogin()">Disable Login</div>
+    </div>
+    <div class="context-menu-item" onclick="openWindow()"><i class="bi bi-box-arrow-up-right"></i> About:Blank Cloak</div>
+    <div class="context-menu-item" onclick="openSettings()"><i class="bi bi-gear"></i> View all Settings</div>
+  </div>
+  <nav id="mytopnav">
+    <a href="/settings.html"><button class="button-6"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+      <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+      <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+    </svg>Settings</button></a>
+    <a href="/gms/"><button class="button-6 active"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16">
+          <path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z"/>
+          <path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z"/>
+        </svg>Games</button></a>
+        <a href="/apps/"><button class="button-6" class="fa-solid fa-user"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+          <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
+        </svg>Apps</button></a>
+        <br>
+        <a href="/app" class="title"><img src="/assets/img/doge.jpg" style="width:22px;height:22px;"> Doge Unblocker</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </nav>
+  <div class="search-bar" style="display: flex; justify-content: center;">
+    <form id="searchForm" onsubmit="return false;" autocomplete="off">
+      <input id="searchApps" placeholder="Search Games" class="searchbar">
+    </form>
+  </div>
+  <div id="searchMessage" style="display: none;color:white;text-align: center;font-size: 30px;margin:20px;font-family:poppins;"></div>
+      <div class="search-results" style="display: flex; justify-content: center; flex-wrap: wrap;">
+        <div class="button-container">
+          <a href="#" class="square_btn" onclick="geforce()">
+            <img src="/assets/img/geforcenow.png" class="rounded"><br>GeForce Now</img>
+          </a>
+          </a>
+          <a href="#" class="square_btn" onclick="onevone()">
+            <img src="/assets/img/1v1.png" class="rounded"><br></img>1v1.lol
+          </a>
+          <a href="#" class="square_btn" onclick="slope()">
+            <img src="/assets/img/slope.png" class="rounded"><br>Slope</img>
+          </a>
+          <a href="#" class="square_btn" onclick="jstris()">
+            <img src="/assets/img/jstris.png"><br>Jstris</img>
+          </a>
+          <a href="#" class="square_btn" onclick="rbx()">
+            <img src="/assets/img/roblox.png" class="rounded"><br>Roblox</img>
+          </a>
+          <a href="#/" class="square_btn" style="height:130px;" onclick="p2048()">
+            <img src="/assets/img/p2048.png" class="rounded"><br>Pokemon 2048</img>
+          </a>
+          <a href="#/" class="square_btn" style="height:130px;" onclick="subway()">
+            <img src="/assets/img/subway.png" class="rounded"><br>Subway Surfers</img>
+          </a>
+          <a href="#/" class="square_btn" style="height:130px;" onclick="brebound()">
+            <img src="/assets/img/boxelrebound.jpg" class="rounded"><br>Boxel Rebound</img>
+          </a>
+          <a href="#" class="square_btn" onclick="florr()">
+            <img src="/assets/img/florr.png" class="rounded"><br>Florr.io</img>
+          </a>
+          <a href="#" class="square_btn" onclick="cookieClicker()">
+            <img src="/assets/img/cookieclicker.jpg" class="rounded"><br>Cookie Clicker</img>
+          </a>
+          <a href="/retrobowl" class="square_btn">
+            <img src="/assets/img/retro.webp" class="rounded"><br>Retro Bowl</img>
+          </a>
+        </div>
+      </div>
+  </div>
+  <br>
+  <script src="/assets/js/index.js"></script>
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+  <script src="/assets/js/ag.js"></script>
+  <script>
+    document.getElementById('searchApps').addEventListener('input', function(event) {
+      const query = this.value.toLowerCase();
+      const links = document.getElementsByClassName('search-results')[0].getElementsByTagName('a');
+      let foundResults = false;
+
+      for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+        const linkText = link.innerText.toLowerCase();
+
+        if (linkText.includes(query)) {
+          link.style.display = 'block';
+          foundResults = true;
+        } else {
+          link.style.display = 'none';
+        }
+      }
+
+      if (!foundResults) {
+        const message = document.getElementById('searchMessage');
+        message.innerText = 'No Results Found.';
+        message.style.display = 'block';
+      } else {
+        const message = document.getElementById('searchMessage');
+        message.style.display = 'none';
+      }
+    });
+  </script>
+  <script>
+    var bgUrl = localStorage.getItem('bgUrl');
+    if (bgUrl === 'none' || bgUrl === null || bgUrl === '') {
+        console.log('No custom background set.');
+    } else {
+        document.body.style.backgroundImage = `url(${bgUrl})`;
+        document.getElementById('particles-js').remove();
+    }
+      </script>
+        <script>
+          window.navigator.serviceWorker
+          .register("/sw.js", {
+            scope: __uv$config.prefix,
+          })
+        </script>
+      <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      <script src="/assets/js/particles.js"></script>
+      <script>
+        // Check if Particles are enabled
+        var particles = localStorage.getItem('particles');
+        if (particles === 'disabled' || particles === null || particles === '') {
+          console.log('Particles are disabled.')
+        } else {
+         particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 0,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#32cf32"
+            },
+        },
+    });
+        }
+      </script>
+</body>
+</html>

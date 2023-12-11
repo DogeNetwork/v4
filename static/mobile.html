@@ -1,0 +1,137 @@
+<head>
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <link rel="icon" href="/assets/img/doge.jpg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6YEQ7Q0XRC');
+</script>
+  <title>Mobile | Doge</title>
+  <style>
+    body {
+      background-color: #262626;
+    }
+
+    @font-face {
+      font-family: mosk;
+      src: url(mosk.ttf);
+    }
+
+    .button-6 {
+      align-items: right;
+      border-radius: 13px;
+      background-color: transparent;
+      border-color: white;
+      border: 2px solid #595858;
+      box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+      box-sizing: border-box;
+      color: white;
+      cursor: pointer;
+      font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 1.25;
+      margin: -8px;
+      min-height: 3rem;
+      margin-left: 10px;
+      padding: 0px 10px;
+      margin-right: 20px;
+      text-decoration: none;
+      transition: all 250ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+      width: 30%;
+    }
+
+    .button-6:hover,
+    .button-6:focus {
+      border-color: white;
+      box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+      color: white;
+      border-radius: 13px;
+    }
+
+    .button-6:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-6:active {
+      background-color: white;
+      color: rgba(0, 0, 0, 0.65);
+      transform: translateY(0);
+      border-radius: 13px;
+    }
+  </style>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+  <center>
+    <br>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div>
+    <h1 style="font-family:poppins;font-size:50px;color:white;">Doge Unblocker</h1>
+    <p style="font-size:30px;padding:0px;margin:0px;">Mobile</p>
+    <br>
+  </div>
+  <form action="/service/route" method="POST" id="uform">
+    <input type="text" name="url" class="form__input" id="name" tag="searchbar" style="font-family:poppins;font-size:20px;width:auto;"
+      placeholder="Type URL or search query">
+  </form>
+  </center>
+  <script>
+    /*
+    function myFunction() {
+      var theurl = prompt("What url do u want to proxify? don't put https, just put the link");
+      window.navigator.serviceWorker.register('/uv/sw.js', {
+        scope: __uv$config.prefix
+      }).then(() => {
+        location.href = __uv$config.prefix + __uv$config.encodeUrl("https://" + theurl)
+      });
+    }
+    */
+  </script>
+    <script src="/assets/js/index.js"></script>
+    <script>
+      var bgUrl = localStorage.getItem('bgUrl');
+      if (bgUrl === 'none' || bgUrl === null || bgUrl === '') {
+          console.log('No custom background set.');
+      } else {
+          document.body.style.backgroundImage = `url(${bgUrl})`;
+          document.getElementById('particles-js').remove();
+      }
+        </script>
+    <script>
+      // Check if Particles are enabled
+      var particles = localStorage.getItem('particles');
+      if (particles === 'disabled' || particles === null || particles === '') {
+        console.log('Particles are disabled.')
+      } else {
+       particlesJS("particles-js", {
+      "particles": {
+          "number": {
+              "value": 0,
+              "density": {
+                  "enable": true,
+                  "value_area": 800
+              }
+          },
+          "color": {
+              "value": "#32cf32"
+          },
+      },
+  });
+      }
+    </script>
+    <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/assets/js/particles.js"></script>
+    <script src="/uv/uv.handler.js"></script>
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/assets/js/cloak.js"></script>
+  </body>

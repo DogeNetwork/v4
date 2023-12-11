@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+  <link rel="icon" href="/assets/img/doge.jpg">
+  <script src="/assets/js/rightclick.js"></script>
+  <script src="/assets/js/cloakcheck.js"></script>
+    <script>
+      var loginValue = localStorage.getItem('login');
+
+if (loginValue === 'enablelogin') {
+  var isLoggedIn = localStorage.getItem('pass');
+
+if (isLoggedIn === 'correct') {
+  console.log("User has successfully logged in.");
+} else {
+  console.log('User has attempted to bypass login screen. Redirecting.');
+  location.href = '/';
+}
+} else {
+  console.log("Login is not enabled.");
+}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-6YEQ7Q0XRC');
+  </script>
+  <title>Doge | V4</title>
+</head>
+<body>
+<iframe src="loading.html" id="siteurl" style="position: fixed; inset: 0px; outline: none; border: none; height: 100%; width: 100%; overflow: hidden;"></iframe>
+<script>
+window.onload = function () {
+      let encodedUrl = localStorage.getItem("encodedUrl");
+      encodedUrl = "/service/" + encodedUrl;
+      document.querySelector("#siteurl").src = encodedUrl;
+    };
+</script>
+</body>
