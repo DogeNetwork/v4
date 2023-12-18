@@ -30,7 +30,7 @@ if (!inFrame && !navigator.userAgent.includes("Firefox")) {
 
         doc.head.appendChild(link);
         doc.body.appendChild(iframe);
-        location.replace(localStorage.getItem('panicLink') || 'https://www.nasa.gov/');
+        location.replace(localStorage.getItem('panicLink') || 'https://www.classroom.google.com/');
     };
 };
 
