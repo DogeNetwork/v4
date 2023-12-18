@@ -58,6 +58,11 @@ function spotify() {
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
+function sortthecort() {
+  agU = Ultraviolet.codec.xor.encode('https://html-classic.itch.zone/html/347310/index.html?v=1542780889');
+  sessionStorage.setItem('agUrl', agU);
+  location.href = '/lessons';
+}
 function tt() {
   agU = Ultraviolet.codec.xor.encode('https://tiktok.com');
   sessionStorage.setItem('agUrl', agU);
