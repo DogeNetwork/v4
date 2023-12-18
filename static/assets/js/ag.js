@@ -59,7 +59,7 @@ function spotify() {
   location.href = '/lessons';
 }
 function sortthecort() {
-  agU = Ultraviolet.codec.xor.encode('https://html-classic.itch.zone/html/347310/index.html?v=1542780889');
+  agU = Ultraviolet.codec.xor.encode('https://game283209.konggames.com/gamez/0028/3209/live/index.html?kongregate_game_version=1518746070&kongregate_host=www.kongregate.com');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
