@@ -18,11 +18,12 @@
 
 
 /*apps*/
-function chatGPT() {
-  agU = Ultraviolet.codec.xor.encode('https://chat.shuttle.rip');
+function gpt() {
+  agU = Ultraviolet.codec.xor.encode('https://ub7.org');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
+
 function chess() {
   agU = Ultraviolet.codec.xor.encode('https://chess.com');
   sessionStorage.setItem('agUrl', agU);
@@ -35,6 +36,11 @@ function discord() {
 }
 function github() {
   agU = Ultraviolet.codec.xor.encode('https://github.com');
+  sessionStorage.setItem('agUrl', agU);
+  location.href = '/lessons';
+}
+function google() {
+  agU = Ultraviolet.codec.xor.encode('https://google.com');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
@@ -63,6 +69,11 @@ function tt() {
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
+function twitter() {
+  agU = Ultraviolet.codec.xor.encode('https://twitter.com');
+  sessionStorage.setItem('agUrl', agU);
+  location.href = '/lessons';
+}
 function yt() {
   agU = Ultraviolet.codec.xor.encode('https://youtube.com');
   sessionStorage.setItem('agUrl', agU);
@@ -70,6 +81,11 @@ function yt() {
 }
 function y8() {
   agU = Ultraviolet.codec.xor.encode('https://y8.com');
+  sessionStorage.setItem('agUrl', agU);
+  location.href = '/lessons';
+}
+function vscode() {
+  agU = Ultraviolet.codec.xor.encode('https://vscode.dev');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
@@ -110,6 +126,11 @@ function jstris() {
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
+function twoZeroFourEight() {
+  agU = Ultraviolet.codec.xor.encode('https://derpmandev.github.io/unblocked-games/2048');
+  sessionStorage.setItem('agUrl', agU);
+  location.href = '/lessons';
+}
 function p2048() {
   agU = Ultraviolet.codec.xor.encode('https://filipekiss.github.io/2048');
   sessionStorage.setItem('agUrl', agU);
@@ -144,4 +165,14 @@ function rBowl() {
   agU = Ultraviolet.codec.xor.encode('https://retro-bowl.net/main.html');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
-}z
+}
+function krunker() {
+  agU = Ultraviolet.codec.xor.encode('https://krunker.io');
+  sessionStorage.setItem('agUrl', agU);
+  location.href = '/lessons';
+}
+function paperIo() {
+  agU = Ultraviolet.codec.xor.encode('https://paper-io.com');
+  sessionStorage.setItem('agUrl', agU);
+  location.href = '/lessons';
+}
