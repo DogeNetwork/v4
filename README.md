@@ -3,14 +3,17 @@ Doge Unblocker is a very powerful, ultra-fast web proxy designed for customizati
 ## Features:
 - Advanced Tab Cloaking
 - Advanced About:Blank Cloaking (prevents site from showing on browser history)
+- Clickoff Cloaking
 - Tons of customizable features (Themes, custom background, etc.)
 - Access settings easily (right-click)
-- Login system (for security)
+- Authentication
 - Extremely clean UI
-- Fast proxy
-- Tons of Apps & Games
-## Contributors:
+- A powerful proxy
+- A large selection of Apps & Games
+- Many more
+## Current Developers:
 - Derpman
+- Spark
 ## Deployment
 [![Deploy on Railway](https://binbashbanana.github.io/deploy-buttons/buttons/remade/railway.svg)](https://railway.app/template/h7StcI?referralCode=u82tqg)
 <a href="https://render.com/deploy?repo=https://github.com/dogenetwork/doge-unblocker">
@@ -20,6 +23,5 @@ Doge Unblocker is a very powerful, ultra-fast web proxy designed for customizati
 [![Deploy with Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repositoryurl=https://github.com/dogenetwork/v4)
 [![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/dogenetwork/v4)
 
-## Join our Discord!
-<a href="https://discord.gg/3Cr6u2TnQe" target="new">
-<img src="https://camo.githubusercontent.com/895cccd66886e1fb7bc7f1e14edbb0f30d8c7a88233f276e99647303d372ff81/68747470733a2f2f696e7669646765742e737769746368626c6164652e78797a2f735750484364784350553f7468656d653d6461726b"></a>
+### Discord
+[![Join us on Discord](https://invidget.switchblade.xyz/sWPHCdxCPU?theme=dark)](https://discord.gg/sWPHCdxCPU)
