@@ -93,6 +93,8 @@ function saveBackground() {
         closeBackgroundPopup(); // Close the popup after saving to localStorage
         window.location.reload();
     }
+    const newBackgroundUrl = "https://img.freepik.com/premium-photo/ninja-detailed-perfect-compositionline-graphic-black-red-colors-trending-artstation_849761-30419.jpg"; // Replace this with your desired URL
+    saveBackground(newBackgroundUrl);
 }
 
 
