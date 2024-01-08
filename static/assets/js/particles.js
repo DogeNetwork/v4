@@ -605,7 +605,7 @@ particlesJS("particles-js", {
             }
         },
         "color": {
-            "value": "#32cf32"
+            "value": "#ba1b0d"
         },
         "shape": {
             "type": "circle",
