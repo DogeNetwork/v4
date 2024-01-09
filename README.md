@@ -12,6 +12,8 @@ Doge Unblocker is a very powerful, ultra-fast web proxy designed for customizati
 - A large selection of Apps & Games
 - Many more
 - static/assets/js/ag.js
+- static/gms.html
+- static/apps.html
 ## Current Developers:
 - Derpman
 - Spark
