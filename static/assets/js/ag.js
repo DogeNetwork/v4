@@ -186,11 +186,6 @@ function buildroyaleio() {
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
-function yohohoio() {
-  agU = Ultraviolet.codec.xor.encode('https://yohoho.io/');
-  sessionStorage.setItem('agUrl', agU);
-  location.href = '/lessons';
-}
 function btd4() {
   agU = Ultraviolet.codec.xor.encode('https://cdn2.addictinggames.com/addictinggames-content/ag-assets/content-items/html5-games/bloonstowerdefense4/index.html');
   sessionStorage.setItem('agUrl', agU);
@@ -222,7 +217,7 @@ function ducklife4() {
   location.href = '/lessons';
 }
 function drifthunters() {
-  agU = Ultraviolet.codec.xor.encode('https://unblockedgamesroom.com/wp-content/uploads/assets/drift-hunters/');
+  agU = Ultraviolet.codec.xor.encode('https://www.180sx.club/media/games/drift-hunters/drift-hunters-chromebook.html');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
@@ -267,7 +262,7 @@ function rooftopsnipers1() {
   location.href = '/lessons';
 }
 function rooftopsnipers2() {
-  agU = Ultraviolet.codec.xor.encode('https://ubg365.github.io/rooftop-snipers-2/');
+  agU = Ultraviolet.codec.xor.encode('https://socoolgamesfiles.sobloxsy.com/projects/rooftop_snipers_2/');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
@@ -293,11 +288,6 @@ function vex6() {
 }
 function worldshardestgame() {
   agU = Ultraviolet.codec.xor.encode('https://watchdocumentaries.com/wp-content/uploads/games/worlds-hardest-game/');
-  sessionStorage.setItem('agUrl', agU);
-  location.href = '/lessons';
-}
-function evio() {
-  agU = Ultraviolet.codec.xor.encode('https://ev.io/');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
