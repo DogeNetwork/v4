@@ -242,27 +242,22 @@ function motox3m() {
   location.href = '/lessons';
 }
 function ltf1() {
-  agU = Ultraviolet.codec.xor.encode('https://f.silvergames.com/ruffle/player.php?id=304');
+  agU = Ultraviolet.codec.xor.encode('https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/8c491f21-7353-4f1f-b2a0-9544824c4d28%2Flearn_to_fly.xml');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
 function ltf2() {
-  agU = Ultraviolet.codec.xor.encode('https://f.silvergames.com/ruffle/player.php?id=1422');
+  agU = Ultraviolet.codec.xor.encode('https://www.gameflare.com/embed/learn-to-fly-2/');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
 function ltf3() {
-  agU = Ultraviolet.codec.xor.encode('https://f.silvergames.com/ruffle/player.php?id=5413');
+  agU = Ultraviolet.codec.xor.encode('https://www.gameflare.com/embed/learn-to-fly-3/');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
 function rooftopsnipers1() {
   agU = Ultraviolet.codec.xor.encode('https://html5.gamedistribution.com/c3a70ae98547407a92ebedca8b79fdfa/?gd_sdk_referrer_url=https://2player.co/rooftop-snipers');
-  sessionStorage.setItem('agUrl', agU);
-  location.href = '/lessons';
-}
-function rooftopsnipers2() {
-  agU = Ultraviolet.codec.xor.encode('https://socoolgamesfiles.sobloxsy.com/projects/rooftop_snipers_2/');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
