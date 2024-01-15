@@ -1,3 +1,8 @@
+// openUrl function
+function openUrl(url) {
+  location.href = 'https://' + url;
+}
+
 // about:blank cloaking
 var blankerCheck = localStorage.getItem('aboutBlank');
 if (blankerCheck === 'enabled') {
@@ -101,6 +106,7 @@ function tabCloak() {
   }
 
   function enableLogin() {
+    /*
     var userpass = prompt('Set Password:');
   if (userpass === '') {
     alert('Please enter a valid password.');
@@ -110,6 +116,8 @@ function tabCloak() {
   localStorage.setItem('wordpass', userpass);
     location.href = "/";
   }
+  */
+ location.href = '/settings.html#auth';
 }
 
   // Function to disable login

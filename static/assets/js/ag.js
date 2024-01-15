@@ -96,6 +96,16 @@ function onevone() {
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
+function basketBros() {
+  agU = Ultraviolet.codec.xor.encode('https://derpman.codeberg.page/echo/@main/basketbros-io/');
+  sessionStorage.setItem('agUrl', agU);
+  location.href = '/lessons';
+}
+function bitlife() {
+  agU = Ultraviolet.codec.xor.encode('https://derpman.codeberg.page/echo/@main/bitlife/index.html');
+  sessionStorage.setItem('agUrl', agU);
+  location.href = '/lessons';
+}
 function brebound() {
   agU = Ultraviolet.codec.xor.encode('https://trinculo54.github.io/Boxel-rebound-hope/Newer/index.html');
   sessionStorage.setItem('agUrl', agU);
@@ -147,7 +157,12 @@ function slope() {
   location.href = '/lessons';
 }
 function subway() {
-  agU = Ultraviolet.codec.xor.encode('https://raw.githack.com/3kh0/3kh0-assets/main/subway-surfers/index.html');
+  agU = Ultraviolet.codec.xor.encode('https://derpman.codeberg.page/echo/@main/subway-surfers/index.html');
+  sessionStorage.setItem('agUrl', agU);
+  location.href = '/lessons';
+}
+function territorial() {
+  agU = Ultraviolet.codec.xor.encode('https://territorial.io');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
@@ -162,9 +177,49 @@ function cookieClicker() {
   location.href = '/lessons';
 }
 function rBowl() {
-  agU = Ultraviolet.codec.xor.encode('https://retro-bowl.net/main.html');
-  sessionStorage.setItem('agUrl', agU);
-  location.href = '/lessons';
+  document.title = 'Doge | V4';
+  var cloakcheckScript = document.createElement("script");
+  cloakcheckScript.src = "/assets/js/cloak.js";
+  document.head.appendChild(cloakcheckScript);
+  
+  var functionsScript = document.createElement("script");
+  functionsScript.src = "/assets/js/functions.js";
+  document.head.appendChild(functionsScript);
+  
+  document.body.innerHTML = `
+    <script src="/assets/js/index.js"></script>
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/assets/js/ag.js"></script>
+    <script>
+      window.navigator.serviceWorker
+        .register("/sw.js", {
+          scope: __uv$config.prefix,
+        });
+    </script>
+    <iframe src="/assets/rb/index.html" style="position: fixed; inset: 0px; outline: none; border: none; height: 100%; width: 100%; overflow: hidden;"></iframe>
+  `;
+  function getRandomThreeDigitNumber() {
+    return Math.floor(Math.random() * 900) + 100;
+  }
+  
+  function getRandomAlphanumericString(length) {
+    const characters = 'abcdefghijklmnopqrstuvw0123456789012345';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+  }
+  
+  var randomThreeDigitNumber = getRandomThreeDigitNumber();
+  var randomAlphanumericString = getRandomAlphanumericString(15);
+  
+  var url = '/temp?draft=' + randomAlphanumericString;
+  var title = 'Google Docs';
+  
+  history.pushState({}, title, url);
 }
 function krunker() {
   agU = Ultraviolet.codec.xor.encode('https://krunker.io');

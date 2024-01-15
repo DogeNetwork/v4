@@ -131,7 +131,7 @@ input {
   border: none;
   padding: 20px;
   width: 520px;
-  background-color: rgba(20, 20, 20, 0.747);
+  background-color: rgba(22, 22, 22, 0.637);
   color: white;
   outline: none;
   border: 2px solid rgba(51, 51, 51, 0.575);;
@@ -162,7 +162,8 @@ nav.responsive a {
 
 
 h1 {
-  font-size: 45.5px;
+  font-size: 20px;
+  font-family: poppins;
 }
 
 .header {
@@ -380,4 +381,35 @@ h2 {
   background-position: 50% 50%;
   overflow: hidden;
   z-index: -1;
+}
+
+.partner {
+    color: #fff;
+    width: 300px;
+    height: 310px;
+    box-shadow: 0px 8px 48px 0px rgba(0,0,0,0.4);
+    background-color: rgba(128, 128, 128, 0.162);
+    display: inline-block;
+    margin-right: 4px;
+    border-radius:10px;
+    cursor: pointer;
+    transition: .2s;
+}
+.partner:hover {
+  transform: translate(-0%,-3%);
+  transition: .2s;
+}
+.partner p {
+  text-align: center;
+  padding-left: 1px;
+  padding-right: 3px;
+}
+
+.partner a {
+  position:fixed;
+  text-align: center;
+  font-size: 25px;
+  text-decoration: none;
+  margin-left: 5px;
+  margin-top: 10px;
 }

@@ -708,6 +708,27 @@ if (selectedTheme === 'ocean') {
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+} else if (selectedTheme === 'obama') {
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 0,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#32cf32"
+            },
+        },
+    });
+    document.body.style.backgroundImage = `url(/assets/img/obama.jpg)`;
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.height = "100%";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
 }
 if (selectedTheme === null) {
 // swamp theme (default theme)
