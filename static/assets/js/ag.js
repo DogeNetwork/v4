@@ -45,7 +45,7 @@ function google() {
   location.href = '/lessons';
 }
 function ng() {
-  agU = Ultraviolet.codec.xor.encode('https://now.gg/play/roblox-corporation/5349/roblox');
+  agU = Ultraviolet.codec.xor.encode('https://now.gg/iframe/snippet?app_pkg=com.roblox.client&partner=gamenora');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
@@ -147,7 +147,7 @@ function p2048() {
   location.href = '/lessons';
 }
 function rbx() {
-  agU = Ultraviolet.codec.xor.encode('https://nowgg.nl/play/roblox-corporation/5349/roblox');
+  agU = Ultraviolet.codec.xor.encode('https://now.gg/iframe/snippet?app_pkg=com.roblox.client&partner=gamenora');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }
