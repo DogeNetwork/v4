@@ -19,49 +19,62 @@
 </script>
      <title>Doge | V4</title>
      <script>
-      window.onload = function () {
-            let encodedAg = sessionStorage.getItem("agUrl");
-            encodedAg = "/service/" + encodedAg;
-            document.querySelector("#siteurl").src = encodedAg;
+      window.onload = function() {
+          let encodedAg = sessionStorage.getItem("agUrl");
+          encodedAg = "/service/" + encodedAg;
+          document.querySelector("#siteurl").src = encodedAg;
 
-            // URL
-            function getRandomThreeDigitNumber() {
-     return Math.floor(Math.random() * 900) + 100;
-   }
-   
-   function getRandomAlphanumericString(length) {
-     const characters = 'abcdefghijklmnopqrstuvw0123456789012345';
-     let result = '';
-     for (let i = 0; i < length; i++) {
-       result += characters.charAt(Math.floor(Math.random() * characters.length));
-     }
-     return result;
-   }
-   
-   var randomThreeDigitNumber = getRandomThreeDigitNumber();
-   var randomAlphanumericString = getRandomAlphanumericString(15);
-   
-   var url = '/lessons?pg=' + randomThreeDigitNumber + '#' + randomAlphanumericString;
-   var title = 'Google Docs';
-   
-   history.pushState({}, title, url);
+          var scriptElement = document.createElement('script');
+
+          scriptElement.src = '/assets/js/now.js';
+          scriptElement.onload = function() {
+              console.log('Sucessfully loaded Now.GG injection script.');
           };
+          scriptElement.onerror = function() {
+              console.error('Now.GG injection could not be loaded.');
+          };
+
+          document.head.appendChild(scriptElement);
+
+
+
+          // URL CLOAKING
+          function getRandomThreeDigitNumber() {
+              return Math.floor(Math.random() * 900) + 100;
+          }
+
+          function getRandomAlphanumericString(length) {
+              const characters = 'abcdefghijklmnopqrstuvw0123456789012345';
+              let result = '';
+              for (let i = 0; i < length; i++) {
+                  result += characters.charAt(Math.floor(Math.random() * characters.length));
+              }
+              return result;
+          }
+
+          var randomThreeDigitNumber = getRandomThreeDigitNumber();
+          var randomAlphanumericString = getRandomAlphanumericString(15);
+
+          var url = '/lessons?pg=' + randomThreeDigitNumber + '#' + randomAlphanumericString;
+          var title = 'Google Docs';
+
+          history.pushState({}, title, url);
+      };
       </script>
      <script>
-           var loginValue = localStorage.getItem('login');
-     
-     if (loginValue === 'enablelogin') {
-       var isLoggedIn = localStorage.getItem('pass');
-     
-     if (isLoggedIn === 'correct') {
-       console.log("User has successfully logged in.");
-     } else {
-       console.log('User has attempted to bypass login screen. Redirecting.');
-       location.href = '/';
-     }
-     } else {
-       console.log("Login is not enabled.");
-     }
+var loginValue = localStorage.getItem('login');
+if (loginValue === 'enablelogin') {
+    var isLoggedIn = localStorage.getItem('pass');
+
+    if (isLoggedIn === 'correct') {
+        console.log("User has successfully logged in.");
+    } else {
+        console.log('User has attempted to bypass login screen. Redirecting.');
+        location.href = '/';
+    }
+} else {
+    console.log("Login is not enabled.");
+}
        </script>
    </head>
    <body>
@@ -76,6 +89,6 @@
         scope: __uv$config.prefix,
       })
     </script>
-   <iframe src="loading.html" id="siteurl" style="position: fixed; inset: 0px; outline: none; border: none; height: 100%; width: 100%; overflow: hidden;"></iframe>
-   </body>
+   <iframe src="loading.html" id="siteurl" style="position: fixed; inset: 0px; outline: none; border: none; height: 100%; width: 100%; overflow: hidden;"></iframe>  
+</body>
    
