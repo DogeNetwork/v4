@@ -45,7 +45,7 @@ function google() {
   location.href = '/lessons';
 }
 function ng() {
-  agU = Ultraviolet.codec.xor.encode('https://now.gg/iframe/snippet?app_pkg=com.roblox.client&partner=gamenora');
+  agU = Ultraviolet.codec.xor.encode('https://nowgg.me/play/roblox-corporation/5349/roblox');
   sessionStorage.setItem('agUrl', agU);
   location.href = '/lessons';
 }

@@ -24,6 +24,7 @@
           encodedAg = "/service/" + encodedAg;
           document.querySelector("#siteurl").src = encodedAg;
 
+          /* No longer needed
           var scriptElement = document.createElement('script');
 
           scriptElement.src = '/assets/js/now.js';
@@ -32,7 +33,7 @@
           };
           scriptElement.onerror = function() {
               console.error('Now.GG injection could not be loaded.');
-          };
+          };*/
 
           document.head.appendChild(scriptElement);
 
