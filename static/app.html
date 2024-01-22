@@ -28,16 +28,16 @@
       var loginValue = localStorage.getItem('login');
 
 if (loginValue === 'enablelogin') {
-  var isLoggedIn = localStorage.getItem('pass');
+    var isLoggedIn = localStorage.getItem('pass');
 
-if (isLoggedIn === 'correct') {
-  console.log("User has successfully logged in.");
+    if (isLoggedIn === 'correct') {
+        console.log("User has successfully logged in.");
+    } else {
+        console.log('User has attempted to bypass login screen. Redirecting.');
+        location.href = '/';
+    }
 } else {
-  console.log('User has attempted to bypass login screen. Redirecting.');
-  location.href = '/';
-}
-} else {
-  console.log("Login is not enabled.");
+    console.log("Login is not enabled.");
 }
   </script>
   <title>Doge | V4</title>
@@ -77,7 +77,6 @@ if (isLoggedIn === 'correct') {
       <i class="fa fa-bars"></i>
     </a>
   </nav>
-</div>
   <div style="padding-left:16px; text-align: center; color: white;margin:80px;z-index:1;">
     <div>
       <form method="POST" id="uform" autocomplete="off" style="z-index:1;">
@@ -125,13 +124,13 @@ const options = [
 ];
 
 function getRandomOption() {
-  const randomNumber = Math.floor(Math.random() * options.length);
-  return options[randomNumber];
+    const randomNumber = Math.floor(Math.random() * options.length);
+    return options[randomNumber];
 }
 
 function setRandomPlaceholder() {
-  const placeholder = document.getElementById("placeholder");
-  placeholder.textContent = getRandomOption();
+    const placeholder = document.getElementById("placeholder");
+    placeholder.textContent = getRandomOption();
 }
 
 setRandomPlaceholder();

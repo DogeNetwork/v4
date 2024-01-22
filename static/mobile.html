@@ -4,13 +4,15 @@
   <link rel="icon" href="/assets/img/doge.jpg">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-6YEQ7Q0XRC');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-6YEQ7Q0XRC');
+  </script>
   <title>Mobile | Doge</title>
   <style>
     body {
@@ -70,21 +72,20 @@
       border-radius: 13px;
     }
   </style>
-  </head>
-  <body>
-    <div id="particles-js"></div>
+</head>
+<body>
+  <div id="particles-js"></div>
   <center>
     <br>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <div>
-    <h1 style="font-family:poppins;font-size:50px;color:white;">Doge Unblocker</h1>
-    <p style="font-size:30px;padding:0px;margin:0px;">Mobile</p>
-    <br>
-  </div>
-  <form action="/service/route" method="POST" id="uform">
-    <input type="text" name="url" class="form__input" id="name" tag="searchbar" style="font-family:poppins;font-size:20px;width:auto;"
-      placeholder="Type URL or search query">
-  </form>
+      <h1 style="font-family:poppins;font-size:50px;color:white;">Doge Unblocker</h1>
+      <p style="font-size:30px;padding:0px;margin:0px;">Mobile</p>
+      <br>
+    </div>
+    <form action="/service/route" method="POST" id="uform">
+      <input type="text" name="url" class="form__input" id="name" tag="searchbar" style="font-family:poppins;font-size:20px;width:auto;" placeholder="Type URL or search query">
+    </form>
   </center>
   <script>
     /*
@@ -98,42 +99,42 @@
     }
     */
   </script>
-    <script src="/assets/js/index.js"></script>
-    <script>
-      var bgUrl = localStorage.getItem('bgUrl');
-      if (bgUrl === 'none' || bgUrl === null || bgUrl === '') {
-          console.log('No custom background set.');
-      } else {
-          document.body.style.backgroundImage = `url(${bgUrl})`;
-          document.getElementById('particles-js').remove();
-      }
-        </script>
-    <script>
-      // Check if Particles are enabled
-      var particles = localStorage.getItem('particles');
-      if (particles === 'disabled' || particles === null || particles === '') {
-        console.log('Particles are disabled.')
-      } else {
-       particlesJS("particles-js", {
-      "particles": {
+  <script src="/assets/js/index.js"></script>
+  <script>
+    var bgUrl = localStorage.getItem('bgUrl');
+    if (bgUrl === 'none' || bgUrl === null || bgUrl === '') {
+      console.log('No custom background set.');
+    } else {
+      document.body.style.backgroundImage = `url(${bgUrl})`;
+      document.getElementById('particles-js').remove();
+    }
+  </script>
+  <script>
+    // Check if Particles are enabled
+    var particles = localStorage.getItem('particles');
+    if (particles === 'disabled' || particles === null || particles === '') {
+      console.log('Particles are disabled.')
+    } else {
+      particlesJS("particles-js", {
+        "particles": {
           "number": {
-              "value": 0,
-              "density": {
-                  "enable": true,
-                  "value_area": 800
-              }
+            "value": 0,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
           },
           "color": {
-              "value": "#32cf32"
+            "value": "#32cf32"
           },
-      },
-  });
-      }
-    </script>
-    <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="/assets/js/particles.js"></script>
-    <script src="/uv/uv.handler.js"></script>
-    <script src="/uv/uv.bundle.js"></script>
-    <script src="/uv/uv.config.js"></script>
-    <script src="/assets/js/cloak.js"></script>
-  </body>
+        },
+      });
+    }
+  </script>
+  <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="/assets/js/particles.js"></script>
+  <script src="/uv/uv.handler.js"></script>
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+  <script src="/assets/js/cloak.js"></script>
+</body>

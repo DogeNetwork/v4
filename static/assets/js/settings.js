@@ -35,8 +35,8 @@ function saveLogin() {
 
 // login button check
 
- // Get the button elements
- var enableButton = document.getElementById('enabledLogin');
+// Get the button elements
+var enableButton = document.getElementById('enabledLogin');
 var disableButton = document.getElementById('disabledLogin');
 
 // Get the value from localStorage
@@ -78,7 +78,7 @@ function closeBackgroundPopup() {
     const bgErrorMessageDiv = document.getElementById("bgErrorMessage");
     document.getElementById("backgroundPopup").style.display = "none";
     bgErrorMessageDiv.style.display = "none";
-    
+
 }
 
 function saveBackground() {
@@ -140,11 +140,13 @@ function docsCloak() {
     localStorage.setItem('cloakedIcon', '/assets/img/docs.ico');
     tabCloak();
 }
+
 function googleCloak() {
     localStorage.setItem('cloakedTitle', 'Google');
     localStorage.setItem('cloakedIcon', '/assets/img/google.ico');
     tabCloak();
 }
+
 function classroomCloak() {
     localStorage.setItem('cloakedTitle', 'Classes');
     localStorage.setItem('cloakedIcon', '/assets/img/classroom-icon.png');
@@ -156,19 +158,19 @@ function enableClickoffCloak() {
     window.location.reload();
 }
 
-function disableClickoffCloak () {
+function disableClickoffCloak() {
     localStorage.setItem('clickoffCloak', 'disabled');
     window.location.reload();
 }
 
 
 // FOR PARTICLES, ENABLING IT WILL BE DISABLING IT. IT'S THE OPPOSITE.  
-function enableParticles () {
+function enableParticles() {
     localStorage.setItem('particles', 'enabled')
     window.location.reload();
 }
 
-function disableParticles () {
+function disableParticles() {
     localStorage.setItem('particles', 'disabled');
     window.location.reload();
 }

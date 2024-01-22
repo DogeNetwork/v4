@@ -185,23 +185,13 @@ if (bgUrl === 'none' || bgUrl === null || bgUrl === '') {
       }
     </script>
 <script>
-  // Get the <select> element by its id
   const dropdown = document.getElementById('dropdown');
-  
-  // Add an event listener to the <select> element
   dropdown.addEventListener('change', function () {
-      // Get the selected option's value
-      const selectedOptionValue = dropdown.value;
-      
-      // Store the selected option's value in localStorage
+      const selectedOptionValue = dropdown.value;     
       localStorage.setItem('selectedOption', selectedOptionValue);
   });
-
-  // Check if there's a previously selected option in localStorage
   const storedOptionValue = localStorage.getItem('selectedOption');
-
   if (storedOptionValue) {
-      // Set the selected option based on the stored value
       dropdown.value = storedOptionValue;
   }
 </script>
