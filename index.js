@@ -1,7 +1,7 @@
 import express from "express";
 import http from "node:http";
 import path from "node:path";
-import { createBareServer } from "@tomphttp/bare-server-node";
+import { createBareServer } from "@nebula-services/bare-server-node";
 
 const __dirname = process.cwd();
 const server = http.createServer();
