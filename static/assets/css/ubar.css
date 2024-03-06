@@ -1,0 +1,239 @@
+@font-face {
+    font-family: poppins;
+    src: url(/assets/fonts/poppins.ttf);
+}
+  @font-face {
+    font-family: sans;
+    src: url(/assets/fonts/sans.ttf);
+}
+
+#urlBar {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#urlBar input {
+    flex: 0 0 70%;
+    align-self: center;
+    text-align: center;
+    width: 0;
+    margin: 0 12%;
+    padding: 5px 35px 5px 1%;
+    margin-right: 10px;
+    background-color: rgba(30, 30, 30, 0.637);
+    color: white;
+    outline: none;
+    border: 2px solid rgba(69, 69, 69, 0.575);
+    border-radius: 6px;
+    font-family: poppins;
+}
+
+iframe {
+    display: block;
+    border: none;
+    height: calc(100vh - 3em);
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.search {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 13.5%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.fs {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    height: 35px;
+    width: 35px;
+    font-weight: bolder;
+    transform: translateY(-50%);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 18px;
+    background-color: transparent;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.fs:hover {
+    background-color: rgba(255, 255, 255, 0.297);
+    border: 2px solid rgba(199, 199, 199, 0.039);
+}
+
+.fs:active {
+    background-color: rgba(255, 255, 255, 0.397);
+}
+
+.ab {
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    height: 35px;
+    width: 35px;
+    font-weight: bolder;
+    transform: translateY(-50%);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 18px;
+    background-color: transparent;
+    transition: .2s;
+    cursor: pointer;   
+}
+
+.ab:hover {
+    background-color: rgba(255, 255, 255, 0.297);
+    border: 2px solid rgba(199, 199, 199, 0.039);
+}
+
+.ab:active {
+    background-color: rgba(255, 255, 255, 0.397);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    height: 35px;
+    width: 35px;
+    font-weight: bolder;
+    transform: translateY(-50%);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: transparent;
+    transition: .2s;
+    cursor: pointer;     
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.297);
+    border: 2px solid rgba(199, 199, 199, 0.039);
+}
+
+.arrow:active {
+    background-color: rgba(255, 255, 255, 0.397);
+}
+
+.reload {
+    position: absolute;
+    top: 50%;
+    left: 8.5%;
+    height: 35px;
+    width: 35px;
+    font-weight: bolder;
+    transform: translateY(-50%);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: transparent;
+    transition: .2s;
+    cursor: pointer; 
+}
+
+.reload:hover {
+    background-color: rgba(255, 255, 255, 0.297);
+    border: 2px solid rgba(199, 199, 199, 0.039);
+}
+
+.reload:active {
+    background-color: rgba(255, 255, 255, 0.397);
+}
+
+.forward {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    height: 35px;
+    width: 35px;
+    font-weight: bolder;
+    transform: translateY(-50%);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 24px;
+    background-color: transparent;
+    transition: .2s;
+    cursor: pointer; 
+}
+
+.forward:hover {
+    background-color: rgba(255, 255, 255, 0.297);
+    border: 2px solid rgba(199, 199, 199, 0.039);
+}
+
+.forward:active {
+    background-color: rgba(255, 255, 255, 0.397);
+}
+
+.back {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    height: 35px;
+    width: 35px;
+    font-weight: bolder;
+    transform: translateY(-50%);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 24px;
+    background-color: transparent;
+    transition: .2s;
+    cursor: pointer; 
+}
+
+.back:hover {
+    background-color: rgba(255, 255, 255, 0.297);
+    border: 2px solid rgba(199, 199, 199, 0.039);
+}
+
+.back:active {
+    background-color: rgba(255, 255, 255, 0.397);
+}
+
+.exit {
+    position: absolute;
+    top: 50%;
+    right: 10.4%;
+    height: 35px;
+    width: 35px;
+    font-weight: bolder;
+    transform: translateY(-50%);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 21px;
+    background-color: transparent;
+    transition: .2s;
+    cursor: pointer; 
+}
+
+.exit:hover {
+    background-color: rgba(255, 255, 255, 0.297);
+    border: 2px solid rgba(199, 199, 199, 0.039);
+}
+
+.exit:active {
+    background-color: rgba(255, 255, 255, 0.397);
+}

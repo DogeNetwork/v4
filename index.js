@@ -17,7 +17,7 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "static")));
 app.get('/app', (req, res) => {
-  res.sendFile(path.join(process.cwd(), './static/app.html'));
+  res.sendFile(path.join(process.cwd(), './static/index.html'));
 });
 app.get('/student', (req, res) => {
   res.sendFile(path.join(process.cwd(), './static/loader.html'));
@@ -59,7 +59,7 @@ server.on("upgrade", (req, socket, head) => {
 });
 
 server.on("listening", () => {
-  console.log(`Doge Unblocker running at port 8000`);
+  console.log(`Doge Unblocker has sucessfully started!\nListening on localhost (Port 8000).`);
 });
 
 server.listen({

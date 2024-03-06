@@ -1,4 +1,27 @@
- // Function to handle button clicks and toggle between functions
+document.addEventListener("DOMContentLoaded", function () {
+    const settingsContainers = document.querySelectorAll('.settingscontainer');
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadSettingsContainer(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+  
+    settingsContainers.forEach(container => {
+      observer.observe(container);
+    });
+  });
+  
+  function loadSettingsContainer(container) {
+
+    container.classList.add('loaded');
+}
+  
+
+// Function to handle button clicks and toggle between functions
  /*document.getElementById('cloak').addEventListener('click', function () {
     // Check which function to call and then toggle
     if (this.getAttribute('data-current-function') === 'tabCloak') {
@@ -9,49 +32,6 @@
         this.setAttribute('data-current-function', 'tabCloak');
     }
 });*/
-function showLoginPopup() {
-    document.getElementById("loginPopup").style.display = "block";
-}
-
-function closeLoginPopup() {
-    const errorMessageDiv = document.getElementById("errorMessage");
-    document.getElementById("loginPopup").style.display = "none";
-    errorMessageDiv.style.display = "none";
-}
-
-function saveLogin() {
-    const userpass = document.getElementById("loginPopup-input").value;
-    const errorMessageDiv = document.getElementById("errorMessage");
-
-    if (userpass.trim() === "") {
-        errorMessageDiv.style.display = "block"; // Make the error message div visible
-    } else {
-        localStorage.setItem("wordpass", userpass);
-        localStorage.setItem('login', 'enablelogin');
-        closeLoginPopup(); // Close the popup after saving to localStorage
-        location.href = '/';
-    }
-}
-
-// login button check
-
-// Get the button elements
-var enableButton = document.getElementById('enabledLogin');
-var disableButton = document.getElementById('disabledLogin');
-
-// Get the value from localStorage
-var loginButtonState = localStorage.getItem('login');
-
-// Set the initial disabled states based on localStorage
-if (loginButtonState === 'disablelogin' || loginButtonState === '' || loginButtonState === null) {
-    disableButton.disabled = true;
-    enableButton.disabled = false;
-} else {
-    disableButton.disabled = false;
-    enableButton.disabled = true;
-}
-
-
 // FOR PARTICLES, DISABLING PARTICLES IS ENABLING. THE BUTTONS ARE OPPISITE.
 var particlesEnabledButton = document.getElementById('enabledParticles');
 var particlesDisabledButton = document.getElementById('disabledParticles');
@@ -102,18 +82,59 @@ function resetBackground() {
     window.location.reload();
 }
 
-/*function enableLeaveConfirmation() {
-    localStorage.setItem('leaveConfirmation', 'enabled');
+
+// panic key
+function showPK() {
+    document.getElementById("panicPopup").style.display = "block";
+}
+
+function closePK() {
+    const pkErrorMessageDiv = document.getElementById("pkErrorMessage");
+    document.getElementById("panicPopup").style.display = "none";
+    pkErrorMessageDiv.style.display = "none";
+
+}
+function detectKey() {
+    document.getElementById('panicPopup-input').readOnly = false;
+
+    document.addEventListener('keydown', function(event) {
+      const pressedKey = event.key;
+      document.getElementById('panicPopup-input').value = pressedKey;
+      document.getElementById('panicPopup-input').readOnly = true;
+      document.removeEventListener('keydown', arguments.callee);
+    }, { once: false });
+}
+
+function savePK() {
+    const pkKey = document.getElementById("panicPopup-input").value;
+    const pkErrorMessageDiv = document.getElementById("pkErrorMessage");
+    localStorage.setItem('pkKey', pkKey);
+    if (pkKey.trim() === "") {
+        pkErrorMessageDiv.style.display = "block";
+    } else {
+        closePK();
+        window.location.reload();
+    }
+}
+
+function removePK() {
+    localStorage.removeItem("pkKey");
     window.location.reload();
 }
 
-function disableLeaveConfirmation() {
-    localStorage.setItem('leaveConfirmation', 'disabled');
+function leaveConf() {
+    var confCheck = localStorage.getItem('leaveConfirmation');
+    if (confCheck !== 'enabled') {
+    localStorage.setItem('leaveConfirmation', 'enabled');
+    } else {
+        localStorage.setItem('leaveConfirmation', 'disabled');
+    }
     window.location.reload();
 }
+
 
 // leaveconf button check
-*/
+
 var eBlank = document.getElementById('enableCloak');
 var dBlank = document.getElementById('disableCloak');
 
@@ -137,19 +158,19 @@ function driveCloak() {
 
 function docsCloak() {
     localStorage.setItem('cloakedTitle', 'Google Docs');
-    localStorage.setItem('cloakedIcon', '/assets/img/docs.ico');
+    localStorage.setItem('cloakedIcon', '/assets/img/docs.webp');
     tabCloak();
 }
 
 function googleCloak() {
     localStorage.setItem('cloakedTitle', 'Google');
-    localStorage.setItem('cloakedIcon', '/assets/img/google.ico');
+    localStorage.setItem('cloakedIcon', '/assets/img/google.webp');
     tabCloak();
 }
 
 function classroomCloak() {
     localStorage.setItem('cloakedTitle', 'Classes');
-    localStorage.setItem('cloakedIcon', '/assets/img/classroom-icon.png');
+    localStorage.setItem('cloakedIcon', '/assets/img/classroom-icon.webp');
     tabCloak();
 }
 

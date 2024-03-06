@@ -1,3 +1,27 @@
+[anim="ripple"] {
+    position: relative;
+    overflow: hidden;
+}
+
+[anim="ripple"]:before {
+    content: '';
+    position: absolute;
+    display: block;
+    background: var(--ripple-background, white);
+    border-radius: 50%;
+    pointer-events: none;
+
+    top: calc(var(--y) * 1px);
+    left: calc(var(--x) * 1px);
+    width: calc(var(--d) * 1px);
+    height: calc(var(--d) * 1px);
+
+    opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
+    transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing, linear);
+    transform: translate(-50%, -50%) scale(var(--s, 1));
+    transform-origin: center;
+}
+
 h1 {
     font-family: poppins;
 }
@@ -11,11 +35,21 @@ p {
     gap: 20px;
     padding: 1% 20px 20px 20px;
 }
+
+.settingscontainer {
+    opacity: 0;
+}
+
+.settingscontainer.loaded {
+    opacity: 1;
+}
+
 .settingscontainer {
     border-radius: 10px;
-    height:300px;
+    backdrop-filter: blur(4px);
+    height: 300px;
     margin: 20px;
-    background-color: rgba(51, 50, 50, 0.322);
+    background-color: rgb(24 24 24 / 32%);
     width: 400px;
     text-align: center;
     box-shadow: 0px 8px 11px 0px rgba(0,0,0,0.4);
@@ -25,25 +59,35 @@ p {
     margin-left: -5px;
 }
 .option {
+    --ripple-background: rgb(146, 146, 146);
+    --ripple-opacity: 2.0;
+    --ripple-duration: 300ms;
     font-family: poppins;
     color: white;
     border-radius: 10px;
     background-color: transparent;
     height: 50px;
     width: 200px;
+    max-width: 150px;
     border: 2px solid rgb(209, 209, 209);
     margin: 5px;
     transition: .2s;
     cursor: pointer;
 }
+
 .option:hover {
+    background-color: rgba(160, 160, 160, 0.342);
+    transform: translate(-0%,-3%);
+}
+/*.option:hover {
     background-color: rgba(255, 255, 255, 0.801);
     color: black;
 }
 .option:active {
     background-color: rgb(255, 255, 255);
 }
-#loginPopup {
+*/
+#panicPopup {
     display: none;
     position: fixed;
     top: 0;
@@ -55,7 +99,7 @@ p {
 }
 
 /* Style for the popup content */
-#loginPopup-content {
+#panicPopup-content {
     background-color: rgba(46, 46, 46, 0.945);
     width: 300px;
     height: 300px;
@@ -66,12 +110,20 @@ p {
     border: 2px solid rgba(70, 70, 70, 0.884);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.233);
 }
-#loginPopup-content button {
+#panicPopup-content button {
+    --ripple-background: rgb(80, 80, 80);
+    --ripple-opacity: 2.0;
+    --ripple-duration: 300ms;
     margin: 10px;
     height: 50px;
     border: 2px solid white;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.233);
 }
+
+#panicPopup-content button:hover {
+    transform: translate(-0%,-3%);
+}
+
 button:disabled {
     background-color: rgba(128, 128, 128, 0.548);
     border: transparent;
@@ -82,7 +134,7 @@ button:disabled:hover {
     border: transparent;
     color: white;
 }
-#loginPopup-input {
+.popupInput {
     width: 255px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.678);
@@ -116,22 +168,25 @@ button:disabled:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.233);
 }
 #backgroundPopup-content button {
+    --ripple-background: rgb(80, 80, 80);
+    --ripple-opacity: 2.0;
+    --ripple-duration: 300ms;
     margin: 10px;
     height: 50px;
     border: 2px solid white;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.233);
 }
-#backgroundPopup-input {
-    width: 255px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.678);
-    height: 20px;
+
+#backgroundPopup-content button:hover {
+    transform: translate(-0%,-3%);
 }
+
 
 .button-container {
     display: flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
+    background-color: transparent;
   }
   
   .centered-button {
@@ -141,4 +196,5 @@ button:disabled:hover {
     border: 2px solid rgb(209, 209, 209);
     color: white; /* Optional: Set button text color */
     cursor: pointer; /* Optional: Add a pointer cursor on hover */
+    background-color: rgba(51, 50, 50, 0.322);
   }

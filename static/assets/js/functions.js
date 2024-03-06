@@ -3,6 +3,10 @@ function openUrl(url) {
   location.href = 'https://' + url;
 }
 
+function send(url) {
+  location.href = window.location.origin + url;
+}
+
 // about:blank cloaking
 var blankerCheck = localStorage.getItem('aboutBlank');
 if (blankerCheck === 'enabled') {
@@ -36,8 +40,20 @@ if (blankerCheck === 'enabled') {
           location.replace("https://classroom.google.com")
       }
   }
-} else {
-  console.log('Blanker Disabled.');
+}
+
+var leaveConf = localStorage.getItem("leaveConfirmation");
+
+if (leaveConf === 'enabled') {
+  window.onbeforeunload = function() {
+      return '';
+  }
+
+  function conf2() {
+      return '';
+  }
+
+  conf2();
 }
 
 var submenuOpen = false;
@@ -132,14 +148,14 @@ function visitLastSite() {
 
 function enableLogin() {
   /*
-  var userpass = prompt('Set Password:');
+var userpass = prompt('Set Password:');
 if (userpass === '') {
-  alert('Please enter a valid password.');
+alert('Please enter a valid password.');
 } else {
-  localStorage.setItem('login', 'enablelogin');
-  alert("You will now use the password '" + userpass + "' to log into the site. Join our Discord if you forget your password.");
+localStorage.setItem('login', 'enablelogin');
+alert("You will now use the password '" + userpass + "' to log into the site. Join our Discord if you forget your password.");
 localStorage.setItem('wordpass', userpass);
-  location.href = "/";
+location.href = "/";
 }
 */
   location.href = '/settings.html#auth';
@@ -236,3 +252,24 @@ document.addEventListener("click", function(event) {
       hideSubmenu();
   }
 });
+
+function vSite() {
+  var checkHistory = localStorage.getItem('encodedUrl');
+  if (checkHistory !== null) {
+      location.href = '/student';
+  } else {
+      alert('Could not find a previously proxified site, visit a site first!');
+  }
+}
+
+function vAG() {
+  var checkHistory = localStorage.getItem('agUrl');
+  if (checkHistory !== null) {
+      location.href = '/lessons';
+  } else {
+      alert('Could not find a previously visited app/game, visit one first!')
+  }
+}
+
+
+console.log("%cJoin our Discord! discord.gg/unblocking", "color: cyan; font-size: 20px");

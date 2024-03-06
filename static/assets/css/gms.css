@@ -10,6 +10,15 @@
     margin-top: 10px;
 }
 
+.square_btn {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.square_btn.loaded {
+    opacity: 1;
+}
+
 .square_btn img {
     width: 103px;
     height: 103px;
@@ -37,12 +46,10 @@
     transition: 0.2s;
 }
 
-
 button img {
     width: 100%;
     height: 100%;
 }
-
 
 .button-container>button {
     width: calc(25% - 20px);
@@ -55,7 +62,6 @@ button img {
 .button-container>button:nth-child(n+5) {
     margin-top: 20px;
 }
-
 
 @keyframes fade-in {
     0% {

@@ -1,40 +1,20 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="title" content="CCM Mathematics" />
-    <meta name="description" content="Enhancing mathematical skills with comprehensive courses and resources for problem-solving and analytical thinking." />
-    <link rel="icon" href="/assets/img/doge.jpg" />
-    <script src="/assets/js/rightclick.js"></script>
-    <script src="/assets/js/cloak.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js"
-        integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
-    <script>
-        var loginValue = localStorage.getItem("login");
-        if (loginValue === "enablelogin") {
-            var isLoggedIn = localStorage.getItem("pass");
-            if (isLoggedIn === "correct") {
-                console.log("User has successfully logged in.");
-            } else {
-                console.log("User has attempted to bypass login screen. Redirecting.");
-                location.href = "/";
-            }
-        } else {
-            console.log("Login is not enabled.");
-        }
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/img/doge.jpg" />
+<link rel="stylesheet" href="/assets/css/ubar.css" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrUkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/assets/js/anym.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-
-        gtag("config", "G-6YEQ7Q0XRC");
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YEQ7Q0XRC');
     </script>
     <script>
         window.onload = function () {
@@ -42,11 +22,11 @@
             encodedUrl = "/service/" + encodedUrl;
             document.querySelector("#siteurl").src = encodedUrl;
 
-            /* URL Cloaking */
-            function getRandomThreeDigitNumber() {
+            // URL Cloaking
+            function rndNum() {
                 return Math.floor(Math.random() * 900) + 100;
             }
-            function getRandomAlphanumericString(length) {
+            function rndAbcString(length) {
                 const characters = "abcdefghijklmnopqrstuvw0123456789012345";
                 let result = "";
                 for (let i = 0; i < length; i++) {
@@ -54,8 +34,8 @@
                 }
                 return result;
             }
-            var randomThreeDigitNumber = getRandomThreeDigitNumber();
-            var randomAlphanumericString = getRandomAlphanumericString(5);
+            var randomThreeDigitNumber = rndNum();
+            var randomAlphanumericString = rndAbcString(5);
             var url = "/student?auth=" + randomAlphanumericString;
             var title = "Google Docs";
 
@@ -65,5 +45,21 @@
     <title>Doge | V4</title>
 </head>
 <body>
-    <iframe src="loading.html" id="siteurl" style="position: fixed; inset: 0px; outline: none; border: none; height: 100%; width: 100%; overflow: hidden;"></iframe>
+<div id="urlBar">
+  <input type="text" id="urlInput" placeholder="Search Google or type a URL" class="navsearch" />
+  <i class="bi bi-search search"></i>
+  <button class="bi bi-arrows-fullscreen fs" onclick="toggleFs()" title="Fullscreen"></button>
+  <button class="bi bi-box-arrow-up-right ab" onclick="openWindow()" title="Open in About:Blank"></button>
+  <button class="bi bi-arrow-90deg-up arrow" onclick="hideBar()" title="Hide Bar"></button>
+  <button class="bi bi-arrow-clockwise reload" onclick="reload()" title="Reload"></button>
+  <button class="bi bi-caret-right forward" onclick="forward()" title="Forward"></button>
+  <button class="bi bi-caret-left back" onclick="back()" title="Back"></button>
+  <button class="bi bi-box-arrow-right exit" onclick="exit()" title="Return Home"></button>
+</div>
+ <iframe src="loading.html" id="siteurl"></iframe>
+ <script src="/uv/uv.handler.js"></script>
+ <script src="/uv/uv.bundle.js"></script>
+ <script src="/uv/uv.config.js"></script>
+ <script src="/assets/js/loader.js"></script>
 </body>
+</html>
