@@ -9,7 +9,7 @@ function loadScript(src, callback) {
 loadScript('/uv/uv.handler.js', function () {
     loadScript('/uv/uv.bundle.js', function () {
         loadScript('/uv/uv.config.js', function () {
-            console.log('Complete');
+            console.log('Loaded assets');
         });
     });
 });
@@ -76,3 +76,32 @@ let isMobileDevice = regexp.test(details);
 if (isMobileDevice) {
  window.location.href = '/mobile.html';
 }
+
+/*
+var scriptElement = document.createElement('script');
+scriptElement.type = 'text/javascript';
+scriptElement.innerHTML = `
+  atOptions = {
+    'key' : 'fc0ad22bd8c1ea22c8c08df927121e8f',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
+  document.write('<scr' + 'ipt type="text/javascript" src="//topcreativeformat.com/fc0ad22bd8c1ea22c8c08df927121e8f/invoke.js"></scr' + 'ipt>');
+`;
+document.body.appendChild(scriptElement);
+
+window.onload = function() {
+    var adFrame = document.querySelector('iframe');
+    if (adFrame) {
+      adFrame.style.borderRadius = '10px';
+      adFrame.style.position = 'absolute';
+      adFrame.style.bottom = '1%';
+      adFrame.style.left = '50%'; // Set left to 50%
+      adFrame.style.transform = 'translateX(-50%)'; // Center horizontally using translateX
+    } else {
+      console.error('Iframe not found on the page.');
+    }
+};
+*/

@@ -112,24 +112,28 @@ document.getElementById('searchApps').addEventListener('input', function(event) 
 
 loadApps();
 
-/* ads 
-atOptions = {
-    'key': 'f1818624979d7b153c0194b4c3ce4d7e',
-    'format': 'iframe',
-    'height': 60,
-    'width': 468,
-    'params': {}
+/*
+var scriptElement = document.createElement('script');
+scriptElement.type = 'text/javascript';
+scriptElement.innerHTML = `atOptions = {
+  'key': 'f1818624979d7b153c0194b4c3ce4d7e',
+  'format': 'iframe',
+  'height': 60,
+  'width': 468,
+  'params': {}
 };
 document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/f1818624979d7b153c0194b4c3ce4d7e/invoke.js"></scr' + 'ipt>');
+`;
+document.body.appendChild(scriptElement);
 
-function centerIframe() {
-  var adFrame = document.querySelector('iframe');
-  var containerWidth = adFrame.parentElement.clientWidth;
-  var adFrameWidth = adFrame.clientWidth;
-  var marginLeft = (containerWidth - adFrameWidth) / 2 + 'px';
-  adFrame.style.marginLeft = marginLeft;
-  adFrame.style.borderRadius = '10px';
-}
-
-setInterval(centerIframe, 900);
+window.onload = function() {
+	function centerIframe() {
+		var adFrame = document.querySelector('iframe');
+		var containerWidth = adFrame.parentElement.clientWidth;
+		var adFrameWidth = adFrame.clientWidth;
+		var marginLeft = (containerWidth - adFrameWidth) / 2 + 'px';
+		adFrame.style.marginLeft = marginLeft;
+	}
+	setInterval(centerIframe, 900);
+};
 */
