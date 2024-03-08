@@ -146,27 +146,6 @@ function visitLastSite() {
   location.href = '/~';
 }
 
-function enableLogin() {
-  /*
-var userpass = prompt('Set Password:');
-if (userpass === '') {
-alert('Please enter a valid password.');
-} else {
-localStorage.setItem('login', 'enablelogin');
-alert("You will now use the password '" + userpass + "' to log into the site. Join our Discord if you forget your password.");
-localStorage.setItem('wordpass', userpass);
-location.href = "/";
-}
-*/
-  location.href = '/settings.html#auth';
-}
-
-// Function to disable login
-function disableLogin() {
-  localStorage.setItem('login', 'disablelogin');
-  location.href = "/";
-}
-
 function handleSubmenuClick2() {
   // useless for testing
   alert("hi2");
@@ -271,5 +250,8 @@ function vAG() {
   }
 }
 
+if (window.location.protocol === "http:") {
+  window.location.href = window.location.href.replace("http:", "https:");
+}
 
 console.log("%cJoin our Discord! discord.gg/unblocking", "color: cyan; font-size: 20px");
