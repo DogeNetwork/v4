@@ -137,7 +137,7 @@ iframe {
 .reload {
     position: absolute;
     top: 50%;
-    left: 8.5%;
+    left: 6%;
     height: 35px;
     width: 35px;
     font-weight: bolder;
@@ -160,10 +160,36 @@ iframe {
     background-color: rgba(255, 255, 255, 0.397);
 }
 
+.devTools {
+    position: absolute;
+    top: 50%;
+    left: 8.8%;
+    height: 35px;
+    width: 35px;
+    font-weight: bolder;
+    transform: translateY(-50%);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    font-size: 21px;
+    background-color: transparent;
+    transition: .2s;
+    cursor: pointer; 
+}
+
+.devTools:hover {
+    background-color: rgba(255, 255, 255, 0.297);
+    border: 2px solid rgba(199, 199, 199, 0.039);
+}
+
+.devTools:active {
+    background-color: rgba(255, 255, 255, 0.397);
+}
+
 .forward {
     position: absolute;
     top: 50%;
-    left: 5%;
+    left: 3.2%;
     height: 35px;
     width: 35px;
     font-weight: bolder;
@@ -189,7 +215,7 @@ iframe {
 .back {
     position: absolute;
     top: 50%;
-    left: 1%;
+    left: 0.2%;
     height: 35px;
     width: 35px;
     font-weight: bolder;

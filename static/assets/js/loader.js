@@ -74,6 +74,39 @@ function isSearchQuery(val = "") {
         /^\S+$/.test(val);
 }
 
+var devToolsLoaded = false;
+
+function devTools() {
+  var siteIframe = document.getElementById('siteurl');
+  if (siteIframe) {
+    var innerDoc = siteIframe.contentDocument || siteIframe.contentWindow.document;
+    var eruda = innerDoc.getElementById('eruda');
+
+    if (!devToolsLoaded) {
+      if (!eruda) {
+        var erudaScript = document.createElement('script');
+        erudaScript.src = "//cdn.jsdelivr.net/npm/eruda";
+        erudaScript.onload = function() {
+          var initScript = document.createElement('script');
+          initScript.innerHTML = "eruda.init();eruda.show();";
+          innerDoc.head.appendChild(initScript);
+        };
+
+        innerDoc.head.appendChild(erudaScript);
+      }
+    } else {
+      if (eruda) {
+        eruda.remove();
+      }
+    }
+    devToolsLoaded = !devToolsLoaded;
+  } else {
+    console.error('Failed to load DevTools!');
+  }
+}
+
+
+
 /* url bar functions */
 function openWindow() {
     function openTabWithIframe(url) {
