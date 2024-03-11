@@ -83,7 +83,11 @@ var gms = {
     'OvO': { imageUrl: "/assets/img/ovo.webp", onClick: ovo, height: 130 },
     'Awesome Tanks 2': { imageUrl: "/assets/img/atanks2.webp", onClick: awesomeTanksTwo, height: 130 },
     'Temple Run': { imageUrl: "/assets/img/temple-run.webp", onClick: templeRun },
-    'Drive Mad': { imageUrl: "/assets/img/drive-mad.webp", onClick: driveMad},
+    'Drift Hunters': { imageUrl: "/assets/img/drifthunters.webp", onClick: driftHunters },
+    'Drive Mad': { imageUrl: "/assets/img/drive-mad.webp", onClick: driveMad },
+    'Stickman Hook': { imageUrl: "/assets/img/stickmanhook.webp", onClick: stickManHook, height: 130 },
+    'Kick The Buddy': { imageUrl: "/assets/img/super-buddy-kick.webp", onClick: kickTheBuddy, height: 130 },
+    'Fireboy and Watergirl': { imageUrl: "/assets/img/fireboy-and-watergirl.webp", onClick: fBwG1, height: 130 },
 }; 
 for (var gmsName in gms) {
     if (gms.hasOwnProperty(gmsName)) {

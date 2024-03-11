@@ -31,6 +31,10 @@ function gpt() {
   openAg('https://ub7.org');
 }
 
+function gemini() {
+  openAg('https://gemini.google.com');
+}
+
 function chess() {
   openAg('https://chess.com');
 }
@@ -89,6 +93,14 @@ function vscode() {
 
 function sFlix() {
   openAg('https://sflix.se');
+}
+
+function netflix() {
+  openAg('https://netflix.com');
+}
+
+function symbolab() {
+  openAg('https://www.symbolab.com');
 }
 
 /*games*/
@@ -268,4 +280,20 @@ function templeRun() {
 
 function driveMad() {
   openAg('https://drivemad.me/iframe/index.html');
+}
+
+function stickManHook() {
+  openAg('https://stickman-hook.io/iframe/index.html');
+}
+
+function kickTheBuddy() {
+  openAg('https://html5.gamedistribution.com/rvvASMiM/09399bfcb6e8462b873a6154b506ea99/index.html?gdpr-targeting=1&gd_sdk_referrer_url=https%3A%2F%2Fwww.silvergames.com%2Fen%2Fsuper-buddy-kick&gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL3d3dy5zaWx2ZXJnYW1lcy5jb20vZW4vc3VwZXItYnVkZHkta2ljayIsInBhcmVudERvbWFpbiI6InNpbHZlcmdhbWVzLmNvbSIsInRvcERvbWFpbiI6InNpbHZlcmdhbWVzLmNvbSIsImhhc0ltcHJlc3Npb24iOmZhbHNlLCJsb2FkZXJFbmFibGVkIjp0cnVlLCJob3N0IjoiaHRtbDUuZ2FtZWRpc3RyaWJ1dGlvbi5jb20iLCJ2ZXJzaW9uIjoiMS41LjE3In0%253D')
+}
+
+function driftHunters() {
+  openAg('https://webglmath.github.io/drift-hunters/index.html');
+}
+
+function fBwG1() {
+  openAg('https://ubg100.github.io/games/fbwg1/index.html');
 }
