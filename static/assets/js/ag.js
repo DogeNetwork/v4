@@ -52,7 +52,7 @@ function google() {
 }
 
 function ng() {
-  openAg('https://nowgg.me/play/roblox-corporation/5349/roblox');
+  openAg('https://nowgg.me');
 }
 
 function pin() {
@@ -149,7 +149,7 @@ function p2048() {
 }
 
 function rbx() {
-  openAg('https://nowgg.me/play/roblox-corporation/5349/roblox');
+  openAg('https://now.gg/iframe/snippet?app_pkg=com.roblox.client&partner=gamenora');
 }
 
 function slope() {
