@@ -61,7 +61,7 @@ var apps = {
     'GeForce Now': { imageUrl: "/assets/img/geforcenow.webp", onClick: geforce },
     'Now.GG': { imageUrl: "/assets/img/nowgg.webp", onClick: ng },
     'Chess.com': { imageUrl: "/assets/img/chess.webp", onClick: chess },
-    'Symbolab Math Solver': { imageUrl: "/assets/img/symbolab.webp", onClick: github, height: 130 },
+    'Symbolab Math Solver': { imageUrl: "/assets/img/symbolab.webp", onClick: symbolab, height: 130 },
     YouTube: { imageUrl: "/assets/img/youtube.webp", onClick: yt },
     Netflix: { imageUrl: "/assets/img/netflix.webp", onClick: netflix },
     SFlix: { imageUrl: "/assets/img/sflix.webp", onClick: sFlix },
