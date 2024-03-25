@@ -1,59 +1,62 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex">
-    <link rel="stylesheet" href="/assets/css/app.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
-    <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="/assets/js/particles.js"></script>
-    <script>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
+  <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="/assets/js/particles.js"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-6YEQ7Q0XRC');
-    </script>
-    <style>
+  </script>
+  <style>
     .loader {
-    width: 100px;
-    height: 100px;
-    border: 8px solid #FFF;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
+      width: 60px;
+      height: 60px;
+      border: 8px solid #FFF;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
     }
 
     @keyframes rotation {
-    0% {
+      0% {
         transform: rotate(0deg);
-    }
-    100% {
+      }
+
+      100% {
         transform: rotate(360deg);
+      }
     }
-    } 
-    </style>
-  </head>
-  <body>
+  </style>
+</head>
+
+<body>
+  <br>
+  <div id="particles-js" style="border:none;"></div>
+  <div class="themesExcluded" style="justify-content: center;align-items: center;display: flex;height: 50vh;">
     <br>
-    <div id="particles-js" style="border:none;"></div>
-    <center>
-        <br>
-        <span class="loader"></span>
-        <h1 style="font-family:poppins;color:white;font-size:40px;">Processing request...</h1>
-    </center>
-    <script src="/assets/js/themes.js"></script>
-    <script>
-          var nav = document.querySelectorAll('nav');
-    nav.forEach(function(navElement) {
-        navElement.style.transition = '1s';
-        navElement.style.backgroundColor = 'rgba(255, 251, 0, 0)';
-        navElement.style.border = '1px solid transparent';
-        navElement.style.boxShadow = '0 0 8px transparent';
-        navElement.style.opacity = '100%';
+    <span class="loader"></span>
+    <h1 style="font-family:poppins;color:white;font-size:40px;">Processing request...</h1>
+  </div>
+  <script src="/assets/js/themes.js"></script>
+  <script>
+    var nav = document.querySelectorAll('nav');
+    nav.forEach(function (navElement) {
+      navElement.style.transition = '1s';
+      navElement.style.backgroundColor = 'rgba(255, 251, 0, 0)';
+      navElement.style.border = '1px solid transparent';
+      navElement.style.boxShadow = '0 0 8px transparent';
+      navElement.style.opacity = '100%';
     });
-    </script>
-  </body>
+  </script>
+</body>
 </html>

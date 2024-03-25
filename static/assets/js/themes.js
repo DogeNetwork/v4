@@ -44,7 +44,7 @@ if (selectedTheme === 'deepsea' && (bgUrl === null || bgUrl === 'none' || bgUrl 
     var containers = document.querySelectorAll('div:not(#particles-js):not(#settingsContainer):not(#contextItem):not(#contextMenu):not(#cloak):not(.themesExcluded)');
 
     containers.forEach(function(container) {
-        container.style.backgroundColor = 'rgba(14, 71, 22, 0.637)'; // Dark Green
+        container.style.backgroundColor = 'rgba(22, 46, 23, 0.859)'; // Dark Green
     });
 
     document.body.style.background = "linear-gradient(to bottom, rgb(33, 116, 47), rgb(0, 0, 0)";

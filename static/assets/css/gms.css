@@ -72,3 +72,23 @@ button img {
         opacity: 1;
     }
 }
+
+input {
+    font-size: 17px;
+}
+
+.searchIcon {
+    color: rgba(117,117,117,255);
+    font-size: 15px;
+    position: absolute;
+    margin-top: 19px;
+    transition: .2s;
+}
+
+.searchbar {
+    font-size: 17px;
+}
+
+.searchbar:focus {
+    padding-left: 48px;
+}

@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="/assets/css/app.css">
 <link rel="stylesheet" href="/assets/css/gms.css">
 <link rel="stylesheet" href="/assets/css/menu.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/assets/js/functions.js"></script>
@@ -33,7 +32,8 @@
  </nav>
  <div class="search-bar themesExcluded" style="display: flex; justify-content: center; border-radius: 10px; margin: 20px;">
   <form id="searchForm" onsubmit="return false;" autocomplete="off">
-  <input id="searchApps" placeholder="Search for apps..." class="searchbar"></form>
+  <i class="bi bi-search searchIcon" style="margin-left: 147px;" id="search"></i>
+  <input id="searchApps" style="width: 420px;" placeholder="Search for apps" class="searchbar"></form>
  </div>
  <div class="search-results themesExcluded" id="appContainer" style="display: flex; justify-content: center; flex-wrap: wrap;">
   <div id="searchMessage" style="display: none;color:white;text-align: center;font-size: 30px;margin:20px;font-family:poppins;" class="themesExcluded"></div>
