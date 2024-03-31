@@ -1,8 +1,3 @@
-.container {
-    margin: 0 auto;
-    text-align: center;
-}
-
 .button-container {
     display: flex;
     flex-wrap: wrap;
@@ -25,10 +20,10 @@
 }
 
 .square_btn {
-    display: inline-block;
     text-align: center;
     height: 115px;
     width: 115px;
+    margin: 0;
     padding: 30px;
     text-decoration: none;
     text-align: center;
@@ -91,4 +86,12 @@ input {
 
 .searchbar:focus {
     padding-left: 48px;
+}
+
+.search-results {
+    padding: 19px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
 }

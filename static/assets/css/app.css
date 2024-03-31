@@ -103,8 +103,6 @@ form {
   height: 85px;
 }
 
-
-
 .button-6:hover {
   border: transparent 2px rgba(255, 255, 255, 0.596);
   background-color: rgba(201, 201, 201, 0.37);
@@ -117,6 +115,16 @@ form {
   background-color: rgba(255, 255, 255, 0.466);
   transform: translateY(0);
   border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #504f4f;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8f8d8d;
+  border-radius: 10px;
 }
 
 nav {
@@ -142,24 +150,6 @@ nav {
   }
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-  background-color: rgba(0, 0, 0, 0.37);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #504f4f;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-}
-
-nav p {
-  font-family: sans;
-}
-
 nav a {
   float: right;
   text-align: center;
@@ -182,7 +172,7 @@ nav .icon {
 input {
   border: none;
   padding: 20px;
-  width: 520px;
+  width: 44%;
   background-color: rgba(22, 22, 22, 0.637);
   color: white;
   outline: none;
@@ -196,6 +186,7 @@ input {
   z-index: 1;
   box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.4);
 }
+
 
 .proxybar:focus {
   width: 700px;

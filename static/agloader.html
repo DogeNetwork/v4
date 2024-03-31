@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex">
     <link rel="icon" href="/assets/img/doge.jpg" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js"
-        integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/assets/js/anym.js"></script>
     <script src="/assets/js/functions.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
@@ -53,30 +50,12 @@
         };
     </script>
 </head>
-
 <body>
     <script src="/assets/js/index.js"></script>
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
     <script src="/assets/js/ag.js"></script>
-    <script>
-        if (localStorage.getItem("currentAg") == "nealFun") {
-            window.addEventListener("message", (event) => {
-
-                iframe = document.getElementById('siteurl')
-                if (event.source === iframe.contentWindow) {
-
-                    const game = event.data.nfg 
-                    
-
-                    
-                } else {
-                    //pass
-                }
-            });
-        }
-    </script>
     <script>
         window.navigator.serviceWorker
             .register("/sw.js", {
