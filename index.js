@@ -15,6 +15,10 @@ app.use(
   })
 );
 
+if (config.challenge) {
+  app.use(basicAuth(config))
+}
+
 app.use(express.static(path.join(__dirname, "static")));
 app.get('/app', (req, res) => {
   res.sendFile(path.join(process.cwd(), './static/index.html'));
