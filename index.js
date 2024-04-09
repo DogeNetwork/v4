@@ -1,5 +1,5 @@
+import config from "./config.js";
 import express from "express";
-import config from "config.js";
 import http from "node:http";
 import path from "node:path";
 import createBareServer from "@tomphttp/bare-server-node";
