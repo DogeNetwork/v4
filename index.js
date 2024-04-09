@@ -1,5 +1,6 @@
 import config from "./config.js";
 import express from "express";
+import basicAuth from "express-basic-auth";
 import http from "node:http";
 import path from "node:path";
 import createBareServer from "@tomphttp/bare-server-node";
