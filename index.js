@@ -16,7 +16,15 @@ app.use(
 );
 
 if (config.challenge) {
-  app.use(basicAuth(config))
+  console.log('Password protection is enabled. Usernames are: ' + Object.keys(config.users))
+  console.log('Passwords are: ' + Object.values(config.users))
+
+  app.use(
+    basicAuth({
+      users: config.users,
+      challenge: true,
+    })
+  )
 }
 
 app.use(express.static(path.join(__dirname, "static")));
