@@ -1,6 +1,6 @@
 # Doge Unblocker V4
 Doge Unblocker is a lightning-fast web proxy designed for performance and stealth. We are **by far** the best proxy, offering speeds and features unbeatable by any other proxies.
-## Features:
+## Key Features:
 - Advanced Tab Cloaking
 - Advanced About:Blank Cloaking
 - Hiding site from browser history
@@ -8,9 +8,10 @@ Doge Unblocker is a lightning-fast web proxy designed for performance and stealt
 - Automatic URL Cloaking
 - Customizable/Personalization features
 - Access settings easily (right-click)
-- Authentication
+- Inspect Element
+- URL Bar
 - Extremely clean UI
-- A powerful web proxy
+- Powerful & fast web proxy
 - A large selection of Apps & Games
 - Many more
 ## Current Developers:
