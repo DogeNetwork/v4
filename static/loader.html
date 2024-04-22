@@ -5,23 +5,13 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/img/doge.jpg" />
 <link rel="stylesheet" href="/assets/css/ubar.css" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrUkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/assets/js/anym.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-6YEQ7Q0XRC');
-    </script>
     <script>
         window.onload = function () {
             let encodedUrl = localStorage.getItem("encodedUrl");
             encodedUrl = "/service/" + encodedUrl;
             document.querySelector("#siteurl").src = encodedUrl;
-
             // URL Cloaking
             function rndNum() {
                 return Math.floor(Math.random() * 900) + 100;
@@ -43,10 +33,12 @@
         };
     </script>
     <title>Doge | V4</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
 </head>
 <body>
 <div id="urlBar">
-  <input type="text" id="urlInput" placeholder="Search Google or type a URL" class="navsearch" />
+  <input type="text" id="urlInput" placeholder="Search Google or type a URL" />
   <i class="bi bi-search search"></i>
   <button class="bi bi-arrows-fullscreen fs" onclick="toggleFs()" title="Fullscreen"></button>
   <button class="bi bi-box-arrow-up-right ab" onclick="openWindow()" title="Open in About:Blank"></button>
@@ -58,9 +50,9 @@
   <button class="bi bi-code-slash devTools" onclick="devTools()" title="Inspect Element"></button>
 </div>
  <iframe src="loading.html" id="siteurl"></iframe>
- <script src="/uv/uv.handler.js"></script>
  <script src="/uv/uv.bundle.js"></script>
- <script src="/uv/uv.config.js"></script>
+ <script src="/assets/js/themes.js"></script>
  <script src="/assets/js/loader.js"></script>
+ <script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -1,22 +1,3 @@
-/* devanagari */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJbecmNE.woff2) format('woff2');
-  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJnecmNE.woff2) format('woff2');
-  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
@@ -48,21 +29,15 @@
   transform-origin: center;
 }
 
-
-@font-face {
-  font-family: sans;
-  src: url(/assets/fonts/sans.ttf);
-}
-
 body {
-    background-attachment: fixed;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-
+  height: 100%;
+  margin: 20px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, poppins;
+}
 
 form {
   background-color: transparent;
@@ -73,120 +48,88 @@ form {
   --ripple-background: rgb(185, 185, 185);
   --ripple-opacity: 2.0;
   --ripple-duration: 300ms;
+  width: 85px;
+  height: 85px;
   align-items: right;
   border: none;
   border-radius: 10px;
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
   color: white;
   cursor: pointer;
   font-family: poppins;
   font-size: 15px;
-  font-weight: 500;
-  text-align: center;
-  justify-content: center;
   line-height: 1.25;
   margin: -5px;
   margin-top: 3px;
-  min-height: 3rem;
   margin-left: 10px;
   padding: 0px 10px;
   margin-right: 20px;
   text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: 85px;
-  height: 85px;
+  transition: .2s;
 }
 
 .button-6:hover {
   border: transparent 2px rgba(255, 255, 255, 0.596);
   background-color: rgba(201, 201, 201, 0.37);
-  padding: 0px 10px;
-  transform: translate(-0%,-3%);
-  transition: 0.2s;
+  transform: translate(-0%, -3%);
 }
 
 .button-6:active {
   background-color: rgba(255, 255, 255, 0.466);
   transform: translateY(0);
-  border-radius: 5px;
 }
 
-::-webkit-scrollbar {
+:not(.select-container, .option-container)::-webkit-scrollbar {
   width: 5px;
   background-color: #504f4f;
 }
 
-::-webkit-scrollbar-thumb {
+:not(.select-container, .option-container)::-webkit-scrollbar-thumb {
   background-color: #8f8d8d;
   border-radius: 10px;
 }
 
 nav {
   padding: 8px;
-  background-color: transparent;
   border-radius: 15px;
   height: 90px;
   width: 80vw;
   max-width: 90vw;
   overflow: hidden;
-  align-items: center;
   background: linear-gradient(rgba(0, 0, 0, 0.384), rgba(0, 0, 0, 0.384));
-  box-shadow: 0px 8px 24px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(20, 20, 20, 0.349);
   position: relative;
   margin: 0 auto;
-  transition: 0.1s;
-}
-
-@media (max-width: 1000px) {
-  nav {
-    width: 100%;
-  }
 }
 
 nav a {
-  float: right;
   text-align: center;
   text-decoration: none;
   margin: 8px;
-  font-family: sans;
 }
+
 nav button {
   float: right;
-  text-align: center;
-  text-decoration: none;
-  margin: 9px;
-  font-family: sans;
-}
-nav .icon {
-  display: none;
-  color: red;
 }
 
 input {
-  border: none;
   padding: 20px;
-  width: 44%;
+  width: 40%;
   background-color: rgba(22, 22, 22, 0.637);
   color: white;
   outline: none;
   border: 2px solid rgba(51, 51, 51, 0.575);
-  font-family: sans;
+  font-family: poppins;
   font-size: 15px;
   text-align: center;
   border-radius: 15px;
+  position: relative;
   transition: 0.2s;
   opacity: 100%;
-  z-index: 1;
-  box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.4);
 }
-
 
 .proxybar:focus {
   width: 700px;
@@ -198,37 +141,13 @@ input {
   color: transparent;
 }
 
-nav.responsive a {
-  float: none;
-  display: block;
-  text-align: left;
-}
-
 h1 {
   font-size: 20px;
   font-family: poppins;
 }
 
-.header {
-  font-family: mosk;
-  font-size: 25px;
-  color: white;
-  margin-left: 20px;
-  margin-top: 2px;
-}
-
-.rounded {
-  border-radius: 10px;
-}
-
-body,
-html {
-  height: 100%;
-  margin: 0;
-}
-
 p {
-  font-family: sans;
+  font-family: poppins;
   color: white;
   font-size: 25px;
   margin-left: 5px;
@@ -249,8 +168,8 @@ p {
 .title:hover {
   background-color: rgba(255, 255, 255, 0.336);
   border-width: 10px;
-  transform: translate(-0%,-3%);
-    box-shadow: 0px 8px 48px 0px rgba(0,0,0,0.4);
+  transform: translate(-0%, -3%);
+  box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.4);
 }
 
 .title:active {
@@ -258,9 +177,8 @@ p {
 }
 
 a {
-  font-family: sans;
+  font-family: poppins;
   color: white;
-  font-size: 17px;
   margin-left: 20px;
   margin-top: 10px;
 }
@@ -270,21 +188,10 @@ a {
   width: 500px;
 }
 
-/*
-.searchbar:hover {
-  width:700px;
-}
-*/
-
-@font-face {
-  font-family: 'mosk';
-  src: url('/assets/fonts/mosk.ttf');
-}
-
 .centered {
   color: #fff;
-  margin: 0;
   position: absolute;
+  margin: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -297,9 +204,10 @@ h1 {
 }
 
 h2 {
-  font-family: sans;
+  font-family: poppins;
   color: white;
 }
+
 .footer {
   text-decoration: none;
   position: absolute;
@@ -307,7 +215,6 @@ h2 {
   left: 0;
   margin: 20px;
   font-size: 16px;
-  background-attachment: fixed;
 }
 
 .footer>a {
@@ -322,7 +229,7 @@ h2 {
 }
 
 .active {
- background-color: rgba(255, 255, 255, 0.267);
+  background-color: rgba(255, 255, 255, 0.267);
 }
 
 .bottom-right-content {
@@ -335,7 +242,6 @@ h2 {
 .bottom-right-content>a {
   text-decoration: none;
   font-size: 18px;
-  transition: 0.4s;
 }
 
 .bottom-right-content>a:hover {
@@ -344,12 +250,11 @@ h2 {
 }
 
 .clock {
-  text-decoration: none;
-  position: absolute;
-  background-color: rgb(20 19 19 / 69%);
-  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.4);
-  width: 150px;
   font-family: poppins;
+  position: absolute;
+  background-color: rgba(20, 19, 19, 0.418);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.4);
+  width: 130px;
   font-size: 18px;
   bottom: 1px;
   left: 50%;
@@ -360,61 +265,45 @@ h2 {
 }
 
 .splashText {
+  font-family: poppins;
   text-align: center;
   justify-content: center;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 #particles-js {
-  position: fixed; /* Change this to 'fixed' */
+  position: fixed;
   width: 100%;
   height: 100vh;
-  top: 0;
-  background-color: var(--bg-c);
-  background-repeat: repeat;
-  background-size: auto;
-  background-position: 50% 50%;
-  overflow: hidden;
   z-index: -1;
-}
-
-.partner {
-    color: #fff;
-    width: 300px;
-    height: 310px;
-    box-shadow: 0px 8px 48px 0px rgba(0,0,0,0.4);
-    background-color: rgba(128, 128, 128, 0.162);
-    display: inline-block;
-    margin-right: 4px;
-    border-radius:10px;
-    cursor: pointer;
-    transition: .2s;
-}
-.partner:hover {
-  transform: translate(-0%,-3%);
-  transition: .2s;
-}
-.partner p {
-  text-align: center;
-  padding-left: 1px;
-  padding-right: 3px;
-}
-
-.partner a {
-  position:fixed;
-  text-align: center;
-  font-size: 25px;
-  text-decoration: none;
-  margin-left: 5px;
-  margin-top: 10px;
 }
 
 .search {
   position: absolute;
   margin-top: 26px;
   margin-left: -150px;
-  color: rgba(117,117,117,255);
   font-size: 19px;
   border-radius: 15px;
   transition: .2s;
+}
+
+a i {
+  font-size: 29px;
+}
+
+@media screen and (max-width: 968px) {
+  .search {
+    display: none;
+  }
+  .proxybar:focus {
+    width: 50%;
+    padding-left: 15px;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .title, p {
+    display: none;
+  }
 }

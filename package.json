@@ -1,6 +1,6 @@
 {
   "name": "education",
-  "version": "4.4.7",
+  "version": "4.4.8",
   "description": "",
   "type": "module",
   "engines": {
@@ -14,7 +14,8 @@
   "author": "",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@tomphttp/bare-server-node": "^1.2.6",
-    "express": "^4.18.2"
+    "@tomphttp/bare-server-node": "^2.0.1",
+    "express": "^4.18.2",
+    "@cypress/request": "^3.0.0"
   }
 }

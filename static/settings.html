@@ -3,33 +3,27 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <link rel="icon" href="/assets/img/doge.jpg">
+  <link rel="icon" id="icon" href="/assets/img/doge.jpg">
   <link rel="stylesheet" href="/assets/css/app.css">
   <link rel="stylesheet" href="/assets/css/menu.css">
   <link rel="stylesheet" href="/assets/css/settings.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="/assets/js/particles.js"></script>
   <script src="/assets/js/functions.js"></script>
   <script src="/assets/js/anym.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-6YEQ7Q0XRC');
- </script>
   <title>Doge | V4</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
 </head>
-<br>
 <body>
-  <div id="contextMenu" class="context-menu themesExcluded" style="--ripple-duration: 300ms;"><div class="context-menu-item with-submenu themesExcluded" id="contextItem" anim="ripple" onclick="toggleSubmenu(event)"><i class="bi bi-file-spreadsheet"></i> Tab Cloak</div><div class="context-submenu themesExcluded" id="contextItem"><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="tabCloak()">Enable</div><div class="context-menu-item themesExcluded" anim="ripple" onclick="disableTabCloak()">Disable</div></div><div class="context-menu-item with-submenu themesExcluded" id="contextItem" anim="ripple" onclick="toggleSubmenu2(event)"><i class="bi bi-clock-history"></i> Last Visited Site</div><div class="context-submenu themesExcluded" id="contextItem"><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="vSite()">Visit Last Site</div><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="vAG()">Visit Last App/Game</div></div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openWindow()"><i class="bi bi-box-arrow-up-right"></i> About:Blank Cloak</div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openSettings()"><i class="bi bi-gear"></i> View all Settings</div></div><nav id="mytopnav">
-  <button class="button-6 active" anim="ripple"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16"><path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/><path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/></svg>Settings</button>
-  <button class="button-6" anim="ripple" onclick="send('/gms')"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16"><path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z"/><path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z"/></svg>Games</button>
-  <button class="button-6" anim="ripple" onclick="send('/apps')"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16"><path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/></svg>Apps</button><br>
-  <a href="/" class="title" anim="ripple"><img src="/assets/img/doge.jpg" style="width:22px;height:22px;"> Doge Unblocker</a>    
-</nav>
+  <div id="contextMenu" class="context-menu themesExcluded" style="--ripple-duration: 300ms;"><div class="context-menu-item with-submenu themesExcluded" id="contextItem" anim="ripple" onclick="toggleSubmenu(event)"><i class="bi bi-file-spreadsheet"></i> Tab Cloak</div><div class="context-submenu themesExcluded" id="contextItem"><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="tabCloak()">Enable</div><div class="context-menu-item themesExcluded" anim="ripple" onclick="disableTabCloak()">Disable</div></div><div class="context-menu-item with-submenu themesExcluded" id="contextItem" anim="ripple" onclick="toggleSubmenu2(event)"><i class="bi bi-clock-history"></i> Last Visited Site</div><div class="context-submenu themesExcluded" id="contextItem"><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="vSite()">Visit Last Site</div><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="vAG()">Visit Last App/Game</div></div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openWindow()"><i class="bi bi-box-arrow-up-right"></i> About:Blank Cloak</div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openSettings()"><i class="bi bi-gear"></i> View all Settings</div></div>
+  <nav id="mytopnav">
+    <button class="button-6 active" anim="ripple"><i class="bi bi-gear" style="font-size:30px;"></i>Settings</button>
+    <button class="button-6" anim="ripple" onclick="send('/gms')"><i class="bi bi-joystick" style="font-size:30px;"></i>Games</button>
+    <button class="button-6" anim="ripple" onclick="send('/apps')"><i class="bi bi-grid-fill" style="font-size:30px;"></i>Apps</button><br>
+    <a href="/" class="title" anim="ripple"><img src="/assets/img/doge.jpg" style="width:22px;height:22px;" id="logo"> Doge Unblocker</a>    
+  </nav>
 <br>
 <div class="containers" id="settingsContainer">
   <div class="settingscontainer"><br>
@@ -38,47 +32,40 @@
 <div class="button-container themesExcluded" style="margin:0;height:115px;background-color:transparent;background:none;"><button class="option button-container centered-button themesExcluded" id="cloak" anim="ripple" onclick="driveCloak()"><img src="https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png"></button><button class="option button-container centered-button themesExcluded" id="cloak" anim="ripple" onclick="docsCloak()"><img src="/assets/img/docs.webp"></button><button class="option button-container centered-button themesExcluded" id="cloak" anim="ripple"onclick="googleCloak()"><img src="https://www.google.com/favicon.ico"></button><button class="option button-container centered-button themesExcluded" id="cloak" anim="ripple" onclick="classroomCloak()"><img src="https://www.gstatic.com/classroom/logo_square_rounded.svg" style="width:30px;height:30px;"></button><button class="option button-container centered-button themesExcluded" anim="ripple" onclick="disableTabCloak()"><img src="/assets/img/none.webp" style="width:30px;height:30px;"></button>
 </div>
 </div>
-
 <div class="settingscontainer"><br>
   <p style="font-weight: bold;">About:Blank Cloak</p>
   <p>Disguises the page in a about:blank link</p>
   <button class="option" style="width:200px" anim="ripple" onclick="openWindow()">Open Blanker</button>
 </div>
-
 <div class="settingscontainer"><br>
   <p style="font-weight: bold;">Advanced About:Blank Cloak</p>
   <p>Opens blanker without leaving site on browser history.</p>
    <button class="option" style="width: 150px;" id="enableCloak" anim="ripple" onclick="enableAboutBlank()">Enable</button><button class="option" id="disableCloak" style="width: 150px;" anim="ripple" onclick="disableAboutBlank()">Disable</button>
 </div>
-
 <div class="settingscontainer"><br>
   <p style="font-weight: bold;">Clickoff Cloaking</p>
   <p style="font-size:19px;">When you click out of this tab, it will automatically morph to look like a educational site. (Google Docs)</p>
 <button class="option" style="width: 150px;" anim="ripple" onclick="enableClickoffCloak()" id="ecc">Enable</button><button style="width: 150px;" class="option" anim="ripple" onclick="disableClickoffCloak()" id="dcc">Disable</button>
 </div>
-
 <div class="settingscontainer"><br>
   <p style="font-weight: bold;">Leave Confirmation</p>
   <p style="font-size:18px;">Shows a popup when you or another software attempts to close/redirect the website. Useful for DyKnow & GoGuardian users.</p>
 <button class="option" style="width: 150px;max-width:150px;" anim="ripple" onclick="leaveConf()">Toggle</button>
 </div>
-
 <div class="settingscontainer"><br>
   <p style="font-weight: bold;">Panic Key</p>
   <p style="font-size:23px;">Redirects/hides the site instantly when a key combo is pressed.</p>
 <button class="option" style="width: 150px;max-width:150px;" anim="ripple" onclick="showPK()">Set Hotkey</button><button style="width: 150px;" class="option" anim="ripple" onclick="removePK()">Remove</button>
 </div>
-
 <div class="settingscontainer"><br>
   <p style="font-weight: bold;">Background</p>
   <p>Customize the site with backgrounds.</p>
 <button class="option" style="width: 150px;max-width:150px;" anim="ripple" onclick="showBackgroundPopup()">Set Background</button><button style="width: 150px;" class="option" anim="ripple" onclick="resetBackground()">Remove</button>
 </div>
-
 <div class="settingscontainer"><br>
   <p style="font-weight: bold;">Themes</p>
   <p style="font-size:23px;">Customize your unblocker by choosing our themes. (Enable particles for effect)</p>
-  <select id="dropdown" class="option" anim="ripple" style="text-align:center;width:200px;">
+  <select id="dropdown" class="option" style="text-align:left;">
     <option disabled value="placeholder" selected>Select a theme</option>
     <option value="deepsea" class="option" style="color:black;">Deep Sea (Default)</option>
     <option value="swamp" class="option" style="color:black;">Swamp</option>
@@ -88,50 +75,35 @@
     <option value="sunset" class="option" style="color:black;">Sunset</option>
     <option value="equinox" class="option" style="color:black;">Equinox</option>
   </select>
-  <button anim="ripple" onclick="window.location.reload()" class="option 90px" style="width:90px;">Save</button>
 </div>
-
 <div class="settingscontainer"><br>
   <p style="font-weight: bold;">Particles</p>
   <p style="font-size:19px;">This lets you enable or disable the particles effect for themes, in case they lag your computer.</p>
 <button style="width: 150px;" class="option" anim="ripple" onclick="disableParticles()" id="disabledParticles">Enable</button><button class="option" style="width: 150px;" anim="ripple" onclick="enableParticles()" id="enabledParticles">Disable</button>
   </div>
 </div>
-
 <div id="panicPopup" class="themesExcluded">
   <div id="panicPopup-content" class="themesExcluded">
     <h2 style="font-family:poppins;">Panic Key</h2>
     <input id="panicPopup-input" class="popupInput" placeholder="Set a key" onclick="detectKey()">
     <p style="font-size:13px;">Warning: Make sure to set a unique key, otherwise you may accidently press it.</p>
-    <p id="pkErrorMessage" style="display:none;font-size:13px;color:red;margin:0px;">Please enter a key.</p><br>
+    <p id="pkErrorMessage" style="display:none;font-size:13px;color:red;">Please enter a key.</p><br>
     <button anim="ripple" onclick="savePK()" class="button-6">Save</button>
     <button anim="ripple" onclick="closePK()" class="button-6">Cancel</button>
   </div>
 </div>
-
 <div id="backgroundPopup" class="themesExcluded">
   <div id="backgroundPopup-content" class="themesExcluded">
       <h2 style="font-family:poppins;">Custom Background</h2>
       <input type="text" id="backgroundPopup-input" class="popupInput" placeholder="Background URL">
       <p style="font-size:13px;">Please include "https://" in your URL.</p>
-      <p id="bgErrorMessage" style="display:none;font-size:13px;color:red;margin:0px;">Please enter a valid link.</p>
-      <br>
+      <p id="bgErrorMessage" style="display:none;font-size:13px;color:red;">Please enter a valid link.</p><br>
       <button anim="ripple" onclick="saveBackground()" class="button-6">Save</button>
       <button anim="ripple" onclick="closeBackgroundPopup()" class="button-6">Cancel</button>
   </div>
 </div>
 <script src="/assets/js/themes.js"></script>
 <script src="/assets/js/settings.js"></script>
-<script>
-  const dropdown = document.getElementById('dropdown');
-  dropdown.addEventListener('change', function () {
-      const selectedOptionValue = dropdown.value;     
-      localStorage.setItem('selectedOption', selectedOptionValue);
-  });
-  const storedOptionValue = localStorage.getItem('selectedOption');
-  if (storedOptionValue) {
-      dropdown.value = storedOptionValue;
-  }
-</script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

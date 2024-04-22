@@ -1,7 +1,11 @@
 const form = document.querySelector("form");
 const input = document.querySelector("input");
+const remove = document.querySelectorAll('body > :not(#particles-js)');
 
 form.addEventListener("submit", async (event) => {
+  remove.forEach(element => {
+    element.remove();
+  });
   event.preventDefault();
   window.navigator.serviceWorker
     .register("./sw.js", {

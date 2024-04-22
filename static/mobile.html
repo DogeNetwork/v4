@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <head>
   <meta name="robots" content="noindex">
-  <link rel="icon" href="/assets/img/doge.jpg">
+  <link rel="icon" id="icon" href="/assets/img/doge.jpg">
   <link rel="stylesheet" href="/assets/css/app.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
   <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="/assets/js/particles.js"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-6YEQ7Q0XRC');
-  </script>
   <title>Mobile | Doge</title>
   <style>
     .button-6 {
@@ -64,10 +57,10 @@
     }
   </style>
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
 <body>
-  <div id="particles-js"></div>
-  <center>
-    <br>
+  <center><br>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <div class="themesExcluded">
       <h1 style="font-family:poppins;font-size:50px;color:white;">Doge Unblocker</h1>
@@ -78,22 +71,8 @@
       <input type="text" name="url" class="form__input themesExcluded" id="name" tag="searchbar" style="font-family:poppins;font-size:20px;width:auto;" placeholder="Type URL or search query">
     </form>
   </center>
-  <script>
-    /*
-    function myFunction() {
-      var theurl = prompt("What url do u want to proxify? don't put https, just put the link");
-      window.navigator.serviceWorker.register('/uv/sw.js', {
-        scope: __uv$config.prefix
-      }).then(() => {
-        location.href = __uv$config.prefix + __uv$config.encodeUrl("https://" + theurl)
-      });
-    }
-    */
-  </script>
   <script src="/assets/js/themes.js"></script>
   <script src="/assets/js/index.js"></script>
-  <script src="/uv/uv.handler.js"></script>
-  <script src="/uv/uv.bundle.js"></script>
-  <script src="/uv/uv.config.js"></script>
   <script src="/assets/js/anym.js"></script>
+  <script src="/assets/js/main.js"></script>
 </body>

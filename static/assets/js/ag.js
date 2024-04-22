@@ -1,21 +1,3 @@
-/*function youtube() {
-  let URL = 'https://www.youtube.com/';
-  let urlToInject = window.location.origin + __uv$config.prefix + __uv$config.encodeUrl(URL);
-  const newWindow = window.open();
-  const iframe = newWindow.document.createElement('iframe');
-  newWindow.document.body.style.margin = '0';
-  iframe.style.width = '100%';
-  iframe.style.height = '100%';
-  iframe.style.position = 'fixed';
-  iframe.style.top = '0';
-  iframe.style.left = '0';
-  iframe.style.zIndex = '99999';
-  iframe.style.border = 'none';
-  newWindow.document.body.style.overflow = 'hidden';
-  newWindow.document.body.appendChild(iframe);
-  iframe.src = urlToInject;
-}*/
-
 function openAg(url, ag) {
   localStorage.setItem("currentAg", ag)
   
@@ -24,151 +6,102 @@ function openAg(url, ag) {
   location.href = '/lessons';
 }
 
-window.navigator.serviceWorker.register("/sw.js", {
-  scope: __uv$config.prefix,
-});
-
 /*apps*/
 function gpt() {
-  openAg('https://ub7.org', "GPT");
+  openAg('https://ub7.org');
 }
 
 function nf() {
   alert('This app is still in development.\nCheck discord.gg/unblocking for details.');
-  /*  document.title = 'Doge | V4';
-  var cloakcheckScript = document.createElement("script");
-  cloakcheckScript.src = "/assets/js/cloak.js";
-  document.head.appendChild(cloakcheckScript);
-
-  var functionsScript = document.createElement("script");
-  functionsScript.src = "/assets/js/functions.js";
-  document.head.appendChild(functionsScript);
-
-  document.body.innerHTML = `
-<script src="/assets/js/index.js"></script>
-<script src="/uv/uv.bundle.js"></script>
-<script src="/uv/uv.bundle.js"></script>
-<script src="/uv/uv.config.js"></script>
-<script src="/assets/js/ag.js"></script>
-<script>
-window.navigator.serviceWorker
-  .register("/sw.js", {
-    scope: __uv$config.prefix,
-  });
-</script>
-<iframe src="/assets/nf/index.html" style="position: fixed; inset: 0px; outline: none; border: none; height: 100%; width: 100%; overflow: hidden;"></iframe>
-
-`
-  var nealFunHandler = document.createElement("script");
-  nealFunHandler.src = "/assets/js/nealFun.js"
-  function getRandomThreeDigitNumber() {
-    return Math.floor(Math.random() * 900) + 100;
-  }
-
-  function getRandomAlphanumericString(length) {
-    const characters = 'abcdefghijklmnopqrstuvw0123456789012345';
-    let result = '';
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return result;
-  }
-
-  var randomAlphanumericString = getRandomAlphanumericString(15);
-  var url = '/temp?draft=' + randomAlphanumericString;
-  var title = 'Google Docs';
-
-  history.pushState({}, title, url);
-  */
 }
 
 function gemini() {
-  openAg('https://gemini.google.com', "Gemini");
+  openAg('https://gemini.google.com');
 }
 
 function chess() {
-  openAg('https://chess.com', "Chess");
+  openAg('https://chess.com');
 }
 
 function discord() {
-  openAg('https://discord.com', "Discord");
+  openAg('https://discord.com');
 }
 
 function github() {
-  openAg('https://github.com', "Github");
+  openAg('https://github.com');
 }
 
 function google() {
-  openAg('https://google.com', "Google");
+  openAg('https://google.com');
 }
 
 function ng() {
-  openAg('https://nowgg.me', "Now.GG");
+  openAg('https://nowgg.me');
 }
 
 function pin() {
-  openAg('https://pinterest.com', "Pinterest");
+  openAg('https://pinterest.com');
 }
 
 function reddit() {
-  openAg('https://reddit.com', "Reddit");
+  openAg('https://reddit.com');
 }
 
 function spotify() {
-  openAg('https://spotify.com', "Spotify");
+  openAg('https://spotify.com');
 }
 
 function tt() {
-  openAg('https://tiktok.com', "TikTok");
+  openAg('https://tiktok.com');
 }
 
 function twitter() {
-  openAg('https://twitter.com', "Twitter");
+  openAg('https://twitter.com');
 }
 
 function twitch() {
-  openAg('https://twitch.tv', "Twitch");
+  openAg('https://twitch.tv');
 }
 
 function yt() {
-  openAg('https://youtube.com', "YouTube");
+  openAg('https://youtube.com');
 }
 
 function y8() {
-  openAg('https://y8.com', "Y8");
+  openAg('https://y8.com');
 }
 
 function vscode() {
-  openAg('https://vscode.dev', "VSCode");
+  openAg('https://vscode.dev');
 }
 
 function sFlix() {
-  openAg('https://sflix.se', "sFlix");
+  openAg('https://sflix.se');
 }
 
 function netflix() {
-  openAg('https://netflix.com', "Netflix");
+  openAg('https://netflix.com');
 }
 
 function symbolab() {
-  openAg('https://www.symbolab.com', "Symbolab");
+  openAg('https://www.symbolab.com');
 }
 
 /*games*/
 function onevone() {
-  openAg('https://1v1.lol', "1v1");
+  openAg('https://1v1.lol');
 }
 
 function basketBros() {
-  openAg('https://derpman.codeberg.page/echo/@main/basketbros-io/', "BasketBros");
+  openAg('https://basketbros.io');
 }
 
 function bitlife() {
-  openAg('https://derpman.codeberg.page/echo/@main/bitlife/index.html', "Bitlife");
+  openAg('https://derpman.codeberg.page/echo/@main/bitlife/index.html');
 }
 
 function brebound() {
-  openAg('https://trinculo54.github.io/Boxel-rebound-hope/Newer/index.html', "BoxelRebound");
+  openAg('https://trinculo54.github.io/Boxel-rebound-hope/Newer/index.html');
 }
 
 function cmg() {
@@ -176,52 +109,52 @@ function cmg() {
 }
 
 function crazygms() {
-  openAg('https://crazygames.com', "CrazyGames");
+  openAg('https://crazygames.com');
 }
 
 function geforce() {
-  openAg('https://play.geforcenow.com', "GeForceNOW");
+  openAg('https://play.geforcenow.com');
 }
 
 function holeio() {
-  openAg('https://hole-io.com', "HoleIO");
+  openAg('https://hole-io.com');
 }
 
 function jstris() {
-  openAg('https://jstris.jezevec10.com/', "JSTris");
+  openAg('https://jstris.jezevec10.com');
 }
 
 function twoZeroFourEight() {
-  openAg('https://derpmandev.github.io/unblocked-games/2048', "2048");
+  openAg('https://derpmandev.github.io/unblocked-games/2048');
 }
 
 function p2048() {
-  openAg('https://filipekiss.github.io/2048', "Poke2048");
+  openAg('https://filipekiss.github.io/2048');
 }
 
 function rbx() {
-  alert(`Warning: In order to access the site, you will have to bypass their proxy detection. You can do this by continuously refreshing the page until it loads. (Don't reload too quickly)\n\nThis can take from 1-10 tries to 30-50 tries.`);
-  openAg('https://now.derpman.lol', "Roblox");
+  alert(`Note: Roblox should be working now, but if it still gives you an VPN/Proxy detection message, refresh it.`);
+  openAg('https://now.derpman.lol');
 }
 
 function slope() {
-  openAg('https://derpmandev.github.io/unblocked-games/slope', "Slope");
+  openAg('https://derpmandev.github.io/unblocked-games/slope');
 }
 
 function subway() {
-  openAg('https://derpman.codeberg.page/echo/@main/subway-surfers/index.html', "Subway Surfers");
+  openAg('https://derpman.codeberg.page/echo/@main/subway-surfers/index.html');
 }
 
 function territorial() {
-  openAg('https://territorial.io', "Territorial");
+  openAg('https://territorial.io');
 }
 
 function florr() {
-  openAg('https://florr.io' `Florrio`);
+  openAg('https://florr.io');
 }
 
 function cookieClicker() {
-  openAg('https://orteil.dashnet.org/cookieclicker', "CookieClicker");
+  openAg('https://orteil.dashnet.org/cookieclicker');
 }
 
 function rBowl() {
@@ -306,12 +239,16 @@ function basketRandom() {
   openAg('https://files.twoplayergames.org/files/games/other/Basket_Random/index.html');
 }
 
+function volleyRandom() {
+  openAg('https://files.twoplayergames.org/files/games/o1/Volley_random/index.html');
+}
+
 function suikaWatermelon() {
   openAg('https://watermelongame.com');
 }
 
 function timeShooter3() {
-  openAg('https://www.twoplayergames.org/embed/time-shooter-2');
+  openAg('https://html5.gamedistribution.com/rvvASMiM/6493b872f0564380a7adad671d1e0a57/index.html');
 }
 
 function thereIsNoGame() {
@@ -362,6 +299,6 @@ function crowdRun3d() {
   openAg('https://games.cdn.famobi.com/html5games/c/crowd-run-3d/v040/?fg_domain=play.famobi.com&fg_aid=A-SILVERGAMES&fg_uid=28ab613b-9f40-4ab7-8f09-aa19f32e3660&fg_pid=8a24e5f2-94a8-4593-b4e5-81cc68f524c8&fg_beat=093&original_ref=https%3A%2F%2Fwww.silvergames.com%2F');
 }
 
-function dogeMiner2() {
-  openAg('https://dogeminer2.com');
+function worldsHardestGm() {
+  openAg('https://assets.surfdoge.pro/assets/worldshardestgm.html');
 }

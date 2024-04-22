@@ -56,28 +56,29 @@ var gms = {
   'Roblox': { imageUrl: "/assets/img/roblox.webp", onClick: rbx },
   // Shooter Games
   '1v1.lol': { imageUrl: "/assets/img/1v1.webp", onClick: onevone },
-  'Awesome Tanks 2': { imageUrl: "/assets/img/atanks2.webp", onClick: awesomeTanksTwo, height: 130 },
+  'Awesome Tanks 2': { imageUrl: "/assets/img/atanks2.webp", onClick: awesomeTanksTwo, height: 135 },
   'Florr.io': { imageUrl: "/assets/img/florr.webp", onClick: florr },
   'Krunker.io': { imageUrl: "/assets/img/krunker.webp", onClick: krunker },
-  'Time Shooter SWAT': { imageUrl: "/assets/img/time-shooter-3.webp", onClick: timeShooter3, height: 130 },
+  'Time Shooter SWAT': { imageUrl: "/assets/img/time-shooter-3.webp", onClick: timeShooter3, height: 135 },
   // Sport Games
   'Retro Bowl': { imageUrl: "/assets/img/retro.webp", onClick: rBowl },
-  'Basket Random': { imageUrl: "/assets/img/basketrandom.webp", onClick: basketRandom, height: 130 },
   'BasketBros.io': { imageUrl: "/assets/img/basketbros.webp", onClick: basketBros },
+  'Basket Random': { imageUrl: "/assets/img/basketrandom.webp", onClick: basketRandom, height: 135 },
+  'Volley Random': { imageUrl: "/assets/img/volley-random.webp", onClick: volleyRandom, height: 135 },
   // Ball/Platformer Games
   'Slope': { imageUrl: "/assets/img/slope.webp", onClick: slope },
-  'Boxel Rebound': { imageUrl: "/assets/img/boxelrebound.webp", onClick: brebound, height: 130 },
+  'Boxel Rebound': { imageUrl: "/assets/img/boxelrebound.webp", onClick: brebound, height: 135 },
   'Run 3': { imageUrl: "/assets/img/run3.webp", onClick: run3 },
-  'Fireboy and Watergirl': { imageUrl: "/assets/img/fireboy-and-watergirl.webp", onClick: fBwG1, height: 130 },
-  'Stickman Hook': { imageUrl: "/assets/img/stickmanhook.webp", onClick: stickManHook, height: 130 },
+  'Fireboy and Watergirl': { imageUrl: "/assets/img/fireboy-and-watergirl.webp", onClick: fBwG1, height: 135 },
+  'Stickman Hook': { imageUrl: "/assets/img/stickmanhook.webp", onClick: stickManHook, height: 135 },
   // Domination Games
-  'Hole.io': { imageUrl: "/assets/img/hole-io.webp", onClick: holeio, height: 130 },
+  'Hole.io': { imageUrl: "/assets/img/hole-io.webp", onClick: holeio, height: 135 },
   'Paper.io': { imageUrl: "/assets/img/paperio.webp", onClick: paperIo },
   'Territorial.io': { imageUrl: "/assets/img/territorial.webp", onClick: territorial },
   // Running Games
-  'Subway Surfers': { imageUrl: "/assets/img/subway.webp", onClick: subway, height: 130 },
+  'Subway Surfers': { imageUrl: "/assets/img/subway.webp", onClick: subway, height: 135 },
   'Temple Run': { imageUrl: "/assets/img/temple-run.webp", onClick: templeRun },
-  'OvO': { imageUrl: "/assets/img/ovo.webp", onClick: ovo, height: 130 },
+  'OvO': { imageUrl: "/assets/img/ovo.webp", onClick: ovo, height: 135 },
   'Vex 8': { imageUrl: "/assets/img/vex8.webp", onClick: vex8 },
   'Tall Man Run': { imageUrl: "/assets/img/tall-man-run.webp", onClick: tallManRun },
   'Crowd Run 3D': { imageUrl: "/assets/img/crowd-run-3d.webp", onClick: crowdRun3d },
@@ -86,22 +87,22 @@ var gms = {
   'Drive Mad': { imageUrl: "/assets/img/drive-mad.webp", onClick: driveMad },
   'Moto X3M': { imageUrl: "/assets/img/motox3m.webp", onClick: motoX3M },
   // Brain Games
-  'Bitlife': { imageUrl: "/assets/img/bitlife.webp", onClick: bitlife, height: 130 },
-  '2048 ': { imageUrl: "/assets/img/2048.webp", onClick: twoZeroFourEight, height: 130 },
-  'Pokemon 2048': { imageUrl: "/assets/img/p2048.webp", onClick: p2048, height: 130 },
+  'Bitlife': { imageUrl: "/assets/img/bitlife.webp", onClick: bitlife, height: 135 },
+  '2048 ': { imageUrl: "/assets/img/2048.webp", onClick: twoZeroFourEight, height: 135 },
+  'Pokemon 2048': { imageUrl: "/assets/img/p2048.webp", onClick: p2048, height: 135 },
   'Chess.com': { imageUrl: "/assets/img/chess.webp", onClick: chess },
   'Jstris': { imageUrl: "/assets/img/jstris.webp", onClick: jstris },
-  'Watermelon Game (Suika)': { imageUrl: "/assets/img/suika.webp", onClick: suikaWatermelon, height: 130 },
+  'Watermelon Game (Suika)': { imageUrl: "/assets/img/suika.webp", onClick: suikaWatermelon, height: 135 },
+  "World's Hardest GM": { imageUrl: "/assets/img/worldshardestgm.webp", onClick: worldsHardestGm, height: 135 },
   // Idle/Clicking Games
-  'Doge Miner 2': { imageUrl: "/assets/img/doge-miner-2.webp", onClick: dogeMiner2 },
   'Cookie Clicker': { imageUrl: "/assets/img/cookieclicker.webp", onClick: cookieClicker },
   'Idle Breakout': { imageUrl: "/assets/img/idlebreakout.webp", onClick: idleBreakout },
   'Monkey Mart': { imageUrl: "/assets/img/monkeymart.webp", onClick: monkeyMart },
   // Sandbox/Arcade Games
-  'Eaglercraft (1.5)': { imageUrl: "/assets/img/eaglercraft.webp", onClick: eaglerCraft15, height: 130 },
-  'Eaglercraft (1.8)': { imageUrl: "/assets/img/eaglercraft.webp", onClick: eaglerCraft18, height: 130 },
-  'Kick The Buddy': { imageUrl: "/assets/img/super-buddy-kick.webp", onClick: kickTheBuddy, height: 130 },
-  'There is No Game': { imageUrl: "/assets/img/there-is-no-gms.webp", onClick: thereIsNoGame, height: 130 },
+  'Eaglercraft (1.5)': { imageUrl: "/assets/img/eaglercraft.webp", onClick: eaglerCraft15, height: 135 },
+  'Eaglercraft (1.8)': { imageUrl: "/assets/img/eaglercraft.webp", onClick: eaglerCraft18, height: 135 },
+  'Kick The Buddy': { imageUrl: "/assets/img/super-buddy-kick.webp", onClick: kickTheBuddy, height: 135 },
+  'There is No Game': { imageUrl: "/assets/img/there-is-no-gms.webp", onClick: thereIsNoGame, height: 135 },
 };
 
 for (var gmsName in gms) {
@@ -116,7 +117,7 @@ for (var gmsName in gms) {
     }
 }
 
-/* search bar */
+/* Search Bar */
 document.getElementById('searchApps').addEventListener('input', function(event) {
     const query = this.value.toLowerCase();
     const links = document.getElementsByClassName('search-results')[0].getElementsByTagName('a');

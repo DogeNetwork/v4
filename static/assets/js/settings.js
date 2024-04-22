@@ -206,3 +206,16 @@ if (clickoffButtonCheck === 'disabled' || clickoffButtonCheck === '' || clickoff
     disableccButton.disabled = false;
     enableccButton.disabled = true;
 }
+
+// On Theme change
+const dropdown = document.getElementById('dropdown');
+dropdown.addEventListener('change', function () {
+    const selectedOptionValue = dropdown.value;     
+    localStorage.setItem('selectedOption', selectedOptionValue);
+    live();particles();
+    console.log('[✔️] Theme Updated');
+});
+const storedOptionValue = localStorage.getItem('selectedOption');
+if (storedOptionValue) {
+    dropdown.value = storedOptionValue;
+}

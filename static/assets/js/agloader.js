@@ -1,12 +1,9 @@
 const urlBar = document.querySelector("#urlBar")
 const siteUrl = document.querySelector("#siteurl");
 const urlInput = document.querySelector("#urlInput");
-let encodedUrl = localStorage.getItem("encodedUrl");
+let encodedUrl = localStorage.getItem("agUrl");
 var selectedTheme = localStorage.getItem('selectedOption');
 var bgUrl = localStorage.getItem('bgUrl');
-siteUrl.addEventListener("load", handleLoadEvent);
-siteUrl.addEventListener("srcchange", handleSrcChangeEvent);
-document.querySelector("#urlInput").addEventListener("keypress", handleEnterKeyPress);
 
 Object.defineProperty(siteUrl, 'src', {
     set: function(value) {
@@ -16,6 +13,7 @@ Object.defineProperty(siteUrl, 'src', {
 });
 
 urlInput.value = Ultraviolet.codec.xor.decode(encodedUrl);
+urlInput.style.color = 'rgba(100, 100, 100, 0.973)';
 
 if (selectedTheme === 'deepsea') {
     urlBar.style.background = "rgb(6, 22, 35)";
@@ -37,41 +35,6 @@ if (selectedTheme === 'deepsea') {
     urlBar.style.background = "rgb(6, 22, 35)";
 } else {
     urlBar.style.background = "rgb(6, 22, 35)";
-}
-
-function handleLoadEvent() {
-    const decodedPart = getUrlDecodedPart(this.contentWindow.location.href);
-    urlInput.value = decodedPart || '';
-}
-
-function handleSrcChangeEvent() {
-    urlInput.value = getUrlDecodedPart(this.contentWindow.location.href) || '';
-}
-
-function updateIframeUrl() {
-    var inputUrl = document.querySelector("#urlInput").value.trim();
-    var iframe = document.querySelector("#siteurl");
-    if (/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(inputUrl)) {
-        iframe.src = '/service/' + Ultraviolet.codec.xor.encode(inputUrl);
-    } else {
-        iframe.src = '/service/' + Ultraviolet.codec.xor.encode(inputUrl.includes('.') ? 'https://' + inputUrl : 'https://www.google.com/search?q=' + encodeURIComponent(inputUrl));
-    }
-}
-
-function handleEnterKeyPress(event) {
-    if (event.key === "Enter") {
-        updateIframeUrl();
-    }
-}
-
-function getUrlDecodedPart(url) {
-    const decodedPart = url.split("/service/")[1];
-    return decodedPart ? Ultraviolet.codec.xor.decode(decodedPart.replace(/\?/g, '=')) : null;
-}
-
-function isSearchQuery(val = "") {
-    return (!/\./.test(val) && !val.startsWith("http://") && !val.startsWith("https://")) ||
-        /^\S+$/.test(val);
 }
 
 var devToolsLoaded = false;

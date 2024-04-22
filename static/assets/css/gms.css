@@ -1,10 +1,3 @@
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
-}
-
 .square_btn {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -12,11 +5,6 @@
 
 .square_btn.loaded {
     opacity: 1;
-}
-
-.square_btn img {
-    width: 103px;
-    height: 103px;
 }
 
 .square_btn {
@@ -36,44 +24,21 @@
     background: rgba(255, 255, 255, 0.144);
     color: white;
     border: solid 2px rgba(255, 255, 255, 0.26);
-    border-radius: 5px;
     transform: scale(1.09);
-    transition: 0.2s;
 }
 
-button img {
-    width: 100%;
-    height: 100%;
+.square_btn img {
+    width: 103px;
+    height: 103px;
 }
 
-.button-container>button {
-    width: calc(25% - 20px);
-}
-
-.button-container>button:nth-child(4n+1) {
-    margin-left: 0;
-}
-
-.button-container>button:nth-child(n+5) {
-    margin-top: 20px;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-input {
-    font-size: 17px;
+.rounded {
+    border-radius: 10px;
 }
 
 .searchIcon {
-    color: rgba(117,117,117,255);
+    color: rgb(253, 253, 253);
+    opacity: 100%;
     font-size: 15px;
     position: absolute;
     margin-top: 19px;
@@ -81,7 +46,7 @@ input {
 }
 
 .searchbar {
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .searchbar:focus {
@@ -89,7 +54,7 @@ input {
 }
 
 .search-results {
-    padding: 19px;
+    color:rgba(255, 255, 255, 0.144);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

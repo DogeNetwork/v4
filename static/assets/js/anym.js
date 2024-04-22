@@ -12,7 +12,7 @@
   if (icon) {
       icon.setAttribute('href', newIcon);
   } else {
-      console.log('Tab Cloak Disabled');
+      console.log('[❌] Tab Cloak');
       document.title = defaultTitle;
   }
 
@@ -49,7 +49,7 @@ if (clickoff === 'enabled') {
   });
 }
 
-// panic key
+// Panic Key
 var storedKey = localStorage.getItem('pkKey');
 
 if (storedKey) {
