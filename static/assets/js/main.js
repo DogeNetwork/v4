@@ -24,10 +24,10 @@ function loadCSS(href, callback) {
 loadScript("/uv/uv.handler.js", function () {
   loadScript("/uv/uv.bundle.js", function () {
     loadScript("/uv/uv.config.js", function () {
-      console.log("[✔️] UV Loaded");
       window.navigator.serviceWorker.register("/sw.js", {
         scope: __uv$config.prefix,
     });
+    console.log("[✔️] UV Loaded");
     });
   });
 });
@@ -63,6 +63,7 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
       "Set a custom background in settings.",
       "Tab Cloaking is highly recommended",
       "About:Blank Cloak is highly recommended",
+      "The #1 site unblocker, with 90K users daily",
       "The #1 site unblocker, with 90K users daily",
       "Finally, an actual site unblocker that works fast!",
       "Do not share this link with anyone.",
