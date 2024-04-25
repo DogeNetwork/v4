@@ -59,21 +59,8 @@ if (window.location.pathname === "/index.html" || window.location.pathname === "
     setInterval(clock, 1000);
     
     const options = [
-      "Right-Click to access more features",
-      "Set a custom background in settings.",
-      "Tab Cloaking is highly recommended",
-      "About:Blank Cloak is highly recommended",
-      "The #1 site unblocker, with 90K users daily",
-      "The #1 site unblocker, with 90K users daily",
-      "Finally, an actual site unblocker that works fast!",
-      "Do not share this link with anyone.",
-      "Join our community at discord.gg/unblocking",
-      "Join our community at discord.gg/unblocking",
-      "© Copyright 2024 Doge Network. All Rights Reserved.",
-      "Customize Doge by going to Settings > Themes",
-      "Want more links? Our Discord provides tons of links!",
-      "Want more links? Our Discord provides tons of links!",
-      "Want more links? Our Discord provides tons of links!",
+      
+      "Saif is king",
     ];
     
     function getRandomOption() {
