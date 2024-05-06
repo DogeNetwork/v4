@@ -1,6 +1,6 @@
 (function() {
-  var defaultTitle = 'Doge | V4';
-  var defaultIcon = '/assets/img/doge.jpg';
+  var defaultTitle = 'saif | V4';
+  var defaultIcon = '/assets/img/saif.jpg';
 
   var storedTitle = localStorage.getItem('tabTitle');
   var storedIcon = localStorage.getItem('tabIcon');
@@ -22,8 +22,8 @@
 })();
 
 // Clickoff Check
-var defaultTitle = 'Doge | V4';
-var defaultIcon = '/assets/img/doge.jpg';
+var defaultTitle = 'saif | V4';
+var defaultIcon = '/assets/img/saif.jpg';
 var storedTitle = localStorage.getItem('tabTitle');
 var storedIcon = localStorage.getItem('tabIcon');
 var icon = document.querySelector('link[rel="icon"]');
@@ -31,8 +31,8 @@ var newTitle = storedTitle || defaultTitle;
 var newIcon = storedIcon || defaultIcon;
 var clickoff = localStorage.getItem('clickoffCloak');
 
-if (storedIcon === '/assets/img/doge.jpg' || storedIcon === null || storedIcon === '') {
-    localStorage.setItem('tabIcon', '/assets/img/doge.jpg');
+if (storedIcon === '/assets/img/saif.jpg' || storedIcon === null || storedIcon === '') {
+    localStorage.setItem('tabIcon', '/assets/img/saif.jpg');
 }
 
 var storedIcon = localStorage.getItem('tabIcon');
