@@ -158,7 +158,7 @@ function cookieClicker() {
 }
 
 function rBowl() {
-  document.title = 'Doge | V4';
+  document.title = 'saif | V4';
   var cloakcheckScript = document.createElement("script");
   cloakcheckScript.src = "/assets/js/cloak.js";
   document.head.appendChild(cloakcheckScript);
@@ -300,5 +300,5 @@ function crowdRun3d() {
 }
 
 function worldsHardestGm() {
-  openAg('https://assets.surfdoge.pro/assets/worldshardestgm.html');
+  openAg('https://assets.surfsaif.pro/assets/worldshardestgm.html');
 }
