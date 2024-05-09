@@ -53,7 +53,7 @@ function addGms(name, imageUrl, onClickFunction, width, height) {
 var gms = {
   // All-Time favorites
   'GeForce Now': { imageUrl: "/assets/img/geforcenow.webp", onClick: geforce },
-  'Roblox': { imageUrl: "/assets/img/roblox.webp", onClick: rbx },
+  '': { imageUrl: "/assets/img/.webp", onClick: rbx },
   // Shooter Games
   '1v1.lol': { imageUrl: "/assets/img/1v1.webp", onClick: onevone },
   'Awesome Tanks 2': { imageUrl: "/assets/img/atanks2.webp", onClick: awesomeTanksTwo, height: 135 },
