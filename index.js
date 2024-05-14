@@ -8,7 +8,8 @@ const __dirname = path.resolve();
 const server = http.createServer();
 const app = express(server);
 const bareServer = createBareServer("/bare/");
-const port = 8000;
+const port = process.env.PORT || 3000;
+
 
 app.use(express.json());
 app.use(
