@@ -8,6 +8,7 @@ const __dirname = path.resolve();
 const server = http.createServer();
 const app = express(server);
 const bareServer = createBareServer("/bare/");
+const port = 8000;
 
 app.use(express.json());
 app.use(
@@ -73,6 +74,6 @@ server.on("listening", () => {
   console.log(`Doge Unblocker @ Port 8000`);
 });
 
-server.listen({
-  port: 8000,
-});
+app.listen(port, "0.0.0.0", function () {
+  console.log('Doge Unblocker is in the config phase')
+})
