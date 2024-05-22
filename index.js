@@ -52,6 +52,10 @@ app.use((req, res) => {
   res.statusCode = 404;
   res.sendFile(path.join(__dirname, './static/404.html'))
 });
+app.use((req, res) => {
+  res.statusCode = 0;
+  res.sendFile(path.join(__dirname, './static/memoryError.html'))
+});
 
 server.on("request", (req, res) => {
   if (bareServer.shouldRoute(req)) {
