@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.8.3/styles/overlayscrollbars.css"
+  integrity="sha512-8zM1Exu45IRHLtl/+UOPWMTZE/5xasxjm9Tps6pka3BJDzDIyq9fyI8GYdSTkYsRZtvWsiiSzjQb2rLAbvF5zQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.8.3/browser/overlayscrollbars.browser.es6.min.js"
+    integrity="sha512-1hS0dWkqFqR8itbjKH8fEujRkHPJcSm3HN/txMvOb1JzT+RbmbGo4qaromzMKZmPdg0frGDAAIOkF4yigV5B7Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <link rel="icon" id="icon" href="/assets/img/doge.jpg">
@@ -16,7 +24,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
   <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
 </head>
-<body>
+<body data-overlayscrollbars-initialize id="main">
   <div id="contextMenu" class="context-menu themesExcluded" style="--ripple-duration: 300ms;"><div class="context-menu-item with-submenu themesExcluded" id="contextItem" anim="ripple" onclick="toggleSubmenu(event)"><i class="bi bi-file-spreadsheet"></i> Tab Cloak</div><div class="context-submenu themesExcluded" id="contextItem"><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="tabCloak()">Enable</div><div class="context-menu-item themesExcluded" anim="ripple" onclick="disableTabCloak()">Disable</div></div><div class="context-menu-item with-submenu themesExcluded" id="contextItem" anim="ripple" onclick="toggleSubmenu2(event)"><i class="bi bi-clock-history"></i> Last Visited Site</div><div class="context-submenu themesExcluded" id="contextItem"><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="vSite()">Visit Last Site</div><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="vAG()">Visit Last App/Game</div></div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openWindow()"><i class="bi bi-box-arrow-up-right"></i> About:Blank Cloak</div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openSettings()"><i class="bi bi-gear"></i> View all Settings</div></div>
   <nav id="mytopnav">
     <button class="button-6 active" anim="ripple"><i class="bi bi-gear" style="font-size:30px;"></i>Settings</button>
@@ -105,5 +113,14 @@
 <script src="/assets/js/themes.js"></script>
 <script src="/assets/js/settings.js"></script>
 <script src="/assets/js/main.js"></script>
+<script>
+  var {
+    OverlayScrollbars,
+    ScrollbarsHidingPlugin,
+    SizeObserverPlugin,
+    ClickScrollPlugin
+  } = OverlayScrollbarsGlobal;
+  const osInstance = OverlayScrollbars(document.querySelector('#main'), {});
+</script>
 </body>
 </html>

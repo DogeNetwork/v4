@@ -1,5 +1,22 @@
 <!DOCTYPE html>
 <head>
+  <script>
+    var {
+      OverlayScrollbars,
+      ScrollbarsHidingPlugin,
+      SizeObserverPlugin,
+      ClickScrollPlugin
+    } = OverlayScrollbarsGlobal;
+    const osInstance = OverlayScrollbars(document.querySelector('#main'), {});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.8.3/styles/overlayscrollbars.css"
+  integrity="sha512-8zM1Exu45IRHLtl/+UOPWMTZE/5xasxjm9Tps6pka3BJDzDIyq9fyI8GYdSTkYsRZtvWsiiSzjQb2rLAbvF5zQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.8.3/browser/overlayscrollbars.browser.es6.min.js"
+    integrity="sha512-1hS0dWkqFqR8itbjKH8fEujRkHPJcSm3HN/txMvOb1JzT+RbmbGo4qaromzMKZmPdg0frGDAAIOkF4yigV5B7Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <meta name="robots" content="noindex">
   <link rel="icon" id="icon" href="/assets/img/doge.jpg">
   <link rel="stylesheet" href="/assets/css/app.css">
@@ -59,7 +76,7 @@
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
-<body>
+<body data-overlayscrollbars-initialize id="main">
   <center><br>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <div class="themesExcluded">
