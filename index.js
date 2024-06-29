@@ -18,7 +18,7 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "static")));
 app.get('/app', (req, res) => {
-  res.sendFile(path.join(__dirname, './static/proxy.html'));
+  res.sendFile(path.join(__dirname, './static/index.html'));
 });
 app.get('/student', (req, res) => {
   res.sendFile(path.join(__dirname, './static/loader.html'));
