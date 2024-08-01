@@ -26,5 +26,14 @@ Doge Unblocker is a lightning-fast web proxy designed for performance and stealt
 [![Deploy with Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repositoryurl=https://github.com/dogenetwork/v4)
 [![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/dogenetwork/v4)
 
+#### Deploy with Docker
+```
+git clone https://github.com/DogeNetwork/v4.git
+cd v4
+sudo docker build . -t doge
+sudo docker run -p 8000:8000 doge
+```
+
+
 ### Discord
 [![Join us on Discord](https://invidget.switchblade.xyz/sWPHCdxCPU?theme=dark)](https://discord.gg/sWPHCdxCPU)
