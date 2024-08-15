@@ -56,6 +56,13 @@ if(window.location.pathname === "/index.html" || window.location.pathname === "/
   proxybar.addEventListener("blur", () => {
     search.style.marginLeft = "-150px";
   });
+  const img = document.createElement('img');
+  img.src = 'https://media.discordapp.net/attachments/1269134257662464022/1271224974841217115/standard_1.gif?ex=66bc7ec4&is=66bb2d44&hm=d4fdc818c91ea446a8c0f31f26285c8492f1fc849920209dac57cba67a1d87f9&=&width=421&height=53';
+  img.className = 'banner footer';
+  img.addEventListener('click', function() {
+    location.href = 'https://freeminecrafthost.com/doge/';
+  })
+  document.body.appendChild(img);
 }
 window.addEventListener("load", function() {
   loadScript("/worker.js");
