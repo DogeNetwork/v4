@@ -1,0 +1,119 @@
+[
+  {
+    "name": "Google",
+    "imageUrl": "/assets/img/google-icon.webp",
+    "onClick": "google"
+  },
+  {
+    "name": "ChatGPT",
+    "imageUrl": "/assets/img/gpt.webp",
+    "onClick": "gpt"
+  },
+  {
+    "name": "Gemini",
+    "imageUrl": "/assets/img/gemini.webp",
+    "onClick": "gemini"
+  },
+  {
+    "name": "Discord",
+    "imageUrl": "/assets/img/discord.webp",
+    "onClick": "discord"
+  },
+  {
+    "name": "Twitter",
+    "imageUrl": "/assets/img/twitter-x.webp",
+    "onClick": "twitter"
+  },
+  {
+    "name": "Reddit",
+    "imageUrl": "/assets/img/reddit.webp",
+    "onClick": "reddit"
+  },
+  {
+    "name": "Pinterest",
+    "imageUrl": "/assets/img/pinterest.webp",
+    "onClick": "pin"
+  },
+  {
+    "name": "CoolMath",
+    "imageUrl": "/assets/img/coolmathgames.webp",
+    "onClick": "cmg"
+  },
+  {
+    "name": "CrazyGames",
+    "imageUrl": "/assets/img/crazygames.webp",
+    "onClick": "crazygms"
+  },
+  {
+    "name": "Y8 Games",
+    "imageUrl": "/assets/img/y8.webp",
+    "onClick": "y8"
+  },
+  {
+    "name": "Neal.fun",
+    "imageUrl": "/assets/img/neal.webp",
+    "onClick": "nf"
+  },
+  {
+    "name": "GeForce Now",
+    "imageUrl": "/assets/img/geforcenow.webp",
+    "onClick": "geforce"
+  },
+  {
+    "name": "Now.GG",
+    "imageUrl": "/assets/img/nowgg.webp",
+    "onClick": "ng"
+  },
+  {
+    "name": "Chess.com",
+    "imageUrl": "/assets/img/chess.webp",
+    "onClick": "chess"
+  },
+  {
+    "name": "Symbolab Math Solver",
+    "imageUrl": "/assets/img/symbolab.webp",
+    "onClick": "symbolab",
+    "height": 130
+  },
+  {
+    "name": "YouTube",
+    "imageUrl": "/assets/img/youtube.webp",
+    "onClick": "yt"
+  },
+  {
+    "name": "Netflix",
+    "imageUrl": "/assets/img/netflix.webp",
+    "onClick": "netflix"
+  },
+  {
+    "name": "SFlix",
+    "imageUrl": "/assets/img/sflix.webp",
+    "onClick": "sFlix"
+  },
+  {
+    "name": "Twitch",
+    "imageUrl": "/assets/img/twitch.webp",
+    "onClick": "twitch"
+  },
+  {
+    "name": "TikTok",
+    "imageUrl": "/assets/img/tiktok.webp",
+    "onClick": "tt"
+  },
+  {
+    "name": "Spotify",
+    "imageUrl": "/assets/img/spotify.webp",
+    "onClick": "spotify"
+  },
+  {
+    "name": "GitHub",
+    "imageUrl": "/assets/img/github.webp",
+    "onClick": "github"
+  },
+  {
+    "name": "Visual Studio Code",
+    "imageUrl": "/assets/img/vscode.webp",
+    "onClick": "vscode",
+    "height": 130
+  }
+]

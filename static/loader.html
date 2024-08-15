@@ -1,58 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="noindex">
-<link rel="icon" href="/assets/img/doge.jpg" />
-<link rel="stylesheet" href="/assets/css/ubar.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrUkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="/assets/js/anym.js"></script>
-    <script>
-        window.onload = function () {
-            let encodedUrl = localStorage.getItem("encodedUrl");
-            encodedUrl = "/service/" + encodedUrl;
-            document.querySelector("#siteurl").src = encodedUrl;
-            // URL Cloaking
-            function rndNum() {
-                return Math.floor(Math.random() * 900) + 100;
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/img/doge.jpg" />
+  <link rel="stylesheet" href="/assets/css/ubar.css" />
+  <link rel="stylesheet" href="/assets/css/tabs.css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="/assets/js/anym.js"></script>
+  <title>Doge | V4</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
+  <script>
+    window.onload = function () {
+        let encodedUrl = localStorage.getItem("encodedUrl");
+        encodedUrl = "/sv/" + encodedUrl;
+        document.querySelector("#siteurl").src = encodedUrl;
+        /* CK */
+        function rndNum() {
+            return Math.floor(Math.random() * 900) + 100;
+        }
+        function rndAbcString(length) {
+            const characters = "abcdefghijklmnopqrstuvw0123456789012345";
+            let result = "";
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
             }
-            function rndAbcString(length) {
-                const characters = "abcdefghijklmnopqrstuvw0123456789012345";
-                let result = "";
-                for (let i = 0; i < length; i++) {
-                    result += characters.charAt(Math.floor(Math.random() * characters.length));
-                }
-                return result;
-            }
-            var randomThreeDigitNumber = rndNum();
-            var randomAlphanumericString = rndAbcString(5);
-            var url = "/student?auth=" + randomAlphanumericString;
-            var title = "Google Docs";
+            return result;
+        }
+        var randomThreeDigitNumber = rndNum();
+        var randomAlphanumericString = rndAbcString(5);
+        var url = "/student?auth=" + randomAlphanumericString;
+        var title = "Google Docs";
 
-            history.pushState({}, title, url);
-        };
-    </script>
-    <title>Doge | V4</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
+        history.pushState({}, title, url);
+        live();
+    };
+</script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
 </head>
 <body>
-<div id="urlBar">
-  <input type="text" id="urlInput" placeholder="Search Google or type a URL" />
-  <i class="bi bi-search search"></i>
-  <button class="bi bi-arrows-fullscreen fs" onclick="toggleFs()" title="Fullscreen"></button>
-  <button class="bi bi-box-arrow-up-right ab" onclick="openWindow()" title="Open in About:Blank"></button>
-  <button class="bi bi-arrow-90deg-up arrow" onclick="hideBar()" title="Hide Bar"></button>
-  <button class="bi bi-arrow-clockwise reload" onclick="reload()" title="Reload"></button>
-  <button class="bi bi-caret-right forward" onclick="forward()" title="Forward"></button>
-  <button class="bi bi-caret-left back" onclick="back()" title="Back"></button>
-  <button class="bi bi-box-arrow-right exit" onclick="exit()" title="Return Home"></button>
-  <button class="bi bi-code-slash devTools" onclick="devTools()" title="Inspect Element"></button>
-</div>
- <iframe src="loading.html" id="siteurl"></iframe>
- <script src="/uv/uv.bundle.js"></script>
- <script src="/assets/js/themes.js"></script>
- <script src="/assets/js/loader.js"></script>
- <script src="/assets/js/main.js"></script>
+  <div id="urlBar">
+    <button class="btn btn-sm btn-ghost btn-circle" onclick="back()"><i data-lucide="chevron-left"></i></button>
+    <button class="btn btn-sm btn-ghost btn-circle" onclick="forward()"><i data-lucide="chevron-right"></i></button>
+    <button class="btn btn-sm btn-ghost btn-circle" onclick="reload()"><i data-lucide="rotate-cw" class="icon"></i></button>
+    <input type="text" placeholder="Search Google or type a URL" class="input input-bordered w-full max-w-xs searchBar" id="searchBar" style="outline:none;" />
+    <i data-lucide="search" class="search" style="width:15px;left:133px;"></i>
+    <button class="btn btn-sm btn-ghost btn-circle" id="tabs"><i data-lucide="folder" class="icon"></i></button>
+    <button class="btn btn-sm btn-ghost btn-circle" onclick="openWindow()"><i data-lucide="square-arrow-out-up-right" class="icon"></i></button>
+    <button class="btn btn-sm btn-ghost btn-circle" id="more"><i data-lucide="menu" class="icon"></i></button>
+  </div>
+  <div id="menu">
+    <button class="btn btn-sm" onclick="exit()" style="margin-top:-46px;"><i data-lucide="house" class="icon" style="margin-right:-3px;width:17px;"></i>Return</button>
+    <button class="btn btn-sm" onclick="hideBar()"><i data-lucide="eye-off" class="icon"></i>Hide Bar</button>
+    <button class="btn btn-sm" onclick="toggleFs()"><i data-lucide="minimize" class="icon"></i>Fullscreen</button>
+    <button class="btn btn-sm" onclick="devTools()"><i data-lucide="terminal" class="icon"></i>DevTools</button>
+  </div>
+  <div id="sidebar">
+    <button class="btn btn-sm btn-ghost btn-circle" onclick="createIframe()" style="position:absolute;margin-top:-45px;left:9px;"><i data-lucide="plus"></i></button>
+    <button class="btn btn-sm btn-ghost btn-circle" onclick="toggleSidebar()" style="position:absolute;margin-top:-45px;right:9px;"><i data-lucide="x"></i></button>
+    <div id="tabList" class="tab-buttons themesExcluded"></div>
+  </div>
+  <div class="iframe-container" id="iframe-container">
+    <iframe src="loading.html" id="loader" title="Loading.." style="display:block"></iframe>
+    <iframe src="" id="siteurl" title="tab1" class="first"></iframe>
+  </div>
+  <script src="/wk/wk2.js"></script>
+  <script src="/assets/js/themes.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/loader.js"></script>
+  <script src="/assets/js/tabs.js"></script>
+  <script>
+    startInterval();
+  </script>
 </body>
 </html>

@@ -10,12 +10,10 @@
     background: var(--ripple-background, white);
     border-radius: 50%;
     pointer-events: none;
-
     top: calc(var(--y) * 1px);
     left: calc(var(--x) * 1px);
     width: calc(var(--d) * 1px);
     height: calc(var(--d) * 1px);
-
     opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
     transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing, linear);
     transform: translate(-50%, -50%) scale(var(--s, 1));
@@ -53,7 +51,7 @@ p {
     width: 400px;
     text-align: center;
     box-shadow: 0px 8px 11px 0px rgba(0,0,0,0.4);
-    border: 2px solid rgba(61, 61, 61, 0.466);
+    border: 2px solid rgba(61, 61, 61, 0.308);
 }
 .settingscontainer p {
     margin-left: -5px;
@@ -79,14 +77,7 @@ p {
     background-color: rgba(160, 160, 160, 0.342);
     transform: translate(-0%,-3%);
 }
-/*.option:hover {
-    background-color: rgba(255, 255, 255, 0.801);
-    color: black;
-}
-.option:active {
-    background-color: rgb(255, 255, 255);
-}
-*/
+
 #panicPopup {
     display: none;
     position: fixed;
@@ -140,9 +131,6 @@ button:disabled:hover {
     background-color: rgba(0, 0, 0, 0.678);
     height: 20px;
 }
-/**/
-
-
 
 #backgroundPopup {
     display: none;
@@ -154,7 +142,6 @@ button:disabled:hover {
     background-color: rgba(0, 0, 0, 0.712);
     z-index: 1;
 }
-
 /* Style for the popup content */
 #backgroundPopup-content {
     background-color: rgba(46, 46, 46, 0.945);
@@ -184,17 +171,17 @@ button:disabled:hover {
 
 .button-container {
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    align-items: center; /* center vertically */
+    justify-content: center; /* center horizontally */
     background-color: transparent;
   }
   
   .centered-button {
     width: fit-content;
-    margin: 10px; /* Optional: Add margin between buttons */
-    padding: 10px; /* Optional: Add padding to buttons */
-    border: 2px solid rgb(209, 209, 209);
-    color: white; /* Optional: Set button text color */
-    cursor: pointer; /* Optional: Add a pointer cursor on hover */
+    margin: 10px;
+    padding: 10px;
     background-color: rgba(51, 50, 50, 0.322);
+    border: 2px solid rgb(209, 209, 209);
+    color: white;
+    cursor: pointer;
   }

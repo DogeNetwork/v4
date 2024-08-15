@@ -1,40 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
+  <link rel="icon" id="icon" href="/assets/img/doge.jpg">
   <link rel="stylesheet" href="/assets/css/app.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="/assets/js/particles.js"></script>
+  <script src="/assets/js/anym.js"></script>
+  <title>Doge | V4</title>
   <style>
-    .loader {
-      width: 60px;
-      height: 60px;
-      border: 8px solid #FFF;
-      border-bottom-color: transparent;
-      border-radius: 50%;
-      display: inline-block;
-      box-sizing: border-box;
-      animation: rotation 1s linear infinite;
+  .loader {
+    width: 60px;
+    height: 60px;
+    border: 8px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
     }
 
-    @keyframes rotation {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
+    100% {
+      transform: rotate(360deg);
     }
+  }
   </style>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
+  <script>
+    function getQueryParam(param) {
+      let urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+    window.onload = function() {
+      let goParam = getQueryParam('url');
+      if (goParam) {
+        let url = goParam;
+        if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
+        else if (!(url.startsWith("https://") || url.startsWith("http://"))) url = "http://" + url;
+        localStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
+        window.navigator.serviceWorker.register("/sw.js", {
+          scope: "/service/",
+        });
+        location.href = '/loader.html';
+      }
+    }
+    
+    function isUrl(val = "") {
+      if (/^http(s?):\/\//.test(val) || (val.includes(".") && val.substr(0, 1) !== " ")) return true;
+      return false;
+    }
+  </script>
 </head>
 <body>
   <br>
-  <div id="particles-js" style="border:none;"></div>
   <div class="themesExcluded" style="justify-content: center;align-items: center;display: flex;height: 50vh;">
     <br>
     <span class="loader"></span>
@@ -42,14 +65,14 @@
   </div>
   <script src="/assets/js/themes.js"></script>
   <script>
-    var nav = document.querySelectorAll('nav');
-    nav.forEach(function (navElement) {
-      navElement.style.transition = '1s';
-      navElement.style.backgroundColor = 'rgba(255, 251, 0, 0)';
-      navElement.style.border = '1px solid transparent';
-      navElement.style.boxShadow = '0 0 8px transparent';
-      navElement.style.opacity = '100%';
-    });
+  var nav = document.querySelectorAll('nav');
+  nav.forEach(function(navElement) {
+    navElement.style.transition = '1s';
+    navElement.style.backgroundColor = 'rgba(255, 251, 0, 0)';
+    navElement.style.border = '1px solid transparent';
+    navElement.style.boxShadow = '0 0 8px transparent';
+    navElement.style.opacity = '100%';
+  });
   </script>
   <script src="/assets/js/main.js"></script>
 </body>

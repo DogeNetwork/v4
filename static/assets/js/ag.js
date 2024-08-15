@@ -1,10 +1,16 @@
 function openAg(url, ag) {
   localStorage.setItem("currentAg", ag)
-  
-  agU = Ultraviolet.codec.xor.encode(url);
-  localStorage.setItem('agUrl', agU);
-  location.href = '/lessons';
+  location.href = '/go?url=' + url;
 }
+
+function openAgDy(url) {
+  location.href = '/search/route?url=' + url;
+}
+
+window.navigator.serviceWorker
+    .register("/sw.js", {
+      scope: "/search/",
+});
 
 /*apps*/
 function gpt() {
@@ -64,7 +70,8 @@ function twitch() {
 }
 
 function yt() {
-  openAg('https://youtube.com');
+  alert(`Doge's URL bar will not be available for this app.\n\nClick "OK" to proceed.`)
+  openAgDy('https://youtube.com');
 }
 
 function y8() {
@@ -105,7 +112,7 @@ function brebound() {
 }
 
 function cmg() {
-  openAg('https://coolmathgames.com', "CoolMath");
+  openAg('https://coolmathgames.com');
 }
 
 function crazygms() {
@@ -260,7 +267,7 @@ function ovo() {
 }
 
 function awesomeTanksTwo() {
-  openAg('https://just-fall.github.io/j4/awesome-tanks-2/');
+  openAg('https://derpman.codeberg.page/awesometanks2/');
 }
 
 function templeRun() {
@@ -273,6 +280,12 @@ function driveMad() {
 
 function stickManHook() {
   openAg('https://stickman-hook.io/iframe/index.html');
+}
+
+
+
+function stackBounce() {
+  openAg('https://storage.googleapis.com/bento-developer-games/stackbounce/gameCode/index.html');
 }
 
 function kickTheBuddy() {
@@ -289,6 +302,10 @@ function fBwG1() {
 
 function vex8() {
   openAg('https://html5.gamedistribution.com/rvvASMiM/949009d40a2846f89f887de2285d6c28/index.html');
+}
+
+function vex3() {
+  openAg('https://derpman.codeberg.page/vex3');
 }
 
 function tallManRun() {

@@ -1,0 +1,49 @@
+#sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    box-shadow: -6px 0 6px -7px rgb(0, 0, 0);
+    overflow-x: hidden;
+    padding-top: 60px;
+    z-index: 1000;
+  }
+  
+  .tab-buttons {
+    margin-top: -5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tab-button-container {
+    position: relative;
+    margin-top: 6px;
+    border-radius: 5px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  
+  .tab-button-container i {
+    margin-right: 10px;
+  }
+  
+  .tab-button-container span {
+    flex-grow: 1;
+  }
+  
+  .tab-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  
+  #addTabButton {
+    margin-bottom: 20px;
+  }

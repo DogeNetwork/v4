@@ -1,0 +1,261 @@
+{
+  "All-Time favorites": [
+    {
+      "name": "GeForce Now",
+      "imageUrl": "/assets/img/geforcenow.webp",
+      "onClick": "geforce"
+    },
+    {
+      "name": "Roblox",
+      "imageUrl": "/assets/img/roblox.webp",
+      "onClick": "rbx"
+    }
+  ],
+  "Shooter Games": [
+    {
+      "name": "1v1.lol",
+      "imageUrl": "/assets/img/1v1.webp",
+      "onClick": "onevone"
+    },
+    {
+      "name": "Awesome Tanks 2",
+      "imageUrl": "/assets/img/atanks2.webp",
+      "onClick": "awesomeTanksTwo",
+      "height": 135
+    },
+    {
+      "name": "Florr.io",
+      "imageUrl": "/assets/img/florr.webp",
+      "onClick": "florr"
+    },
+    {
+      "name": "Krunker.io",
+      "imageUrl": "/assets/img/krunker.webp",
+      "onClick": "krunker"
+    },
+    {
+      "name": "Time Shooter SWAT",
+      "imageUrl": "/assets/img/time-shooter-3.webp",
+      "onClick": "timeShooter3",
+      "height": 135
+    }
+  ],
+  "Sport Games": [
+    {
+      "name": "Retro Bowl",
+      "imageUrl": "/assets/img/retro.webp",
+      "onClick": "rBowl"
+    },
+    {
+      "name": "BasketBros.io",
+      "imageUrl": "/assets/img/basketbros.webp",
+      "onClick": "basketBros"
+    },
+    {
+      "name": "Basket Random",
+      "imageUrl": "/assets/img/basketrandom.webp",
+      "onClick": "basketRandom",
+      "height": 135
+    },
+    {
+      "name": "Volley Random",
+      "imageUrl": "/assets/img/volley-random.webp",
+      "onClick": "volleyRandom",
+      "height": 135
+    }
+  ],
+  "Ball/Platformer Games": [
+    {
+      "name": "Slope",
+      "imageUrl": "/assets/img/slope.webp",
+      "onClick": "slope"
+    },
+    {
+      "name": "Boxel Rebound",
+      "imageUrl": "/assets/img/boxelrebound.webp",
+      "onClick": "brebound",
+      "height": 135
+    },
+    {
+      "name": "Run 3",
+      "imageUrl": "/assets/img/run3.webp",
+      "onClick": "run3"
+    },
+    {
+      "name": "Fireboy and Watergirl",
+      "imageUrl": "/assets/img/fireboy-and-watergirl.webp",
+      "onClick": "fBwG1",
+      "height": 135
+    },
+    {
+      "name": "Stack Bounce",
+      "imageUrl": "/assets/img/stackbounce.webp",
+      "onClick": "stackBounce"
+    },
+    {
+      "name": "Stickman Hook",
+      "imageUrl": "/assets/img/stickmanhook.webp",
+      "onClick": "stickManHook",
+      "height": 135
+    }
+  ],
+  "Domination Games": [
+    {
+      "name": "Hole.io",
+      "imageUrl": "/assets/img/hole-io.webp",
+      "onClick": "holeio",
+      "height": 135
+    },
+    {
+      "name": "Paper.io",
+      "imageUrl": "/assets/img/paperio.webp",
+      "onClick": "paperIo"
+    },
+    {
+      "name": "Territorial.io",
+      "imageUrl": "/assets/img/territorial.webp",
+      "onClick": "territorial"
+    }
+  ],
+  "Running Games": [
+    {
+      "name": "Subway Surfers",
+      "imageUrl": "/assets/img/subway.webp",
+      "onClick": "subway",
+      "height": 135
+    },
+    {
+      "name": "Temple Run",
+      "imageUrl": "/assets/img/temple-run.webp",
+      "onClick": "templeRun"
+    },
+    {
+      "name": "OvO",
+      "imageUrl": "/assets/img/ovo.webp",
+      "onClick": "ovo",
+      "height": 135
+    },
+    {
+      "name": "Vex 3",
+      "imageUrl": "/assets/img/vex3.webp",
+      "onClick": "vex8"
+    },
+    {
+      "name": "Vex 8",
+      "imageUrl": "/assets/img/vex8.webp",
+      "onClick": "vex8"
+    },
+    {
+      "name": "Tall Man Run",
+      "imageUrl": "/assets/img/tall-man-run.webp",
+      "onClick": "tallManRun"
+    },
+    {
+      "name": "Crowd Run 3D",
+      "imageUrl": "/assets/img/crowd-run-3d.webp",
+      "onClick": "crowdRun3d"
+    }
+  ],
+  "Car/Racing Games": [
+    {
+      "name": "Drift Hunters",
+      "imageUrl": "/assets/img/drifthunters.webp",
+      "onClick": "driftHunters"
+    },
+    {
+      "name": "Drive Mad",
+      "imageUrl": "/assets/img/drive-mad.webp",
+      "onClick": "driveMad"
+    },
+    {
+      "name": "Moto X3M",
+      "imageUrl": "/assets/img/motox3m.webp",
+      "onClick": "motoX3M"
+    }
+  ],
+  "Brain Games": [
+    {
+      "name": "Bitlife",
+      "imageUrl": "/assets/img/bitlife.webp",
+      "onClick": "bitlife",
+      "height": 135
+    },
+    {
+      "name": "2048",
+      "imageUrl": "/assets/img/2048.webp",
+      "onClick": "twoZeroFourEight",
+      "height": 135
+    },
+    {
+      "name": "Pokemon 2048",
+      "imageUrl": "/assets/img/p2048.webp",
+      "onClick": "p2048",
+      "height": 135
+    },
+    {
+      "name": "Chess.com",
+      "imageUrl": "/assets/img/chess.webp",
+      "onClick": "chess"
+    },
+    {
+      "name": "Jstris",
+      "imageUrl": "/assets/img/jstris.webp",
+      "onClick": "jstris"
+    },
+    {
+      "name": "Watermelon Game (Suika)",
+      "imageUrl": "/assets/img/suika.webp",
+      "onClick": "suikaWatermelon",
+      "height": 135
+    },
+    {
+      "name": "World's Hardest GM",
+      "imageUrl": "/assets/img/worldshardestgm.webp",
+      "onClick": "worldsHardestGm",
+      "height": 135
+    }
+  ],
+  "Idle/Clicking Games": [
+    {
+      "name": "Cookie Clicker",
+      "imageUrl": "/assets/img/cookieclicker.webp",
+      "onClick": "cookieClicker"
+    },
+    {
+      "name": "Idle Breakout",
+      "imageUrl": "/assets/img/idlebreakout.webp",
+      "onClick": "idleBreakout"
+    },
+    {
+      "name": "Monkey Mart",
+      "imageUrl": "/assets/img/monkeymart.webp",
+      "onClick": "monkeyMart"
+    }
+  ],
+  "Sandbox/Arcade Games": [
+    {
+      "name": "Eaglercraft (1.5)",
+      "imageUrl": "/assets/img/eaglercraft.webp",
+      "onClick": "eaglerCraft15",
+      "height": 135
+    },
+    {
+      "name": "Eaglercraft (1.8)",
+      "imageUrl": "/assets/img/eaglercraft.webp",
+      "onClick": "eaglerCraft18",
+      "height": 135
+    },
+    {
+      "name": "Kick The Buddy",
+      "imageUrl": "/assets/img/super-buddy-kick.webp",
+      "onClick": "kickTheBuddy",
+      "height": 135
+    },
+    {
+      "name": "There is No Game",
+      "imageUrl": "/assets/img/there-is-no-gms.webp",
+      "onClick": "thereIsNoGame",
+      "height": 135
+    }
+  ]
+}

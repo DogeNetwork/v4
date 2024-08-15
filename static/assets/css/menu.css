@@ -14,7 +14,6 @@
   top: 0;
   left: 0;
 }
-
 .context-menu-item {
   cursor: pointer;
   font-family: poppins;
@@ -23,17 +22,12 @@
   transition: background-color 0.3s ease;
   transition: .2s;
 }
-
-
 .context-menu-item:not(:last-child) {
   border-bottom: 1px solid rgb(143, 143, 143)7e;
 }
-
-
 .context-menu-item:hover {
   background-color: rgba(0, 0, 0, 0.212);
 }
-
 .context-submenu {
   display: none;
   position: absolute;

@@ -35757,7 +35757,7 @@
         });
     };
     
-    function createInjection(handler = '/uv.handler.js', bundle = '/uv.bundle.js', config = '/uv.config.js', cookies = '', referrer = '') {
+    function createInjection(handler = '/wk1.js', bundle = '/wk2.js', config = '/wk3.js', cookies = '', referrer = '') {
         return [
             {
                 tagName: 'script',
@@ -39150,9 +39150,9 @@
             this.meta = options.meta || {};
             this.meta.base ||= undefined;
             this.meta.origin ||= '';
-            this.bundleScript = options.bundle || '/uv.bundle.js';
-            this.handlerScript = options.handler || '/uv.handler.js';
-            this.configScript = options.config || '/uv.config.js';
+            this.bundleScript = options.bundle || '/wk2.js';
+            this.handlerScript = options.handler || '/wk1.js';
+            this.configScript = options.config || '/wk3.js';
             this.meta.url ||= this.meta.base || '';
             this.codec = Ultraviolet.codec;
             this.html = new _html_js__WEBPACK_IMPORTED_MODULE_0__["default"](this);

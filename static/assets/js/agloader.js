@@ -1,6 +1,7 @@
 const urlBar = document.querySelector("#urlBar")
 const siteUrl = document.querySelector("#siteurl");
 const urlInput = document.querySelector("#urlInput");
+const menu = document.getElementById('menuDialog');
 let encodedUrl = localStorage.getItem("agUrl");
 var selectedTheme = localStorage.getItem('selectedOption');
 var bgUrl = localStorage.getItem('bgUrl');
@@ -110,6 +111,7 @@ function toggleFs() {
 function hideBar() {
     urlBar.style.display = 'none';
     siteUrl.style.height = '100vh';
+    menu.style.display = 'none';
 }
 
 function reload() {
@@ -127,3 +129,32 @@ function back() {
 function exit() {
     location.href = '/';
 }
+
+var more = document.getElementById("more");
+more.addEventListener("click", function() {
+var menu = document.getElementById('menuDialog');
+if (menu.style.display === 'block') {
+  menu.style.display = 'none';
+} else {
+  menu.style.display = 'block';
+}});
+
+function onFrameClick() {
+    if (document.getElementById('siteurl').contentWindow) {
+        document.getElementById('siteurl').contentWindow.addEventListener('click', frameClicked);
+        document.getElementById('siteurl').contentWindow.addEventListener('touchend', frameClicked); // For the iPad kids
+
+    }
+}
+
+function frameClicked() {
+    document.getElementById("menuDialog").style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    onFrameClick();
+    setInterval(onFrameClick, 1000);
+});
+
+// URL Updating for default frame
+document.getElementById("siteurl").addEventListener("load", updateTabUrl);

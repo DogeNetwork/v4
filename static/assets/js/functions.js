@@ -72,16 +72,10 @@ function toggleSubmenu(event) {
     submenu.style.left =
       submenuParent.offsetLeft + submenuParent.offsetWidth + "px";
     submenuParent.classList.add("open");
-    event.stopPropagation(); // Prevent the click event from closing the right-click menu
+    event.stopPropagation(); // prevent the click from closing the right-click menu
   }
 
   submenuOpen = !submenuOpen;
-}
-
-function handleSubmenuClick() {
-  // Perform action when submenu option is clicked
-  alert("hi");
-  hideSubmenu();
 }
 
 function toggleSubmenu2(event) {
@@ -143,10 +137,6 @@ function openWindow() {
   win.document.body.appendChild(iframe);
 }
 
-function visitLastSite() {
-  location.href = "/~";
-}
-
 function showContextMenu(event) {
   event.preventDefault();
   var contextMenu = document.getElementById("contextMenu");
@@ -169,32 +159,11 @@ function hideSubmenu() {
 }
 
 function hideSubmenu2() {
-  var submenu2 = document.querySelectorAll(".context-submenu")[1];
-  submenu2.style.display = "none";
   submenu2Open = false;
 }
 
 function openSettings() {
   location.href = "/settings.html";
-}
-
-function youtube() {
-  let URL = "https://www.youtube.com/";
-  let urlToInject =
-    window.location.origin + __uv$config.prefix + __uv$config.encodeUrl(URL);
-  const newWindow = window.open();
-  const iframe = newWindow.document.createElement("iframe");
-  newWindow.document.body.style.margin = "0";
-  iframe.style.width = "100%";
-  iframe.style.height = "100%";
-  iframe.style.position = "fixed";
-  iframe.style.top = "0";
-  iframe.style.left = "0";
-  iframe.style.zIndex = "99999";
-  iframe.style.border = "none";
-  newWindow.document.body.style.overflow = "hidden";
-  newWindow.document.body.appendChild(iframe);
-  iframe.src = urlToInject;
 }
 
 function enableAboutBlank() {
@@ -223,21 +192,12 @@ document.addEventListener("click", function (event) {
   }
 });
 
-function vSite() {
+function visitSite() {
   var checkHistory = localStorage.getItem("encodedUrl");
-  if (checkHistory !== null) {
-    location.href = "/student";
+  if (checkHistory) {
+    location.href = "/go?url=" + checkHistory;
   } else {
     alert("Could not find a previously proxified site, visit a site first!");
-  }
-}
-
-function vAG() {
-  var checkHistory = localStorage.getItem("agUrl");
-  if (checkHistory !== null) {
-    location.href = "/lessons";
-  } else {
-    alert("Could not find a previously visited app/game, visit one first!");
   }
 }
 
