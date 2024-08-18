@@ -1,18 +1,17 @@
 import express from 'express';
 import http from 'node:http';
 import path from 'node:path';
-import { createBareServer } from '@tomphttp/bare-server-node';
+import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
+import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
+import wisp from "wisp-server-node";
 import request from '@cypress/request';
 import chalk from 'chalk';
-import packageJson from './package.json' assert { type: 'json' }; // Ensure package.json is treated as a JSON module
+import packageJson from './package.json' assert { type: 'json' };
 
 const __dirname = path.resolve();
 const server = http.createServer();
 const app = express(server);
-const bareServer = createBareServer('/bear/');
-
 const version = packageJson.version;
-
 const discord = 'https://discord.gg/unblocking';
 
 app.use(express.json());
@@ -22,7 +21,10 @@ app.use(
   })
 );
 
+app.use("/libcurl/", express.static(libcurlPath));
+app.use("/baremux/", express.static(baremuxPath));
 app.use(express.static(path.join(__dirname, 'static')));
+
 app.get('/app', (req, res) => {
   res.sendFile(path.join(__dirname, './static/index.html'));
 });
@@ -41,7 +43,7 @@ app.get('/lessons', (req, res) => {
 app.get('/info', (req, res) => {
   res.sendFile(path.join(__dirname, './static/info.html'));
 });
-app.get('/go', (req, res) => {
+app.get('/edu', (req, res) => {
   res.sendFile(path.join(__dirname, './static/loading.html'));
 });
 app.get('/worker.js', (req, res) => {
@@ -60,20 +62,14 @@ app.use((req, res) => {
   res.sendFile(path.join(__dirname, './static/404.html'));
 });
 
-server.on('request', (req, res) => {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeRequest(req, res);
-  } else {
-    app(req, res);
-  }
+server.on("request", (req, res) => {
+  app(req, res);
 });
 
-server.on('upgrade', (req, socket, head) => {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeUpgrade(req, socket, head);
-  } else {
-    socket.end();
-  }
+server.on("upgrade", (req, socket, head) => {
+  if (req.url.endsWith("/wisp/")) {
+    wisp.routeRequest(req, socket, head);
+  } else socket.end();
 });
 
 server.on('listening', () => {

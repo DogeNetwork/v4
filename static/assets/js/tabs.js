@@ -35,10 +35,10 @@ function createIframe() {
 
     document.getElementById("iframe-container").appendChild(iframe);
 
-    // Create tab button
     const tabButton = document.createElement("button");
     tabButton.className = "btn btn-wide tab-button-container";
     tabButton.style.width = '92%';
+    tabButton.style.height = '48px';
     tabButton.style.backgroundColor = document.querySelector('.defaultTab').style.backgroundColor;
     tabButton.id = `tabButton-${iframeCount}`;
     tabButton.src = '';
@@ -79,6 +79,7 @@ function defaultTab() {
     defaultTabButton.id = "tabButton-1";
     defaultTabButton.innerHTML = `Default`;
     defaultTabButton.style.width = '92%';
+    defaultTabButton.style.height = '48px';
     defaultTabButton.onclick = function() {
         const currentIframe = document.getElementById("siteurl");
         if (currentIframe) {

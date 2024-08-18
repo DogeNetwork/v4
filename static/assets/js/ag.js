@@ -1,20 +1,11 @@
 function openAg(url, ag) {
   localStorage.setItem("currentAg", ag)
-  location.href = '/go?url=' + url;
+  location.href = '/edu?login=' + Ultraviolet.codec.base64.encode(url);
 }
-
-function openAgDy(url) {
-  location.href = '/search/route?url=' + url;
-}
-
-window.navigator.serviceWorker
-    .register("/sw.js", {
-      scope: "/search/",
-});
 
 /*apps*/
 function gpt() {
-  openAg('https://ub7.org');
+  openAg('https://julius.ai/ai-chatbot');
 }
 
 function nf() {
@@ -70,8 +61,7 @@ function twitch() {
 }
 
 function yt() {
-  alert(`Doge's URL bar will not be available for this app.\n\nClick "OK" to proceed.`)
-  openAgDy('https://youtube.com');
+  openAg('https://youtube.com');
 }
 
 function y8() {
@@ -83,7 +73,7 @@ function vscode() {
 }
 
 function sFlix() {
-  openAg('https://sflix.se');
+  openAg('https://vidstream.to');
 }
 
 function netflix() {
@@ -140,8 +130,8 @@ function p2048() {
 }
 
 function rbx() {
-  alert(`Note: Roblox should be working now, but if it still gives you an VPN/Proxy detection message, refresh it.`);
-  openAg('https://now.derpman.lol');
+  alert(`This app might not work as expected. Refresh the page if it detects a VPN.`);
+  openAg('https://educationbluesky.com/apps/roblox-corporation/5349/roblox.html');
 }
 
 function slope() {
@@ -235,7 +225,7 @@ function monkeyMart() {
 }
 
 function idleBreakout() {
-  openAg('https://html-classic.itch.zone/html/9150519/index.html');
+  openAg('https://www.onlinegames.io/games/2024/more/idle-breakout/index.html');
 }
 
 function motoX3M() {
@@ -281,8 +271,6 @@ function driveMad() {
 function stickManHook() {
   openAg('https://stickman-hook.io/iframe/index.html');
 }
-
-
 
 function stackBounce() {
   openAg('https://storage.googleapis.com/bento-developer-games/stackbounce/gameCode/index.html');

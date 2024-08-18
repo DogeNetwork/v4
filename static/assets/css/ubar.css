@@ -15,26 +15,25 @@
 }
 
 #urlBar input {
+  color: rgb(140,148,160);
+  background-color: transparent;
+  font-family: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   min-width: 10vw;
   height: 37px;
   width: calc(80vw + 20%);
   margin: 0 17px;
-  padding-left: 35px;
+  padding-left: 36px;
   padding-right: 20px;
   margin-right: 10px;
+  margin-left: 13px;
+  font-weight: 500;
   font-size: 14px;
+  border: 0.5px solid rgb(38,53,65);
+  border-radius: 10px;
 }
 
-iframe {
-    display: block;
-    border: none;
-    height: calc(100vh - 3.2em);
-    width: 100vw;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
+#urlBar input::placeholder {
+  color: rgb(140,148,160);
 }
 
 #siteurl {
@@ -58,25 +57,15 @@ iframe {
 #urlBar {
     display: flex;
     align-items: center;
-    padding: 8px;
+    padding: 6px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
   }
   
-  .searchBar {
-    min-width: 10vw;
-    height: 37px;
-    width: calc(80vw + 20%);
-    margin: 0 17px;
-    padding-left: 35px;
-    padding-right: 20px;
-    margin-right: 10px;
-    font-size: 14px;
-  }
-  
   button {
+    color: rgb(140,148,160);
     display: flex;
     float: left;
     margin-right: 3px;
@@ -107,8 +96,9 @@ iframe {
     display: none;
     position: fixed;
     margin-top: 40px;
+    height: 120px;
     right: 0;
-    height: 155px;
+    height: 90px;
     border-radius: 5px;
     width: 200px;
     box-shadow:
@@ -123,10 +113,82 @@ iframe {
   
   #menu button {
     width: 91%;
+    height: 30px;
+    background: transparent;
+    font-family: poppins;
+    font-weight: 800;
     border-radius: 3px;
     margin-left: 11px;
     margin-top: -16px;
     margin-bottom: 16px;
-    background: transparent;
     border: none;
+    transition: .1s ease-in-out;
   }
+
+  #menu button:hover {
+    transform: scale(0.97);
+    background-color: rgba(204, 204, 204, 0.062);
+  }
+
+  #menu button:active {
+    transform: scale(0.95);
+  }
+
+  #menu .icon {
+    margin-right: 6px;
+  }
+
+  .btn {
+    color: rgb(140,148,160);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.5;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+}
+.btn-ghost {
+    background-color: transparent;
+    border-color: transparent;
+    color: inherit;
+    box-shadow: none;
+}
+
+.btn-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.253);
+}
+
+.btn-ghost:active {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(0.9);
+}
+
+.btn-circle {
+    border-radius: 90px;
+    padding: 0.5rem;
+    color: rgb(140,148,160);
+    width: 2.5rem;
+    height: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-circle.btn-sm {
+    padding: 0.25rem;
+    width: 2rem;
+    height: 2rem;
+}

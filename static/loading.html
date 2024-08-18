@@ -6,9 +6,9 @@
   <link rel="icon" id="icon" href="/assets/img/doge.jpg">
   <link rel="stylesheet" href="/assets/css/app.css">
   <script src="/assets/js/anym.js"></script>
-  <title>Doge | V4</title>
+  <title>Classroom</title>
   <style>
-  .loader {
+  .spinner {
     width: 60px;
     height: 60px;
     border: 8px solid #FFF;
@@ -31,37 +31,13 @@
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
   <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
-  <script>
-    function getQueryParam(param) {
-      let urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
-    window.onload = function() {
-      let goParam = getQueryParam('url');
-      if (goParam) {
-        let url = goParam;
-        if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
-        else if (!(url.startsWith("https://") || url.startsWith("http://"))) url = "http://" + url;
-        localStorage.setItem("encodedUrl", __uv$config.encodeUrl(url));
-        window.navigator.serviceWorker.register("/sw.js", {
-          scope: "/service/",
-        });
-        location.href = '/loader.html';
-      }
-    }
-    
-    function isUrl(val = "") {
-      if (/^http(s?):\/\//.test(val) || (val.includes(".") && val.substr(0, 1) !== " ")) return true;
-      return false;
-    }
-  </script>
+  <script src="/assets/js/param.js"></script>
 </head>
 <body>
   <br>
   <div class="themesExcluded" style="justify-content: center;align-items: center;display: flex;height: 50vh;">
     <br>
-    <span class="loader"></span>
-    <h1 style="font-family:poppins;color:white;font-size:40px;">Processing request...</h1>
+    <span class="spinner"></span>
   </div>
   <script src="/assets/js/themes.js"></script>
   <script>

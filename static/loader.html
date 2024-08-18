@@ -1,41 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex">
   <link rel="icon" href="/assets/img/doge.jpg" />
   <link rel="stylesheet" href="/assets/css/ubar.css" />
   <link rel="stylesheet" href="/assets/css/tabs.css" />
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="/assets/js/anym.js"></script>
   <title>Doge | V4</title>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
-  <script>
-    window.onload = function () {
-        let encodedUrl = localStorage.getItem("encodedUrl");
-        encodedUrl = "/sv/" + encodedUrl;
-        document.querySelector("#siteurl").src = encodedUrl;
-        /* CK */
-        function rndNum() {
-            return Math.floor(Math.random() * 900) + 100;
-        }
-        function rndAbcString(length) {
-            const characters = "abcdefghijklmnopqrstuvw0123456789012345";
-            let result = "";
-            for (let i = 0; i < length; i++) {
-                result += characters.charAt(Math.floor(Math.random() * characters.length));
-            }
-            return result;
-        }
-        var randomThreeDigitNumber = rndNum();
-        var randomAlphanumericString = rndAbcString(5);
-        var url = "/student?auth=" + randomAlphanumericString;
-        var title = "Google Docs";
-
-        history.pushState({}, title, url);
-        live();
-    };
-</script>
+  <script src="/assets/js/preload.js"></script>
   <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
 </head>
 <body>
@@ -43,14 +17,14 @@
     <button class="btn btn-sm btn-ghost btn-circle" onclick="back()"><i data-lucide="chevron-left"></i></button>
     <button class="btn btn-sm btn-ghost btn-circle" onclick="forward()"><i data-lucide="chevron-right"></i></button>
     <button class="btn btn-sm btn-ghost btn-circle" onclick="reload()"><i data-lucide="rotate-cw" class="icon"></i></button>
-    <input type="text" placeholder="Search Google or type a URL" class="input input-bordered w-full max-w-xs searchBar" id="searchBar" style="outline:none;" />
-    <i data-lucide="search" class="search" style="width:15px;left:133px;"></i>
+    <input type="text" placeholder="Search Google or type a URL" class="input searchBar" id="searchBar" style="outline:none;" />
+    <i data-lucide="search" class="search" style="width:15px;left:133px;color:rgb(140,148,160);"></i>
     <button class="btn btn-sm btn-ghost btn-circle" id="tabs"><i data-lucide="folder" class="icon"></i></button>
     <button class="btn btn-sm btn-ghost btn-circle" onclick="openWindow()"><i data-lucide="square-arrow-out-up-right" class="icon"></i></button>
     <button class="btn btn-sm btn-ghost btn-circle" id="more"><i data-lucide="menu" class="icon"></i></button>
   </div>
   <div id="menu">
-    <button class="btn btn-sm" onclick="exit()" style="margin-top:-46px;"><i data-lucide="house" class="icon" style="margin-right:-3px;width:17px;"></i>Return</button>
+    <button class="btn btn-sm" onclick="exit()" style="margin-top:-46px;"><i data-lucide="house" class="icon" style="width:17px;"></i>Return</button>
     <button class="btn btn-sm" onclick="hideBar()"><i data-lucide="eye-off" class="icon"></i>Hide Bar</button>
     <button class="btn btn-sm" onclick="toggleFs()"><i data-lucide="minimize" class="icon"></i>Fullscreen</button>
     <button class="btn btn-sm" onclick="devTools()"><i data-lucide="terminal" class="icon"></i>DevTools</button>
@@ -64,10 +38,10 @@
     <iframe src="loading.html" id="loader" title="Loading.." style="display:block"></iframe>
     <iframe src="" id="siteurl" title="tab1" class="first"></iframe>
   </div>
-  <script src="/wk/wk2.js"></script>
+  <script src="/baremux/index.js"></script>
+  <script src="/uv/uv.bundle.js"></script>
   <script src="/assets/js/themes.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="/assets/js/main.js"></script>
   <script src="/assets/js/loader.js"></script>
   <script src="/assets/js/tabs.js"></script>
   <script>

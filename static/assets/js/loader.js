@@ -7,36 +7,25 @@ const frame = document.getElementById('siteurl');
 var selectedTheme = localStorage.getItem('selectedOption');
 searchBar.value = Ultraviolet.codec.xor.decode(localStorage.getItem('encodedUrl'));
 lucide.createIcons();
-if (selectedTheme === 'deepsea') {
-  searchBar.style.background = "rgb(6, 22, 35)";
+const themeStyles = {
+  deepsea: { background: "rgb(6, 22, 35)" },
+  equinox: { backgroundImage: "url('/assets/img/topographic_splash.webp')" },
+  swamp: { background: "rgb(12, 43, 22)" },
+  ocean: { background: "rgb(2, 59, 57)" },
+  starry: { background: "rgb(63, 3, 53)" },
+  magma: { background: "rgb(31, 26, 26)" },
+  sunset: { background: "rgb(29, 21, 27)" },
+  midnight: { background: "rgb(27, 27, 27)" },
+  default: { background: "rgb(6, 22, 35)" }
+};
+const selectedStyle = themeStyles[selectedTheme] || themeStyles.default;
+if (selectedStyle.background) {
+  searchBar.style.background = selectedStyle.background;
 }
-else if (selectedTheme === 'equinox') {
-  urlBar.style.backgroundImage = "url('/assets/img/topographic_splash.webp')";
+if (selectedStyle.backgroundImage) {
+  urlBar.style.backgroundImage = selectedStyle.backgroundImage;
 }
-else if (selectedTheme === 'swamp') {
-  searchBar.style.background = "rgb(12, 43, 22)";
-}
-else if (selectedTheme === 'ocean') {
-  searchBar.style.background = "rgb(2, 59, 57)";;
-}
-else if (selectedTheme === 'starry') {
-  searchBar.style.background = "rgb(63, 3, 53)";
-}
-else if (selectedTheme === 'magma') {
-  searchBar.style.background = "rgb(31, 26, 26)";
-}
-else if (selectedTheme === 'sunset') {
-  searchBar.style.background = "rgb(29, 21, 27)";
-}
-else if (selectedTheme === 'midnight') {
-  searchBar.style.background = "rgb(27, 27, 27)";
-}
-else if (selectedTheme === null) {
-  searchBar.style.background = "rgb(6, 22, 35)";
-}
-else {
-  searchBar.style.background = "rgb(6, 22, 35)";
-}
+
 document.getElementById('tabs').addEventListener('click', function() {
   sidebar.style.display = sidebar.style.display === "block" ? "none" : "block";
   if (sidebar.style.display === 'block') {
@@ -54,10 +43,10 @@ searchBar.addEventListener("keydown", function() {
     var inputUrl = searchBar.value.trim();
     searchBar.blur();
     if (/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(inputUrl)) {
-      document.getElementById('siteurl').src = '/sv/' + Ultraviolet.codec.xor.encode(inputUrl);
+      document.getElementById('siteurl').src = '/service/' + Ultraviolet.codec.xor.encode(inputUrl);
     }
     else {
-      document.getElementById('siteurl').src = '/sv/' + Ultraviolet.codec.xor.encode(inputUrl.includes('.') ? 'https://' + inputUrl : 'https://www.google.com/search?q=' + encodeURIComponent(inputUrl));
+      document.getElementById('siteurl').src = '/service/' + Ultraviolet.codec.xor.encode(inputUrl.includes('.') ? 'https://' + inputUrl : 'https://www.google.com/search?q=' + encodeURIComponent(inputUrl));
     }
   }
 });
@@ -65,16 +54,14 @@ setTimeout(function() {
   var searchBarValue = document.getElementById('searchBar').value;
   if (searchBarValue.startsWith('https://')) {
     localStorage.setItem('encodedUrl', Ultraviolet.codec.xor.encode(searchBarValue));
-  }
-  else {
-    console.log('Blank URL, not saving');
+  } else {
+    // Blank URL, not saving
   }
 }, 60000);
 // Save URL every 60 seconds
 function forward() {
   frame.contentWindow.history.go(1);
 }
-
 function back() {
   frame.contentWindow.history.go(-1);
   setTimeout(() => {
@@ -124,7 +111,7 @@ function openWindow() {
   iframe.style.width = "100%";
   iframe.style.height = "100%";
   iframe.style.margin = "0";
-  iframe.src = 'https://' + window.location.hostname + __uv$config.prefix + Ultraviolet.codec.xor.encode(document.getElementById('searchBar').value);
+  iframe.src = 'https://' + window.location.hostname + '/service/' + Ultraviolet.codec.xor.encode(document.getElementById('searchBar').value);
   win.document.body.appendChild(iframe);
 }
 
@@ -153,7 +140,7 @@ function decode(url) {
   else if (url === 'welcome.html' || url === 'https://beta.derpman.lol/welcome.html') {
     return ''
   }
-  var uvPrefix = '/sv/';
+  var uvPrefix = '/service/';
   const uvIndex = url.indexOf(uvPrefix);
   const encodedPart = uvIndex !== -1 ? url.substring(uvIndex + uvPrefix.length) : url;
   try {

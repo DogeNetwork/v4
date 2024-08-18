@@ -22,11 +22,8 @@ function loadCSS(href, callback) {
   document.head.appendChild(link);
 }
 if(window.location.pathname !== "/settings.html") {
-  loadScript("/wk/wk2.js", function() {
-    loadScript("/wk/wk3.js", function() {
-      window.navigator.serviceWorker.register("/sw.js", {
-        scope: __uv$config.prefix,
-      });
+  loadScript("/uv/uv.bundle.js", function() {
+    loadScript("/uv/uv.config.js", function() {
       console.log("[✔️] UV Loaded");
     });
   });

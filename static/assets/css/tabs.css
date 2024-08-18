@@ -20,13 +20,21 @@
   .tab-button-container {
     position: relative;
     margin-top: 6px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 15px;
     display: flex;
     align-items: center;
     align-self: center;
+    font-family: poppins;
+    font-weight: 600;
     cursor: pointer;
     box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.116);
+    transition: .2s ease-in-out;
+  }
+
+  .tab-button-container:active {
+    transform: scale(0.96);
   }
   
   .tab-button-container i {
@@ -39,7 +47,7 @@
   
   .tab-close {
     position: absolute;
-    top: 5px;
+    top: 1px;
     right: 5px;
     cursor: pointer;
   }

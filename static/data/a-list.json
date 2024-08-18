@@ -5,7 +5,7 @@
     "onClick": "google"
   },
   {
-    "name": "ChatGPT",
+    "name": "JuliusAI",
     "imageUrl": "/assets/img/gpt.webp",
     "onClick": "gpt"
   },
@@ -86,7 +86,7 @@
     "onClick": "netflix"
   },
   {
-    "name": "SFlix",
+    "name": "SFlix Movies",
     "imageUrl": "/assets/img/sflix.webp",
     "onClick": "sFlix"
   },
