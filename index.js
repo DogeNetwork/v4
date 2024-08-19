@@ -1,20 +1,18 @@
 import express from 'express';
 import http from 'node:http';
 import path from 'node:path';
-import { createBareServer } from "@tomphttp/bare-server-node";
-import { bareModulePath } from "@mercuryworkshop/bare-as-module3";
+import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
+import wisp from "wisp-server-node";
 import request from '@cypress/request';
 import chalk from 'chalk';
 import packageJson from './package.json' assert { type: 'json' };
-// Removed libcurl and replaced it with Bare
-// For some reason using Bare is faster (Isn't bare supposed to suck)
+
 const __dirname = path.resolve();
 const server = http.createServer();
 const app = express(server);
 const version = packageJson.version;
 const discord = 'https://discord.gg/unblocking';
-const bareServer = createBareServer("/bear/");
 
 app.use(express.json());
 app.use(
@@ -23,8 +21,8 @@ app.use(
   })
 );
 
+app.use("/libcurl/", express.static(libcurlPath));
 app.use("/baremux/", express.static(baremuxPath));
-app.use("/baremod/", express.static(bareModulePath));
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/app', (req, res) => {
@@ -65,19 +63,13 @@ app.use((req, res) => {
 });
 
 server.on("request", (req, res) => {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeRequest(req, res);
-  } else {
-    app(req, res);
-  }
+  app(req, res);
 });
 
 server.on("upgrade", (req, socket, head) => {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeUpgrade(req, socket, head);
-  } else {
-    socket.end();
-  }
+  if (req.url.endsWith("/wisp/")) {
+    wisp.routeRequest(req, socket, head);
+  } else socket.end();
 });
 
 server.on('listening', () => {

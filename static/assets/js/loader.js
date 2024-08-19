@@ -137,7 +137,7 @@ function decode(url) {
   if (url === 'about:blank' || url === 'welcome.html') {
     return ''
   }
-  else if (url === 'welcome.html' || url === 'https://' + location.hostname + '/welcome.html') {
+  else if (url === 'welcome.html' || url === 'https://beta.derpman.lol/welcome.html') {
     return ''
   }
   var uvPrefix = '/service/';
