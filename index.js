@@ -1,7 +1,7 @@
 import express from 'express';
 import http from 'node:http';
 import path from 'node:path';
-import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
+import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 import wisp from "wisp-server-node";
 import request from '@cypress/request';
@@ -21,7 +21,7 @@ app.use(
   })
 );
 
-app.use("/libcurl/", express.static(libcurlPath));
+app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
 app.use(express.static(path.join(__dirname, 'static')));
 
@@ -103,5 +103,5 @@ process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('SIGINT', () => shutdown('SIGINT'));
 
 server.listen({
-  port: 8000,
+  port: 8001,
 });
