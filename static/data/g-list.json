@@ -256,6 +256,12 @@
       "imageUrl": "/assets/img/there-is-no-gms.webp",
       "onClick": "thereIsNoGame",
       "height": 135
+    },
+    {
+      "name": "Mario Party",
+      "imageUrl": "/assets/img/marioparty.jpg",
+      "onClick": "marioparty",
+      "height": 135
     }
   ]
 }
