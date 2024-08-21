@@ -307,3 +307,7 @@ function crowdRun3d() {
 function worldsHardestGm() {
   openAg('https://assets.surfdoge.pro/assets/worldshardestgm.html');
 }
+
+function marioparty() {
+  openAg('https://classwork-heaven.pages.dev/marioparty');
+}
