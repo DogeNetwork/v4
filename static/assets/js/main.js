@@ -21,13 +21,7 @@ function loadCSS(href, callback) {
   }
   document.head.appendChild(link);
 }
-if(window.location.pathname !== "/settings.html") {
-  loadScript("/uv/uv.bundle.js", function() {
-    loadScript("/uv/uv.config.js", function() {
-      console.log("[✔️] UV Loaded");
-    });
-  });
-}
+
 loadCSS('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css', function() {
   console.log('[✔️] Bootstrap icons');
 });
