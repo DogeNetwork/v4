@@ -1,5 +1,6 @@
 window.onload = function() {
 	let scope;
+	const vercelCheck = localStorage.getItem('isVercel');
 	const swAllowedHostnames = ["localhost", "127.0.0.1"];
 	const wispUrl = (location.protocol === "https:" ? "wss" : "ws") + "://" + location.host + "/wisp/";
 	const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
@@ -30,10 +31,14 @@ window.onload = function() {
 		const domains = await fetchDomains();
 		const domainRegex = createDomainRegex(domains);
 		const searchValue = Ultraviolet.codec.xor.decode(localStorage.getItem("encodedUrl"));
-		if (domainRegex.test(searchValue)) {
-			scope = '/sv/';
+		if (vercelCheck !== 'true') {
+			if (domainRegex.test(searchValue)) {
+				scope = '/sv/';
+			} else {
+				scope = '/service/';
+			}
 		} else {
-			scope = '/service/';
+			scope = '/sv/';
 		}
 		let encodedUrl = localStorage.getItem("encodedUrl");
 		encodedUrl = scope + encodedUrl;
