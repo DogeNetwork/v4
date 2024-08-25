@@ -15,8 +15,12 @@ async function registerSW() {
   }
 
   await connection.setTransport("/epoxy/index.mjs", [{ wisp: wispUrl }]);
-  await navigator.serviceWorker.register(stockSW);
-
+  await window.navigator.serviceWorker.register("/sw.js", {
+    scope: '/service/',
+  });
+  await window.navigator.serviceWorker.register("/oldsw.js", {
+    scope: '/sv/',
+  });
 }
 
 registerSW();

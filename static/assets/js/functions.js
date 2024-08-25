@@ -197,7 +197,7 @@ function visitSite() {
   if (checkHistory) {
     location.href = "/go?url=" + checkHistory;
   } else {
-    alert("Could not find a previously proxified site, visit a site first!");
+    alert("Could not find a previously saved site, visit a site first!");
   }
 }
 
@@ -205,7 +205,12 @@ if (window.location.protocol === "http:") {
   window.location.href = window.location.href.replace("http:", "https:");
 }
 
+var domain = window.location.hostname;
+if (domain.endsWith('vercel.app')) {
+    localStorage.setItem('isVercel', 'true');
+}
+
 console.log(
-  "%cJoin our Discord! discord.gg/unblocking",
-  "color: cyan; font-size: 20px"
+  "%cCyborgEDU (Student Pack) v32.537.2.11",
+  "color: yellow; font-size: 16px"
 );

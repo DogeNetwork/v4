@@ -45,7 +45,7 @@ function reddit() {
 }
 
 function spotify() {
-  openAg('https://spotify.com');
+  openAg('https://accounts.spotify.com/login');
 }
 
 function tt() {

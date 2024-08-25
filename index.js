@@ -3,6 +3,7 @@ import http from 'node:http';
 import path from 'node:path';
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
+import { createBareServer } from "@tomphttp/bare-server-node";
 import wisp from "wisp-server-node";
 import request from '@cypress/request';
 import chalk from 'chalk';
@@ -10,9 +11,19 @@ import packageJson from './package.json' assert { type: 'json' };
 
 const __dirname = path.resolve();
 const server = http.createServer();
+const bareServer = createBareServer('/bear/');
 const app = express(server);
 const version = packageJson.version;
 const discord = 'https://discord.gg/unblocking';
+const routes = [
+  { route: '/app', file: './static/index.html' },
+  { route: '/portal', file: './static/loader.html' },
+  { route: '/apps', file: './static/apps.html' },
+  { route: '/gms', file: './static/gms.html' },
+  { route: '/lessons', file: './static/agloader.html' },
+  { route: '/info', file: './static/info.html' },
+  { route: '/edu', file: './static/loading.html' }
+];
 
 app.use(express.json());
 app.use(
@@ -25,27 +36,16 @@ app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
 app.use(express.static(path.join(__dirname, 'static')));
 
-app.get('/app', (req, res) => {
-  res.sendFile(path.join(__dirname, './static/index.html'));
+routes.forEach(({ route, file }) => {
+  app.get(route, (req, res) => {
+    res.sendFile(path.join(__dirname, file));
+  });
 });
+
 app.get('/student', (req, res) => {
-  res.sendFile(path.join(__dirname, './static/loader.html'));
+  res.redirect('/portal');
 });
-app.get('/apps', (req, res) => {
-  res.sendFile(path.join(__dirname, './static/apps.html'));
-});
-app.get('/gms', (req, res) => {
-  res.sendFile(path.join(__dirname, './static/gms.html'));
-});
-app.get('/lessons', (req, res) => {
-  res.sendFile(path.join(__dirname, './static/agloader.html'));
-});
-app.get('/info', (req, res) => {
-  res.sendFile(path.join(__dirname, './static/info.html'));
-});
-app.get('/edu', (req, res) => {
-  res.sendFile(path.join(__dirname, './static/loading.html'));
-});
+
 app.get('/worker.js', (req, res) => {
   request('https://cdn.surfdoge.pro/worker.js', (error, response, body) => {
     if (!error && response.statusCode === 200) {
@@ -63,11 +63,14 @@ app.use((req, res) => {
 });
 
 server.on("request", (req, res) => {
-  app(req, res);
+  if (bareServer.shouldRoute(req)) {
+    bareServer.routeRequest(req, res);
+  } else app(req, res);
 });
-
 server.on("upgrade", (req, socket, head) => {
-  if (req.url.endsWith("/wisp/")) {
+  if (bareServer.shouldRoute(req)) {
+    bareServer.routeUpgrade(req, socket, head);
+  } else if (req.url.endsWith("/wisp/")) {
     wisp.routeRequest(req, socket, head);
   } else socket.end();
 });

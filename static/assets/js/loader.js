@@ -1,12 +1,15 @@
-let devToolsLoaded = 0;
+let scope;
 const searchBar = document.querySelector(".input");
 const urlBar = document.querySelector('#urlBar');
 const sideBar = document.getElementById("sidebar");
 const menu = document.getElementById('menu');
 const frame = document.getElementById('siteurl');
-var selectedTheme = localStorage.getItem('selectedOption');
+const selectedTheme = localStorage.getItem('selectedOption');
+const vercelCheck = localStorage.getItem('isVercel');
+
 searchBar.value = Ultraviolet.codec.xor.decode(localStorage.getItem('encodedUrl'));
 lucide.createIcons();
+
 const themeStyles = {
   deepsea: { background: "rgb(6, 22, 35)" },
   equinox: { backgroundImage: "url('/assets/img/topographic_splash.webp')" },
@@ -18,6 +21,7 @@ const themeStyles = {
   midnight: { background: "rgb(27, 27, 27)" },
   default: { background: "rgb(6, 22, 35)" }
 };
+
 const selectedStyle = themeStyles[selectedTheme] || themeStyles.default;
 if (selectedStyle.background) {
   searchBar.style.background = selectedStyle.background;
@@ -27,49 +31,76 @@ if (selectedStyle.backgroundImage) {
 }
 
 document.getElementById('tabs').addEventListener('click', function() {
-  sidebar.style.display = sidebar.style.display === "block" ? "none" : "block";
-  if (sidebar.style.display === 'block') {
+  sideBar.style.display = sideBar.style.display === "block" ? "none" : "block";
+  if (sideBar.style.display === 'block') {
     menu.style.display = 'none';
   }
 });
 document.getElementById('more').addEventListener('click', function() {
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-  if (menu.style.display === 'block') {
-    document.getElementById('sidebar').style.display = 'none';
-  }
+	menu.style.display = menu.style.display === "block" ? "none" : "block";
+	if (menu.style.display === 'block') {
+		sideBar.style.display = 'none';
+	}
 });
-searchBar.addEventListener("keydown", function() {
-  if (event.key === 'Enter') {
-    var inputUrl = searchBar.value.trim();
-    searchBar.blur();
-    if (/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(inputUrl)) {
-      document.getElementById('siteurl').src = '/service/' + Ultraviolet.codec.xor.encode(inputUrl);
-    }
-    else {
-      document.getElementById('siteurl').src = '/service/' + Ultraviolet.codec.xor.encode(inputUrl.includes('.') ? 'https://' + inputUrl : 'https://www.google.com/search?q=' + encodeURIComponent(inputUrl));
-    }
-  }
+
+function fetchDomains() {
+	return fetch('/data/b-list.json').then(response => response.json()).then(data => data.domains).catch(error => {
+		console.error('Error fetching domains:', error);
+		return []; // ADds a promise so scope can work
+	});
+}
+
+function createDomainRegex(domains) {
+	const escapedDomains = domains.map(domain => domain.replace(/\./g, '\\.'));
+	return new RegExp(escapedDomains.join('|') + '(?=[/\\s]|$)', 'i');
+}
+
+searchBar.addEventListener("keydown", function(event) {
+	if (event.key === 'Enter') {
+		var inputUrl = searchBar.value.trim();
+		searchBar.blur();
+		fetchDomains().then(domains => {
+			const domainRegex = createDomainRegex(domains);
+			const searchValue = searchBar.value.trim();
+			if (vercelCheck !== 'true') {
+				if (domainRegex.test(searchValue)) {
+					scope = '/sv/';
+				} else {
+					scope = '/service/';
+				}
+			} else {
+				scope = '/sv/';
+				// serverless = no websocket support
+			}
+			if (/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(inputUrl)) {
+				document.getElementById('siteurl').src = scope + Ultraviolet.codec.xor.encode(inputUrl);
+			} else {
+				document.getElementById('siteurl').src = scope + Ultraviolet.codec.xor.encode(inputUrl.includes('.') ? 'https://' + inputUrl : 'https://www.google.com/search?q=' + encodeURIComponent(inputUrl));
+			}
+		});
+	}
 });
 setTimeout(function() {
-  var searchBarValue = document.getElementById('searchBar').value;
-  if (searchBarValue.startsWith('https://')) {
-    localStorage.setItem('encodedUrl', Ultraviolet.codec.xor.encode(searchBarValue));
-  } else {
-    // Blank URL, not saving
-  }
+	var searchBarValue = document.getElementById('searchBar').value;
+	if (searchBarValue.startsWith('https://')) {
+		localStorage.setItem('encodedUrl', Ultraviolet.codec.xor.encode(searchBarValue));
+	} else {
+		// Blank URL, not saving
+	}
 }, 60000);
 // Save URL every 60 seconds
 function forward() {
-  frame.contentWindow.history.go(1);
+	frame.contentWindow.history.go(1);
 }
+
 function back() {
-  frame.contentWindow.history.go(-1);
-  setTimeout(() => {
-    const currentSrc = frame.contentWindow.location.pathname;
-    if (currentSrc === '/loading.html') {
-      forward();
-    }
-  }, 500);
+	frame.contentWindow.history.go(-1);
+	setTimeout(() => {
+		const currentSrc = frame.contentWindow.location.pathname;
+		if (currentSrc === '/loading.html') {
+			forward();
+		}
+	}, 500);
 }
 
 function reload() {
@@ -135,23 +166,32 @@ function hideBar() {
 
 function decode(url) {
   if (url === 'about:blank' || url === 'welcome.html') {
-    return ''
+    return '';
   }
   else if (url === 'welcome.html' || url === 'https://' + location.hostname + '/welcome.html') {
-    return ''
+    return '';
   }
-  var uvPrefix = '/service/';
-  const uvIndex = url.indexOf(uvPrefix);
-  const encodedPart = uvIndex !== -1 ? url.substring(uvIndex + uvPrefix.length) : url;
-  try {
-    const decodedPart = Ultraviolet.codec.xor.decode(encodedPart);
-    return decodedPart;
+
+  var prefixes = ['/service/', '/sv/'];
+  let decodedPart = null;
+
+  for (let prefix of prefixes) {
+    const uvIndex = url.indexOf(prefix);
+    if (uvIndex !== -1) {
+      const encodedPart = url.substring(uvIndex + prefix.length);
+      try {
+        decodedPart = Ultraviolet.codec.xor.decode(encodedPart);
+        break; // Exit the loop once we find a valid prefix
+      } catch (error) {
+        console.error('Error decoding the URL part:', error);
+        return null;
+      }
+    }
   }
-  catch (error) {
-    console.error('Error decoding the URL part:', error);
-    return null;
-  }
+
+  return decodedPart;
 }
+
 
 function updateSearch() {
   var url = decode(document.getElementById('siteurl').src);

@@ -3,8 +3,8 @@ const input = document.querySelector("input");
 const remove = document.querySelectorAll('body > :not(#particles-js)');
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  window.navigator.serviceWorker.register("/sw.js", {
-    scope: __uv$config.prefix,
+  window.navigator.serviceWorker.register("/oldsw.js", {
+    scope: '/sv/',
   }).then(() => {
     let url = input.value.trim();
     if (!isUrl(url)) url = "https://www.google.com/search?q=" + url;
@@ -13,7 +13,7 @@ form.addEventListener("submit", async (event) => {
     remove.forEach(element => {
       element.remove();
     });
-    location.href = "/student";
+    location.href = "/portal";
   });
 });
 
