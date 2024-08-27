@@ -27,7 +27,7 @@ loadCSS('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icon
 });
 if(window.location.pathname === "/index.html" || window.location.pathname === "/") {
   console.log("[✔️] Index.html");
-  const options = ["Right-Click to access more features", "Set a custom background in settings.", "Tab Cloaking is highly recommended", "About:Blank Cloak is highly recommended", "The #1 site unblocker, with 90K users daily", "The #1 site unblocker, with 90K users daily", "Finally, an actual site unblocker that works fast!", "Do not share this link with anyone.", "Join our community at discord.gg/unblocking", "Join our community at discord.gg/unblocking", "© Copyright 2024 Doge Network. All Rights Reserved.", "Customize Doge by going to Settings > Themes", "Want more links? Our Discord provides tons of links!", "Want more links? Our Discord provides tons of links!", "Want more links? Our Discord provides tons of links!", ];
+  const options = ["Right-Click to access more features", "Set a custom background in settings.", "Tab Cloaking is highly recommended", "About:Blank Cloak is highly recommended", "This site was originally created as a joke", "Hosted on the best hardware!", "Do not share this link with anyone.", "Join our Discord for more cool things!", "Join our Discord for more cool things!", "© Copyright 2024 Doge Network. All Rights Reserved.", "Customize Doge by going to Settings > Themes", "Want more links? Our Discord provides tons of links!", "Want more links? Our Discord provides tons of links!", "Want more links? Our Discord provides tons of links!", ];
 
   function getRandomOption() {
     const randomNumber = Math.floor(Math.random() * options.length);
@@ -39,12 +39,12 @@ if(window.location.pathname === "/index.html" || window.location.pathname === "/
     placeholder.textContent = getRandomOption();
   }
   setRandomPlaceholder();
-  var proxybar = document.querySelector(".proxybar");
+  var bar = document.querySelector(".browse-input");
   var search = document.getElementById("search");
-  proxybar.addEventListener("focus", () => {
+  bar.addEventListener("focus", () => {
     search.style.marginLeft = "-367px";
   });
-  proxybar.addEventListener("blur", () => {
+  browse-input.addEventListener("blur", () => {
     search.style.marginLeft = "-150px";
   });
   const img = document.createElement('img');

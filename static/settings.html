@@ -18,9 +18,9 @@
 <body>
   <div id="contextMenu" class="context-menu themesExcluded" style="--ripple-duration: 300ms;"><div class="context-menu-item with-submenu themesExcluded" id="contextItem" anim="ripple" onclick="toggleSubmenu(event)"><i class="bi bi-file-spreadsheet"></i> Tab Cloak</div><div class="context-submenu themesExcluded" id="contextItem"><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="tabCloak()">Enable</div><div class="context-menu-item themesExcluded" anim="ripple" onclick="disableTabCloak()">Disable</div></div><div class="context-menu-item themesExcluded" id="contextItem" onclick="visitSite()"><i class="bi bi-clock-history"></i> Last Visited Site</div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openWindow()"><i class="bi bi-box-arrow-up-right"></i> About:Blank Cloak</div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openSettings()"><i class="bi bi-gear"></i> View all Settings</div></div>
   <nav id="mytopnav">
-    <button class="button-6 active" anim="ripple"><i class="bi bi-gear" style="font-size:30px;"></i>Settings</button>
-    <button class="button-6" anim="ripple" onclick="send('/gms')"><i class="bi bi-joystick" style="font-size:30px;"></i>Games</button>
-    <button class="button-6" anim="ripple" onclick="send('/apps')"><i class="bi bi-grid-fill" style="font-size:30px;"></i>Apps</button><br>
+    <button class="btn-main active" anim="ripple"><i class="bi bi-gear" style="font-size:30px;"></i>Settings</button>
+    <button class="btn-main" anim="ripple" onclick="send('/gms')"><i class="bi bi-joystick" style="font-size:30px;"></i>Games</button>
+    <button class="btn-main" anim="ripple" onclick="send('/apps')"><i class="bi bi-grid-fill" style="font-size:30px;"></i>Apps</button><br>
     <a href="/" class="title" anim="ripple"><img src="/assets/img/doge.jpg" style="width:22px;height:22px;" id="logo"> Doge Unblocker</a>    
   </nav>
 <br>
@@ -87,8 +87,8 @@
     <input id="panicPopup-input" class="popupInput" placeholder="Set a key" onclick="detectKey()">
     <p style="font-size:13px;">Warning: Make sure to set a unique key, otherwise you may accidently press it.</p>
     <p id="pkErrorMessage" style="display:none;font-size:13px;color:red;">Please enter a key.</p><br>
-    <button anim="ripple" onclick="savePK()" class="button-6">Save</button>
-    <button anim="ripple" onclick="closePK()" class="button-6">Cancel</button>
+    <button anim="ripple" onclick="savePK()" class="btn-main">Save</button>
+    <button anim="ripple" onclick="closePK()" class="btn-main">Cancel</button>
   </div>
 </div>
 <div id="backgroundPopup" class="themesExcluded">
@@ -97,8 +97,8 @@
       <input type="text" id="backgroundPopup-input" class="popupInput" placeholder="Background URL">
       <p style="font-size:13px;">Please include "https://" in your URL.</p>
       <p id="bgErrorMessage" style="display:none;font-size:13px;color:red;">Please enter a valid link.</p><br>
-      <button anim="ripple" onclick="saveBackground()" class="button-6">Save</button>
-      <button anim="ripple" onclick="closeBackgroundPopup()" class="button-6">Cancel</button>
+      <button anim="ripple" onclick="saveBackground()" class="btn-main">Save</button>
+      <button anim="ripple" onclick="closeBackgroundPopup()" class="btn-main">Cancel</button>
   </div>
 </div>
 <script src="/assets/js/themes.js?v=1.4"></script>
