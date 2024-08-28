@@ -44,7 +44,7 @@ if(window.location.pathname === "/index.html" || window.location.pathname === "/
   bar.addEventListener("focus", () => {
     search.style.marginLeft = "-367px";
   });
-  browse-input.addEventListener("blur", () => {
+  bar.addEventListener("blur", () => {
     search.style.marginLeft = "-150px";
   });
   const img = document.createElement('img');
