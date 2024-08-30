@@ -9,21 +9,16 @@ const vercelCheck = localStorage.getItem('isVercel');
 var leaveConf = localStorage.getItem("leaveConfirmation");
 
 if (leaveConf === "enabled") {
-    // Immediately set up the onbeforeunload handler
     window.onbeforeunload = function (e) {
         const confirmationMessage = "Are you sure you want to leave this page?";
-        (e || window.event).returnValue = confirmationMessage; // Required for some browsers
-        return confirmationMessage; // Required for others
+        (e || window.event).returnValue = confirmationMessage;
+        return confirmationMessage;
     };
 
-    // Optional: Slight delay to ensure the handler is recognized by the browser
     setTimeout(() => {
-        // Engage the onbeforeunload event even if there's no user interaction
         console.log('onbeforeunload handler engaged after page load.');
     }, 500);
 }
-
-
 
 searchBar.value = Ultraviolet.codec.xor.decode(localStorage.getItem('encodedUrl'));
 lucide.createIcons();
@@ -205,7 +200,6 @@ function decode(url) {
       }
     }
   }
-
   return decodedPart;
 }
 
