@@ -4,6 +4,7 @@ import path from 'node:path';
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 import { createBareServer } from "@tomphttp/bare-server-node";
+import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import wisp from "wisp-server-node";
 import request from '@cypress/request';
 import chalk from 'chalk';
@@ -32,9 +33,10 @@ app.use(
   })
 );
 
+app.use(express.static(path.join(__dirname, 'static')));
+app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
-app.use(express.static(path.join(__dirname, 'static')));
 
 routes.forEach(({ route, file }) => {
   app.get(route, (req, res) => {
