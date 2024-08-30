@@ -4,6 +4,14 @@ window.onload = function() {
 	const swAllowedHostnames = ["localhost", "127.0.0.1"];
 	const wispUrl = (location.protocol === "https:" ? "wss" : "ws") + "://" + location.host + "/wisp/";
 	const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
+	function isMobile() {
+		const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+		 if (/iPhone|iPad|iPod|android|Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
+			return true;
+		 }
+		return false;
+	}
+
 	async function registerSW() {
 		if (!navigator.serviceWorker) {
 			if (location.protocol !== "https:" && !swAllowedHostnames.includes(location.hostname)) throw new Error("Service workers cannot be registered without https.");
@@ -31,7 +39,10 @@ window.onload = function() {
 		const domains = await fetchDomains();
 		const domainRegex = createDomainRegex(domains);
 		const searchValue = Ultraviolet.codec.xor.decode(localStorage.getItem("encodedUrl"));
-		if (vercelCheck !== 'true') {
+		
+		if (isMobile()) {
+			scope = '/sv/';
+		} else if (!vercelCheck) {
 			if (domainRegex.test(searchValue)) {
 				scope = '/sv/';
 			} else {
@@ -40,6 +51,7 @@ window.onload = function() {
 		} else {
 			scope = '/sv/';
 		}
+		
 		let encodedUrl = localStorage.getItem("encodedUrl");
 		encodedUrl = scope + encodedUrl;
 		document.querySelector("#siteurl").src = encodedUrl;

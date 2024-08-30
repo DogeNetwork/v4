@@ -6,6 +6,24 @@ const menu = document.getElementById('menu');
 const frame = document.getElementById('siteurl');
 const selectedTheme = localStorage.getItem('selectedOption');
 const vercelCheck = localStorage.getItem('isVercel');
+var leaveConf = localStorage.getItem("leaveConfirmation");
+
+if (leaveConf === "enabled") {
+    // Immediately set up the onbeforeunload handler
+    window.onbeforeunload = function (e) {
+        const confirmationMessage = "Are you sure you want to leave this page?";
+        (e || window.event).returnValue = confirmationMessage; // Required for some browsers
+        return confirmationMessage; // Required for others
+    };
+
+    // Optional: Slight delay to ensure the handler is recognized by the browser
+    setTimeout(() => {
+        // Engage the onbeforeunload event even if there's no user interaction
+        console.log('onbeforeunload handler engaged after page load.');
+    }, 500);
+}
+
+
 
 searchBar.value = Ultraviolet.codec.xor.decode(localStorage.getItem('encodedUrl'));
 lucide.createIcons();
@@ -14,7 +32,6 @@ const themeStyles = {
   deepsea: { background: "rgb(6, 22, 35)" },
   equinox: { backgroundImage: "url('/assets/img/topographic_splash.webp')" },
   swamp: { background: "rgb(12, 43, 22)" },
-  ocean: { background: "rgb(2, 59, 57)" },
   starry: { background: "rgb(63, 3, 53)" },
   magma: { background: "rgb(31, 26, 26)" },
   sunset: { background: "rgb(29, 21, 27)" },
@@ -142,7 +159,7 @@ function openWindow() {
   iframe.style.width = "100%";
   iframe.style.height = "100%";
   iframe.style.margin = "0";
-  iframe.src = 'https://' + window.location.hostname + '/service/' + Ultraviolet.codec.xor.encode(document.getElementById('searchBar').value);
+  iframe.src = 'https://' + window.location.hostname + scope + Ultraviolet.codec.xor.encode(document.getElementById('searchBar').value);
   win.document.body.appendChild(iframe);
 }
 
@@ -237,6 +254,60 @@ function toggleFs() {
     menu.style.display = 'none';
   }
 }
+
+function handleOpen(url) {
+  const newWindow = window.open('about:blank', '_blank');
+  if (newWindow) {
+    newWindow.document.open();
+    newWindow.document.write(`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Genesis Quick Login</title>
+        <style>
+          body { margin: 0; height: 100vh; }
+          iframe { border: none; width: 100%; height: 100%; margin: 0; }
+        </style>
+      </head>
+      <body>
+        <iframe src="${'https://' + window.location.hostname + '/sv/' + Ultraviolet.codec.xor.encode(url)}" frameborder="0"></iframe>
+      </body>
+      </html>
+    `);
+    newWindow.document.close();
+  } else {
+    console.error('Failed to open Genesis Quick Login!');
+  }
+
+  return null;
+}
+
+function interceptFrame() {
+  if (frame.contentWindow) {
+    frame.contentWindow.open = function(url, target) {
+      handleOpen(url);
+      return null;
+    };
+
+    frame.contentWindow.document.addEventListener('click', event => {
+      const target = event.target;
+      if (target.tagName === 'A' && target.getAttribute('target') === '_blank') {
+        event.preventDefault();
+        const href = target.getAttribute('href');
+        if (href) {
+          window.parent.handleOpen(href); 
+        }
+      }
+    });
+
+    frame.contentWindow.addEventListener('submit', event => {
+      event.preventDefault();
+    });
+  }
+}
+
+frame.addEventListener('load', interceptFrame);
+
 document.addEventListener('DOMContentLoaded', function() {
   onFrameClick();
   setInterval(onFrameClick, 1000);

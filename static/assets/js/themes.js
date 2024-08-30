@@ -29,9 +29,6 @@ function live() {
       case 'swamp':
         applyTheme('rgba(22, 46, 23, 0.705)', "linear-gradient(to bottom, rgb(33, 116, 47), rgb(0, 0, 0))");
         break;
-      case 'ocean':
-        applyTheme('rgba(84, 137, 161, 0.637)', "linear-gradient(to bottom, rgb(70, 173, 214), rgb(99, 84, 36))");
-        break;
       case 'starry':
         applyTheme('rgba(39, 81, 109, 0.521)', "linear-gradient(to right, rgb(14, 132, 211), rgb(113, 11, 209))");
         break;
