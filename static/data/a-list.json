@@ -91,6 +91,11 @@
     "onClick": "sFlix"
   },
   {
+    "name": "9anime",
+    "imageUrl": "/assets/img/9anim.webp",
+    "onClick": "nineAnim"
+  },
+  {
     "name": "Twitch",
     "imageUrl": "/assets/img/twitch.webp",
     "onClick": "twitch"

@@ -38,6 +38,12 @@
       "imageUrl": "/assets/img/time-shooter-3.webp",
       "onClick": "timeShooter3",
       "height": 135
+    },
+    {
+      "name": "Rocket Bot Royale",
+      "imageUrl": "/assets/img/rocketbotroyale.webp",
+      "onClick": "rocketRoyale",
+      "height": 135
     }
   ],
   "Sport Games": [

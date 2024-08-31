@@ -1,6 +1,6 @@
 self.__uv$config = {
     prefix: '/sv/',
-    bare: '/bear/',
+    bare: 'https://surfdoge.pro/bear/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/wk/wk1.js', // handler

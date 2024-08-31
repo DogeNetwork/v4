@@ -264,7 +264,7 @@ function handleOpen(url) {
         </style>
       </head>
       <body>
-        <iframe src="${'https://' + window.location.hostname + '/sv/' + Ultraviolet.codec.xor.encode(url)}" frameborder="0"></iframe>
+        <iframe src="${'https://' + window.location.hostname + '/sv/' + Ultraviolet.codec.xor.encode(url)}" sandbox="allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-modals allow-orientation-lock" frameborder="0"></iframe>
       </body>
       </html>
     `);

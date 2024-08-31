@@ -80,6 +80,10 @@ function netflix() {
   openAg('https://netflix.com');
 }
 
+function nineAnim() {
+  openAg('https://9animetv.to/');
+}
+
 function symbolab() {
   openAg('https://www.symbolab.com');
 }
@@ -246,6 +250,10 @@ function suikaWatermelon() {
 
 function timeShooter3() {
   openAg('https://html5.gamedistribution.com/rvvASMiM/6493b872f0564380a7adad671d1e0a57/index.html');
+}
+
+function rocketRoyale() {
+  openAg('https://rocketbotroyale.winterpixel.io/');
 }
 
 function thereIsNoGame() {
