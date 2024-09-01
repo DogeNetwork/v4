@@ -277,34 +277,30 @@ function handleOpen(url) {
 }
 
 function interceptFrame() {
-  if (frame.contentWindow) {
-    frame.contentWindow.open = function(url, target) {
-      handleOpen(url);
-      return null;
-    };
-
-    frame.contentWindow.document.addEventListener('click', event => {
-      const target = event.target;
-      if (target.tagName === 'A') {
-        if (target.getAttribute('target') === '_blank' || target.getAttribute('target') === '_top') {
-          event.preventDefault();
-          const href = target.getAttribute('href');
-          if (href) {
-            window.parent.handleOpen(href);
-          }
-        }
-      }      
-    });
-
-    frame.contentWindow.addEventListener('submit', event => {
-      event.preventDefault();
-    });
-  }
+	if (frame.contentWindow) {
+		frame.contentWindow.open = function(url, target) {
+			handleOpen(url);
+			return null;
+		};
+		frame.contentWindow.document.addEventListener('click', event => {
+			const target = event.target;
+			if (target.tagName === 'A') {
+				if (target.getAttribute('target') === '_top' || target.getAttribute('target') === '_blank') {
+					event.preventDefault();
+					const href = target.getAttribute('href');
+					if (href) {
+						window.parent.handleOpen(href);
+					}
+				}
+			}
+		});
+		frame.contentWindow.addEventListener('submit', event => {
+			event.preventDefault();
+		});
+	}
 }
-
 frame.addEventListener('load', interceptFrame);
-
 document.addEventListener('DOMContentLoaded', function() {
-  onFrameClick();
-  setInterval(onFrameClick, 1000);
+	onFrameClick();
+	setInterval(onFrameClick, 1000);
 });
