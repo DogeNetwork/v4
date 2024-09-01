@@ -5,11 +5,14 @@ window.onload = function() {
 	const wispUrl = (location.protocol === "https:" ? "wss" : "ws") + "://" + location.host + "/wisp/";
 	const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
 	function isMobile() {
-		const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-		 if (/iPhone|iPad|iPod|android|Mobile|webOS|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
-			return true;
-		 }
-		return false;
+		let details = navigator.userAgent;
+		let regexp = /android|iphone|kindle|ipad/i;
+		let isMobileDevice = regexp.test(details);
+		if (isMobileDevice) {
+		 return true;
+		} else {
+			return false;
+		}
 	}
 
 	async function registerSW() {
