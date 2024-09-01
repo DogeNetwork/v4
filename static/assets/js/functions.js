@@ -47,13 +47,11 @@ if (blankerCheck === "enabled") {
 var leaveConf = localStorage.getItem("leaveConfirmation");
 
 if (leaveConf === "enabled") {
-  window.onbeforeunload = function () {
-    return "";
-  };
-  function conf2() {
-    return "";
-  }
-  conf2();
+  window.onbeforeunload = function (e) {
+    const confirmationMessage = "Are you sure you want to leave this page?";
+    (e || window.event).returnValue = confirmationMessage;
+    return confirmationMessage;
+};
 }
 
 var submenuOpen = false;
