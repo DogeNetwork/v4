@@ -30,7 +30,7 @@ function createIframe() {
     iframeCount++;
     const iframe = document.createElement("iframe");
     iframe.src = "welcome.html";
-    iframe.sandbox = "allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-orientation-lock allow-modals";
+    iframe.sandbox = "allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-orientation-lock allow-modals allow-top-navigation";
     iframe.id = "siteurl";
     iframe.title = `tab${iframeCount}`;
 
