@@ -285,13 +285,15 @@ function interceptFrame() {
 
     frame.contentWindow.document.addEventListener('click', event => {
       const target = event.target;
-      if (target.tagName === 'A' && target.getAttribute('target') === '_blank') {
-        event.preventDefault();
-        const href = target.getAttribute('href');
-        if (href) {
-          window.parent.handleOpen(href); 
+      if (target.tagName === 'A') {
+        if (target.getAttribute('target') === '_blank' || target.getAttribute('target') === '_top') {
+          event.preventDefault();
+          const href = target.getAttribute('href');
+          if (href) {
+            window.parent.handleOpen(href);
+          }
         }
-      }
+      }      
     });
 
     frame.contentWindow.addEventListener('submit', event => {
