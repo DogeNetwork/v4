@@ -276,31 +276,48 @@ function handleOpen(url) {
   return null;
 }
 
-function interceptFrame() {
-	if (frame.contentWindow) {
-		frame.contentWindow.open = function(url, target) {
-			handleOpen(url);
-			return null;
-		};
-		frame.contentWindow.document.addEventListener('click', event => {
-			const target = event.target;
-			if (target.tagName === 'A') {
-				if (target.getAttribute('target') === '_top' || target.getAttribute('target') === '_blank') {
-					event.preventDefault();
-					const href = target.getAttribute('href');
-					if (href) {
-						window.parent.handleOpen(href);
-					}
-				}
-			}
-		});
-		frame.contentWindow.addEventListener('submit', event => {
-			event.preventDefault();
-		});
-	}
+function getWindow() {
+  let currentWindow = window;
+  while (currentWindow.parent && currentWindow !== currentWindow.parent) {
+    currentWindow = currentWindow.parent;
+    if (typeof currentWindow.handleOpen === 'function') {
+      return currentWindow;
+    }
+  } // Derpman -  I did this because on about:blank the intercepting doesn't work, so this searches for the correct window
+  return window;
 }
+
+function interceptFrame() {
+  if (frame.contentWindow) {
+    frame.contentWindow.open = function(url, target) {
+      handleOpen(url);
+      return null;
+    };
+
+    frame.contentWindow.document.addEventListener('click', event => {
+      const target = event.target;
+      if (target.tagName === 'A') {
+        const targetAttr = target.getAttribute('target');
+        if (targetAttr === '_top' || targetAttr === '_blank') {
+          event.preventDefault();
+          const href = target.getAttribute('href');
+          if (href) {
+            const correctWindow = getWindow();
+            correctWindow.handleOpen(href);
+          }
+        }
+      }
+    });
+
+    frame.contentWindow.addEventListener('submit', event => {
+      event.preventDefault();
+    });
+  }
+}
+
 frame.addEventListener('load', interceptFrame);
+
 document.addEventListener('DOMContentLoaded', function() {
-	onFrameClick();
-	setInterval(onFrameClick, 1000);
+  onFrameClick();
+  setInterval(onFrameClick, 1000);
 });
