@@ -21,25 +21,20 @@ if (blankerCheck === "enabled") {
     if (!popup || popup.closed) {
       alert("Please allow popups and redirects for about:blank cloak to work.");
     } else {
-      const doc = popup.document;
-      const iframe = doc.createElement("iframe");
-      const style = iframe.style;
-      const link = doc.createElement("link");
-      const name = localStorage.getItem("name") || "My Drive - Google Drive";
-      const icon =
-        localStorage.getItem("icon") ||
-        "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png";
-      doc.title = name;
+      popup.document.title = "My Drive - Google Drive";
+      const link = popup.document.createElement("link");
       link.rel = "icon";
-      link.href = icon;
+      link.href = "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png";
+      popup.document.head.appendChild(link);
+      const iframe = popup.document.createElement("iframe");
+      iframe.style.position = "fixed";
+      iframe.style.top = iframe.style.bottom = iframe.style.left = iframe.style.right = "0";
+      iframe.style.width = iframe.style.height = "100%";
+      iframe.style.margin = "0";
+      iframe.style.border = iframe.style.outline = "none";
       iframe.src = location.href;
-      style.position = "fixed";
-      style.top = style.bottom = style.left = style.right = 0;
-      style.border = style.outline = "none";
-      style.width = style.height = "100%";
-      doc.head.appendChild(link);
-      doc.body.appendChild(iframe);
-      location.replace("https://classroom.google.com");
+      popup.document.body.appendChild(iframe);
+      location.replace("https://www.google.com");
     }
   }
 }

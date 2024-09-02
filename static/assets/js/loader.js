@@ -258,6 +258,7 @@ function handleOpen(url) {
       <html>
       <head>
         <title>Genesis Quick Login</title>
+        <link rel="icon" href="https://www.genesisedu.com/wp-content/uploads/2020/10/favicon.jpg" />
         <style>
           body { margin: 0; height: 100vh; }
           iframe { border: none; width: 100%; height: 100%; margin: 0; }
