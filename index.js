@@ -48,38 +48,23 @@ app.get('/student', (req, res) => {
   res.redirect('/portal');
 });
 
-app.get('/worker.js', (req, res) => {
-  request('https://cdn.surfdoge.pro/worker.js', (error, response, body) => {
-    if (!error && response.statusCode === 200) {
+app.get('/worker.js', async (req, res) => {
+  try {
+    const response = await fetch('https://cdn.surfdoge.pro/worker.js');
+    if (response.ok) {
       res.setHeader('Content-Type', 'text/javascript');
+      const body = await response.text();
       res.send(body);
     } else {
       res.status(500).send('Error fetching worker script');
     }
-  });
-});
-
-app.use((req, res) => {
-  res.statusCode = 404;
-  res.sendFile(path.join(__dirname, './static/404.html'));
-});
-
-server.on("request", (req, res) => {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeRequest(req, res);
-  } else app(req, res);
-});
-server.on("upgrade", (req, socket, head) => {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeUpgrade(req, socket, head);
-  } else if (req.url.endsWith("/wisp/")) {
-    wisp.routeRequest(req, socket, head);
-  } else socket.end();
+  } catch (error) {
+    res.status(500).send('Error fetching worker script');
+  }
 });
 
 server.on('listening', () => {
-  console.log(chalk.bgBlue.white.bold(`  Welcome to Doge V4, user!  `) + '\n');
-  console.log(chalk.cyan('-----------------------------------------------'));
+  console.log(chalk.green('-----------------------------------------------'));
   console.log(chalk.green('  🌟 Status: ') + chalk.bold('Active'));
   console.log(chalk.green('  🌍 Port: ') + chalk.bold(chalk.yellow(server.address().port)));
   console.log(chalk.green('  🕒 Time: ') + chalk.bold(new Date().toLocaleTimeString()));
@@ -108,5 +93,5 @@ process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('SIGINT', () => shutdown('SIGINT'));
 
 server.listen({
-  port: 8000,
+  port: process.env.PORT || 8000,
 });
