@@ -1,6 +1,6 @@
 (function() {
-    var defaultTitle = 'Doge | V4';
-    var defaultIcon = '/assets/img/doge.jpg';
+    var defaultTitle = '(1) SalyteLearn';
+    var defaultIcon = '/assets/img/salyte.jpg';
     var storedTitle = localStorage.getItem('tabTitle') || defaultTitle;
     var storedIcon = localStorage.getItem('tabIcon') || defaultIcon;
     var icon = document.querySelector('link[rel="icon"]');
