@@ -194,8 +194,6 @@ function visitSite() {
   }
 }
 
-
-
 var domain = window.location.hostname;
 if (domain.endsWith('vercel.app')) {
     localStorage.setItem('isVercel', 'true');
