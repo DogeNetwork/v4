@@ -3,265 +3,223 @@
     {
       "name": "GeForce Now",
       "imageUrl": "/assets/img/geforcenow.webp",
-      "onClick": "geforce"
+      "url": "https://play.geforcenow.com"
     },
     {
       "name": "Roblox",
       "imageUrl": "/assets/img/roblox.webp",
-      "onClick": "rbx"
+      "url": "https://educationbluesky.com/apps/roblox-corporation/5349/roblox.html"
     }
   ],
   "Shooter Games": [
     {
       "name": "1v1.lol",
       "imageUrl": "/assets/img/1v1.webp",
-      "onClick": "onevone"
+      "url": "https://1v1.lol"
     },
     {
       "name": "Awesome Tanks 2",
       "imageUrl": "/assets/img/atanks2.webp",
-      "onClick": "awesomeTanksTwo",
-      "height": 135
+      "url": "https://derpman.codeberg.page/awesometanks2/"
     },
     {
       "name": "Florr.io",
       "imageUrl": "/assets/img/florr.webp",
-      "onClick": "florr"
+      "url": "https://florr.io"
     },
     {
       "name": "Krunker.io",
       "imageUrl": "/assets/img/krunker.webp",
-      "onClick": "krunker"
+      "url": "https://krunker.io"
     },
     {
       "name": "Time Shooter SWAT",
       "imageUrl": "/assets/img/time-shooter-3.webp",
-      "onClick": "timeShooter3",
-      "height": 135
+      "url": "https://html5.gamedistribution.com/rvvASMiM/6493b872f0564380a7adad671d1e0a57/index.html"
     },
     {
       "name": "Rocket Bot Royale",
       "imageUrl": "/assets/img/rocketbotroyale.webp",
-      "onClick": "rocketRoyale",
-      "height": 135
+      "url": "https://rocketbotroyale.winterpixel.io/"
     }
   ],
   "Sport Games": [
     {
       "name": "Retro Bowl",
       "imageUrl": "/assets/img/retro.webp",
-      "onClick": "rBowl"
+      "url": "/assets/rb/index.html"
     },
     {
       "name": "BasketBros.io",
       "imageUrl": "/assets/img/basketbros.webp",
-      "onClick": "basketBros"
+      "url": "https://basketbros.io"
     },
     {
       "name": "Basket Random",
       "imageUrl": "/assets/img/basketrandom.webp",
-      "onClick": "basketRandom",
-      "height": 135
+      "url": "https://files.twoplayergames.org/files/games/other/Basket_Random/index.html"
     },
     {
       "name": "Volley Random",
       "imageUrl": "/assets/img/volley-random.webp",
-      "onClick": "volleyRandom",
-      "height": 135
+      "url": "https://files.twoplayergames.org/files/games/o1/Volley_random/index.html"
     }
   ],
   "Ball/Platformer Games": [
     {
       "name": "Slope",
       "imageUrl": "/assets/img/slope.webp",
-      "onClick": "slope"
+      "url": "https://derpmandev.github.io/unblocked-games/slope"
     },
     {
       "name": "Boxel Rebound",
       "imageUrl": "/assets/img/boxelrebound.webp",
-      "onClick": "brebound",
-      "height": 135
+      "url": "https://trinculo54.github.io/Boxel-rebound-hope/Newer/index.html"
     },
     {
       "name": "Run 3",
       "imageUrl": "/assets/img/run3.webp",
-      "onClick": "run3"
+      "url": "https://bonbang.github.io/store99/run-3"
     },
     {
       "name": "Fireboy and Watergirl",
       "imageUrl": "/assets/img/fireboy-and-watergirl.webp",
-      "onClick": "fBwG1",
-      "height": 135
+      "url": "https://ubg100.github.io/games/fbwg1/index.html"
     },
     {
       "name": "Stack Bounce",
       "imageUrl": "/assets/img/stackbounce.webp",
-      "onClick": "stackBounce"
+      "url": "https://storage.googleapis.com/bento-developer-games/stackbounce/gameCode/index.html"
     },
     {
       "name": "Stickman Hook",
       "imageUrl": "/assets/img/stickmanhook.webp",
-      "onClick": "stickManHook",
-      "height": 135
+      "url": "https://stickman-hook.io/iframe/index.html"
     }
   ],
   "Domination Games": [
     {
       "name": "Hole.io",
       "imageUrl": "/assets/img/hole-io.webp",
-      "onClick": "holeio",
-      "height": 135
+      "url": "https://hole-io.com"
     },
     {
       "name": "Paper.io",
       "imageUrl": "/assets/img/paperio.webp",
-      "onClick": "paperIo"
+      "url": "https://paper-io.com"
     },
     {
       "name": "Territorial.io",
       "imageUrl": "/assets/img/territorial.webp",
-      "onClick": "territorial"
+      "url": "https://territorial.io"
     }
   ],
   "Running Games": [
     {
       "name": "Subway Surfers",
       "imageUrl": "/assets/img/subway.webp",
-      "onClick": "subway",
-      "height": 135
+      "url": "https://derpman.codeberg.page/echo/@main/subway-surfers/index.html"
     },
     {
       "name": "Temple Run",
       "imageUrl": "/assets/img/temple-run.webp",
-      "onClick": "templeRun"
+      "url": "https://burgerbounty.github.io/s8/temple-run-2/"
     },
     {
       "name": "OvO",
       "imageUrl": "/assets/img/ovo.webp",
-      "onClick": "ovo",
-      "height": 135
+      "url": "https://ovo.onrender.com/versions/1.4.4b/index.html"
     },
     {
       "name": "Vex 3",
       "imageUrl": "/assets/img/vex3.webp",
-      "onClick": "vex8"
+      "url": "https://derpman.codeberg.page/vex3"
     },
     {
       "name": "Vex 8",
       "imageUrl": "/assets/img/vex8.webp",
-      "onClick": "vex8"
+      "url": "https://html5.gamedistribution.com/rvvASMiM/949009d40a2846f89f887de2285d6c28/index.html"
     },
     {
       "name": "Tall Man Run",
       "imageUrl": "/assets/img/tall-man-run.webp",
-      "onClick": "tallManRun"
+      "url": "https://html5.gamedistribution.com/rvvASMiM/7980c23fbbae4af6851e01052fce3cce/index.html"
     },
     {
       "name": "Crowd Run 3D",
       "imageUrl": "/assets/img/crowd-run-3d.webp",
-      "onClick": "crowdRun3d"
+      "url": "https://games.cdn.famobi.com/html5games/c/crowd-run-3d/v040/"
     }
   ],
   "Car/Racing Games": [
     {
       "name": "Drift Hunters",
       "imageUrl": "/assets/img/drifthunters.webp",
-      "onClick": "driftHunters"
+      "url": "https://webglmath.github.io/drift-hunters/index.html"
     },
     {
       "name": "Drive Mad",
       "imageUrl": "/assets/img/drive-mad.webp",
-      "onClick": "driveMad"
+      "url": "https://drivemad.me/iframe/index.html"
     },
     {
       "name": "Moto X3M",
       "imageUrl": "/assets/img/motox3m.webp",
-      "onClick": "motoX3M"
+      "url": "https://www.coolmathgames.com/0-moto-x3m/play"
     }
   ],
   "Brain Games": [
     {
       "name": "Bitlife",
       "imageUrl": "/assets/img/bitlife.webp",
-      "onClick": "bitlife",
-      "height": 135
+      "url": "https://derpman.codeberg.page/echo/@main/bitlife/index.html"
     },
     {
       "name": "2048",
       "imageUrl": "/assets/img/2048.webp",
-      "onClick": "twoZeroFourEight",
-      "height": 135
+      "url": "https://derpmandev.github.io/unblocked-games/2048"
     },
     {
       "name": "Pokemon 2048",
       "imageUrl": "/assets/img/p2048.webp",
-      "onClick": "p2048",
-      "height": 135
+      "url": "https://filipekiss.github.io/2048"
     },
     {
       "name": "Chess.com",
       "imageUrl": "/assets/img/chess.webp",
-      "onClick": "chess"
+      "url": "https://chess.com"
     },
     {
       "name": "Jstris",
       "imageUrl": "/assets/img/jstris.webp",
-      "onClick": "jstris"
+      "url": "https://jstris.jezevec10.com"
     },
     {
       "name": "Watermelon Game (Suika)",
       "imageUrl": "/assets/img/suika.webp",
-      "onClick": "suikaWatermelon",
-      "height": 135
+      "url": "https://watermelongame.com"
     },
     {
       "name": "World's Hardest GM",
       "imageUrl": "/assets/img/worldshardestgm.webp",
-      "onClick": "worldsHardestGm",
-      "height": 135
+      "url": "https://assets.surfdoge.pro/assets/worldshardestgm.html"
     }
   ],
   "Idle/Clicking Games": [
     {
       "name": "Cookie Clicker",
       "imageUrl": "/assets/img/cookieclicker.webp",
-      "onClick": "cookieClicker"
+      "url": "https://orteil.dashnet.org/cookieclicker"
     },
     {
       "name": "Idle Breakout",
       "imageUrl": "/assets/img/idlebreakout.webp",
-      "onClick": "idleBreakout"
+      "url": "https://www.onlinegames.io/games/2024/more/idle-breakout/index.html"
     },
     {
-      "name": "Monkey Mart",
-      "imageUrl": "/assets/img/monkeymart.webp",
-      "onClick": "monkeyMart"
-    }
-  ],
-  "Sandbox/Arcade Games": [
-    {
-      "name": "Eaglercraft (1.5)",
-      "imageUrl": "/assets/img/eaglercraft.webp",
-      "onClick": "eaglerCraft15",
-      "height": 135
-    },
-    {
-      "name": "Eaglercraft (1.8)",
-      "imageUrl": "/assets/img/eaglercraft.webp",
-      "onClick": "eaglerCraft18",
-      "height": 135
-    },
-    {
-      "name": "Kick The Buddy",
-      "imageUrl": "/assets/img/super-buddy-kick.webp",
-      "onClick": "kickTheBuddy",
-      "height": 135
-    },
-    {
-      "name": "There is No Game",
-      "imageUrl": "/assets/img/there-is-no-gms.webp",
-      "onClick": "thereIsNoGame",
-      "height": 135
+      "name": "Cat Clicker RE",
+      "imageUrl": "/assets/img/catclickerre.webp",
+      "url": "https://cats.com/game"
     }
   ]
 }
