@@ -194,9 +194,7 @@ function visitSite() {
   }
 }
 
-if (window.location.protocol === "http:") {
-  window.location.href = window.location.href.replace("http:", "https:");
-}
+
 
 var domain = window.location.hostname;
 if (domain.endsWith('vercel.app')) {
