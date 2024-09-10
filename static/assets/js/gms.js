@@ -17,12 +17,17 @@ function loadSquareBtn(btn) {
   btn.classList.add('loaded');
 }
 
-function addGms(name, imageUrl, onClickFunction, width, height) {
+function addGms(name, imageUrl, gameUrl, width, height) {
   var gmsContainer = document.getElementById('gmsContainer');
   var linkElement = document.createElement('a');
   linkElement.href = "#";
   linkElement.className = "square_btn";
-  linkElement.onclick = onClickFunction;
+  linkElement.onclick = function() {
+    function launch() {
+      eval(gameUrl); // apps and gms use own function
+   }
+    launch();
+  };
   if (width) {
     linkElement.style.width = width + 'px';
   }
@@ -53,8 +58,8 @@ fetch('/data/g-list.json').then(response => {
     if (data.hasOwnProperty(category)) {
       const games = data[category];
       games.forEach(game => {
-        const { name, imageUrl, onClick, width, height } = game;
-        addGms(name, imageUrl, window[onClick], width, height);
+        const { name, imageUrl, url, width, height } = game;
+        addGms(name, imageUrl, url, width, height);
       });
     }
   }
@@ -70,6 +75,7 @@ fetch('/data/g-list.json').then(response => {
     fetchMessage.innerText = 'Failed to load, please refresh.';
   }
 });
+
 /* Search Bar */
 document.getElementById('searchApps').addEventListener('input', function(event) {
   const query = this.value.toLowerCase();
@@ -95,6 +101,7 @@ document.getElementById('searchApps').addEventListener('input', function(event) 
     message.style.display = 'none';
   }
 });
+
 var searchBar = document.querySelector('.searchbar');
 var searchIcon = document.getElementById('search');
 searchBar.addEventListener('focus', () => {
