@@ -154,7 +154,11 @@ function openWindow() {
   iframe.style.width = "100%";
   iframe.style.height = "100%";
   iframe.style.margin = "0";
-  iframe.src = 'https://' + window.location.hostname + scope + Ultraviolet.codec.xor.encode(document.getElementById('searchBar').value);
+  if (document.getElementById('searchBar').value !== 'https://chitchatter.im/public/doge?embed=1') {
+    iframe.src = 'https://' + window.location.hostname + scope + Ultraviolet.codec.xor.encode(document.getElementById('searchBar').value);
+  } else {
+    iframe.src = document.getElementById('searchBar').value;
+  }  
   win.document.body.appendChild(iframe);
 }
 
