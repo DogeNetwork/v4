@@ -63,7 +63,7 @@ fetch('/data/a-list.json').then(response => {
   }
   loadApps();
 }).catch(error => {
-  console.error('Failed to fetch apps.json:', error);
+  console.error('Failed to fetch a-list.json:', error);
   const fetchMessage = document.getElementById('fetchMessage');
   if (fetchMessage) {
     fetchMessage.innerText = 'Failed to load, please refresh.';
