@@ -106,7 +106,7 @@ function tabCloak() {
 }
 
 function disableTabCloak() {
-  var newTitle = "(1) SalyteLearn;
+  var newTitle = "(1) SalyteLearn";
   var newIcon = "/assets/img/salyte.jpg";
 
   localStorage.setItem("tabTitle", newTitle);
