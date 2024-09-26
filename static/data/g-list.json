@@ -243,13 +243,13 @@
     {
       "name": "Eaglercraft (1.5)",
       "imageUrl": "/assets/img/eaglercraft.webp",
-      "url": "openAg('https://derpmandev.github.io/unblocked-games/eaglercraft-1-5')",
+      "url": "openAg('https://kalibara4.github.io/eagler/1.5.2/')",
       "height": 135
     },
     {
       "name": "Eaglercraft (1.8)",
       "imageUrl": "/assets/img/eaglercraft.webp",
-      "url": "openAg('https://derpmandev.github.io/unblocked-games/eaglercraft-1-8')",
+      "url": "openAg('https://kalibara4.github.io/eagler/1.8.8/')",
       "height": 135
     },
     {
