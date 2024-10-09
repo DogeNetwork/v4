@@ -1,4 +1,5 @@
 let scope;
+let devToolsLoaded;
 const searchBar = document.querySelector(".input");
 const urlBar = document.querySelector('#urlBar');
 const sideBar = document.getElementById("sidebar");
