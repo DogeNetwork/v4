@@ -58,15 +58,11 @@ function live() {
   })
   /* Background Check */
   document.addEventListener('DOMContentLoaded', function() {
-    if(bgUrl === 'none' || bgUrl === null || bgUrl === '') {
-      console.log('[❌] Custom Background');
-    }
-    else {
+    if (bgUrl === 'none' || bgUrl === null || bgUrl === '') {
+    } else if (bgUrl !== 'none') {
       document.body.style.backgroundImage = `url(${bgUrl})`;
       document.getElementById('particles-js').remove();
-      console.log('[✔️] Custom Background');
     }
   });
-  console.log('[✔️] Themes Loaded');
 }
 live();

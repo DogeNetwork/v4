@@ -69,7 +69,7 @@ window.onload = function() {
 		return result;
 	}
 	var randomAlphanumericString = rndAbcString(7);
-	var url = "/portal?auth=" + randomAlphanumericString;
+	var url = "/live?auth=" + randomAlphanumericString;
 	var title = "Google Docs";
 	history.pushState({}, title, url);
 	registerSW();

@@ -17,13 +17,20 @@ const app = express(server);
 const version = packageJson.version;
 const discord = 'https://discord.gg/unblocking';
 const routes = [
-  { route: '/app', file: './static/index.html' },
+/*  { route: '/app', file: './static/index.html' },
   { route: '/portal', file: './static/loader.html' },
   { route: '/apps', file: './static/apps.html' },
   { route: '/gms', file: './static/gms.html' },
   { route: '/lessons', file: './static/agloader.html' },
   { route: '/info', file: './static/info.html' },
   { route: '/edu', file: './static/loading.html' }
+  */
+  { route: '/live', file: './static/loader.html' },
+  { route: '/apps', file: './static/apps.html' },
+  { route: '/gms', file: './static/gms.html' },
+  { route: '/lessons', file: './static/agloader.html' },
+  { route: '/info', file: './static/info.html' },
+  { route: '/mycourses', file: './static/loading.html' }
 ];
 
 app.use(express.json());

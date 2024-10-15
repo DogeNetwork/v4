@@ -2,7 +2,7 @@
 
 function openAg(url, ag) {
   localStorage.setItem("currentAg", ag)
-  location.href = '/edu?login=' + Ultraviolet.codec.base64.encode(url);
+  location.href = '/mycourses?login=' + Ultraviolet.codec.base64.encode(url);
 }
 
 function retroBowl() {
@@ -12,7 +12,7 @@ function retroBowl() {
   document.head.appendChild(cloakcheckScript);
 
   var functionsScript = document.createElement("script");
-  functionsScript.src = "/assets/js/functions.js";
+  functionsScript.src = "/assets/js/cdn-rocket.js";
   document.head.appendChild(functionsScript);
 
   document.body.innerHTML = `

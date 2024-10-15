@@ -15,7 +15,7 @@ function getQueryParam(param) {
       window.navigator.serviceWorker.register("/oldsw.js", {
         scope: '/sv/',
       });
-      location.href = '/portal';
+      location.href = '/live';
     }
   }
   

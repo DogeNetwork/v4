@@ -200,6 +200,6 @@ if (domain.endsWith('vercel.app')) {
 }
 
 console.log(
-  "%cCyborgEDU (Student Pack) v32.537.2.11",
-  "color: yellow; font-size: 16px"
+  "%cPearnyl Education (Loader) v35.3.11",
+  "color: cyan; font-size: 16px"
 );
