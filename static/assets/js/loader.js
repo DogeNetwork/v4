@@ -1,3 +1,4 @@
+let devToolsLoaded;
 let scope;
 const searchBar = document.querySelector(".input");
 const urlBar = document.querySelector('#urlBar');
