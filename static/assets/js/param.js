@@ -12,10 +12,10 @@ function getQueryParam(param) {
       window.navigator.serviceWorker.register("/sw.js", {
         scope: "/service/",
       });
-      window.navigator.serviceWorker.register("/oldsw.js", {
-        scope: '/sv/',
+      window.navigator.serviceWorker.register("/lab.js", {
+        scope: '/assignments/',
       });
-      location.href = '/live';
+      location.href = '/mastery';
     }
   }
   

@@ -1,5 +1,4 @@
 let scope;
-let devToolsLoaded;
 const searchBar = document.querySelector(".input");
 const urlBar = document.querySelector('#urlBar');
 const sideBar = document.getElementById("sidebar");
@@ -77,12 +76,12 @@ searchBar.addEventListener("keydown", function(event) {
 			const searchValue = searchBar.value.trim();
 			if (vercelCheck !== 'true') {
 				if (domainRegex.test(searchValue)) {
-					scope = '/sv/';
+					scope = '/assignments/';
 				} else {
 					scope = '/service/';
 				}
 			} else {
-				scope = '/sv/';
+				scope = '/assignments/';
 				// serverless = no websocket support
 			}
 			if (/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(inputUrl)) {
@@ -155,11 +154,7 @@ function openWindow() {
   iframe.style.width = "100%";
   iframe.style.height = "100%";
   iframe.style.margin = "0";
-  if (document.getElementById('searchBar').value !== 'https://chitchatter.im/public/doge?embed=1') {
-    iframe.src = 'https://' + window.location.hostname + scope + Ultraviolet.codec.xor.encode(document.getElementById('searchBar').value);
-  } else {
-    iframe.src = document.getElementById('searchBar').value;
-  }  
+  iframe.src = 'https://' + window.location.hostname + scope + Ultraviolet.codec.xor.encode(document.getElementById('searchBar').value);
   win.document.body.appendChild(iframe);
 }
 
@@ -189,7 +184,7 @@ function decode(url) {
     return '';
   }
 
-  var prefixes = ['/service/', '/sv/'];
+  var prefixes = ['/service/', '/assignments/'];
   let decodedPart = null;
 
   for (let prefix of prefixes) {
@@ -270,7 +265,7 @@ function handleOpen(url) {
         </style>
       </head>
       <body>
-        <iframe src="${'https://' + window.location.hostname + '/sv/' + Ultraviolet.codec.xor.encode(url)}" sandbox="allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-modals allow-orientation-lock" frameborder="0"></iframe>
+        <iframe src="${'https://' + window.location.hostname + '/assignments/' + Ultraviolet.codec.xor.encode(url)}" sandbox="allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-modals allow-orientation-lock" frameborder="0"></iframe>
       </body>
       </html>
     `);

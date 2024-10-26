@@ -18,8 +18,8 @@ async function registerSW() {
   await window.navigator.serviceWorker.register("/sw.js", {
     scope: '/service/',
   });
-  await window.navigator.serviceWorker.register("/oldsw.js", {
-    scope: '/sv/',
+  await window.navigator.serviceWorker.register("/lab.js", {
+    scope: '/assignments/',
   });
 }
 

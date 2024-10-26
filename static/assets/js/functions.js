@@ -106,8 +106,8 @@ function tabCloak() {
 }
 
 function disableTabCloak() {
-  var newTitle = "(1) SalyteLearn";
-  var newIcon = "/assets/img/salyte.jpg";
+  var newTitle = "Doge | V4";
+  var newIcon = "/assets/img/doge.jpg";
 
   localStorage.setItem("tabTitle", newTitle);
   localStorage.setItem("tabIcon", newIcon);
@@ -200,6 +200,6 @@ if (domain.endsWith('vercel.app')) {
 }
 
 console.log(
-  "%cPearnyl Education (Loader) v35.3.11",
-  "color: cyan; font-size: 16px"
+  "%cCyborgEDU (Student Pack) v32.537.2.11",
+  "color: yellow; font-size: 16px"
 );

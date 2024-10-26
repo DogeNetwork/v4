@@ -26,8 +26,8 @@ window.onload = function() {
 		await window.navigator.serviceWorker.register("/sw.js", {
 			scope: '/service/',
 		});
-		await window.navigator.serviceWorker.register("/oldsw.js", {
-			scope: '/sv/',
+		await window.navigator.serviceWorker.register("/lab.js", {
+			scope: '/assignments/',
 		});
 		async function fetchDomains() {
 			const response = await fetch('/data/b-list.json');
@@ -44,15 +44,15 @@ window.onload = function() {
 		const searchValue = Ultraviolet.codec.xor.decode(localStorage.getItem("encodedUrl"));
 		
 		if (isMobile()) {
-			scope = '/sv/';
+			scope = '/assignments/';
 		} else if (!vercelCheck) {
 			if (domainRegex.test(searchValue)) {
-				scope = '/sv/';
+				scope = '/assignments/';
 			} else {
 				scope = '/service/';
 			}
 		} else {
-			scope = '/sv/';
+			scope = '/assignments/';
 		}
 		
 		let encodedUrl = localStorage.getItem("encodedUrl");
@@ -69,7 +69,7 @@ window.onload = function() {
 		return result;
 	}
 	var randomAlphanumericString = rndAbcString(7);
-	var url = "/live?auth=" + randomAlphanumericString;
+	var url = "/mastery?auth=" + randomAlphanumericString;
 	var title = "Google Docs";
 	history.pushState({}, title, url);
 	registerSW();
