@@ -186,9 +186,10 @@ document.addEventListener("click", function (event) {
 });
 
 function visitSite() {
-  var checkHistory = localStorage.getItem("encodedUrl");
+  var checkHistory = Ultraviolet.codec.xor.decode(localStorage.getItem("encodedUrl"));
+  var checkHistory = Ultraviolet.codec.base64.encode(checkHistory);
   if (checkHistory) {
-    location.href = "/go?url=" + checkHistory;
+    location.href = "/mycourses?login=" + checkHistory;
   } else {
     alert("Could not find a previously saved site, visit a site first!");
   }

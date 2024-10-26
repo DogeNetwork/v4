@@ -2,7 +2,7 @@
 
 function openAg(url, ag) {
   localStorage.setItem("currentAg", ag)
-  location.href = '/edu?login=' + Ultraviolet.codec.base64.encode(url);
+  location.href = '/mycourses?login=' + Ultraviolet.codec.base64.encode(url);
 }
 
 function retroBowl() {
