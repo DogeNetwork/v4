@@ -2,4 +2,3 @@ node_modules
 dist
 .DS_Store
 **/.DS_Store
-package-lock.json
