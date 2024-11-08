@@ -241,6 +241,11 @@
   ],
   "Sandbox/Arcade Games": [
     {
+      "name": "Minecraft (Java Edition)",
+      "imageUrl": "/assets/img/minecraft.webp",
+      "url": "openAg('https://mcraft.fun')"
+    },
+    {
       "name": "Eaglercraft (1.5)",
       "imageUrl": "/assets/img/eaglercraft.webp",
       "url": "openAg('https://derpmandev.github.io/unblocked-games/eaglercraft-1-5')",
