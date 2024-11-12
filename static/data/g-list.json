@@ -243,7 +243,8 @@
     {
       "name": "Minecraft (Java Edition)",
       "imageUrl": "/assets/img/minecraft.webp",
-      "url": "openAg('https://mcraft.fun')"
+      "url": "openAg('https://mcraft.fun')",
+      "height": 135
     },
     {
       "name": "Eaglercraft (1.5)",
