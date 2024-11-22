@@ -47,13 +47,6 @@ if(window.location.pathname === "/index.html" || window.location.pathname === "/
   bar.addEventListener("blur", () => {
     search.style.marginLeft = "-150px";
   });
-  const img = document.createElement('img');
-  img.src = '/assets/img/mchost.gif';
-  img.className = 'banner footer';
-  img.addEventListener('click', function() {
-    location.href = 'https://freeminecrafthost.com/doge/';
-  })
-  document.body.appendChild(img);
 }
 window.addEventListener("load", function() {
   loadScript("/worker.js");
