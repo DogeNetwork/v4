@@ -87,7 +87,7 @@ searchBar.addEventListener("keydown", function(event) {
           }
 
           if (/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(inputUrl)) {
-              inputUrl = inputUrl.replace(/^https:\/\//, 'http://');
+              // inputUrl = inputUrl.replace(/^https:\/\//, 'http://');
           } else {
               document.getElementById('siteurl').src = scope + Ultraviolet.codec.xor.encode(inputUrl.includes('.') ? 'http://' + inputUrl : 'http://www.google.com/search?q=' + encodeURIComponent(inputUrl));
           }
