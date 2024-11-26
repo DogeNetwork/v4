@@ -69,33 +69,30 @@ function createDomainRegex(domains) {
 }
 
 searchBar.addEventListener("keydown", function(event) {
-  if (event.key === 'Enter') {
-      var inputUrl = searchBar.value.trim();
-      searchBar.blur();
-      fetchDomains().then(domains => {
-          const domainRegex = createDomainRegex(domains);
-          const searchValue = searchBar.value.trim();
-          if (vercelCheck !== 'true') {
-              if (domainRegex.test(searchValue)) {
-                  scope = '/assignments/';
-              } else {
-                  scope = '/service/';
-              }
-          } else {
-              scope = '/assignments/';
-              // serverless = no websocket support
-          }
-
-          if (/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(inputUrl)) {
-              // inputUrl = inputUrl.replace(/^https:\/\//, 'http://');
-          } else {
-              document.getElementById('siteurl').src = scope + Ultraviolet.codec.xor.encode(inputUrl.includes('.') ? 'http://' + inputUrl : 'http://www.google.com/search?q=' + encodeURIComponent(inputUrl));
-          }
-      });
-  }
+	if (event.key === 'Enter') {
+		var inputUrl = searchBar.value.trim();
+		searchBar.blur();
+		fetchDomains().then(domains => {
+			const domainRegex = createDomainRegex(domains);
+			const searchValue = searchBar.value.trim();
+			if (vercelCheck !== 'true') {
+				if (domainRegex.test(searchValue)) {
+					scope = '/assignments/';
+				} else {
+					scope = '/service/';
+				}
+			} else {
+				scope = '/assignments/';
+				// serverless = no websocket support
+			}
+			if (/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(inputUrl)) {
+				document.getElementById('siteurl').src = scope + Ultraviolet.codec.xor.encode(inputUrl);
+			} else {
+				document.getElementById('siteurl').src = scope + Ultraviolet.codec.xor.encode(inputUrl.includes('.') ? 'https://' + inputUrl : 'https://www.google.com/search?q=' + encodeURIComponent(inputUrl));
+			}
+		});
+	}
 });
-
-
 setTimeout(function() {
 	var searchBarValue = document.getElementById('searchBar').value;
 	if (searchBarValue.startsWith('https://')) {
