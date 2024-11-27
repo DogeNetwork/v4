@@ -1,57 +1,161 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <link rel="icon" id="icon" href="/assets/img/salyte.jpg">
-  <script src="/assets/js/cdn-rocket.js?v=3" defer></script>
-  <link rel="stylesheet" href="/assets/css/app.css?v=3">
-  <link rel="stylesheet" href="/assets/css/menu.css?v=3">
-  <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js?v=3"></script>
-  <script src="/assets/js/anym.js?v=3"></script>
-  <title>Dashboard | Salyte</title>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6YEQ7Q0XRC');</script>
-</head>
-<body>
-  <script src="/baremux/index.js?v=3"></script>
-  <script src="/wk/wk2.js?v=3"></script>
-  <script src="/wk/wk3.js?v=3"></script>
-<div id="contextMenu" class="context-menu themesExcluded" style="--ripple-duration: 300ms;"><div class="context-menu-item with-submenu themesExcluded" id="contextItem" anim="ripple" onclick="toggleSubmenu(event)"><i class="bi bi-file-spreadsheet"></i> Tab Cloak</div><div class="context-submenu themesExcluded" id="contextItem"><div class="context-menu-item themesExcluded" id="contextItem" anim="ripple" onclick="tabCloak()">Enable</div><div class="context-menu-item themesExcluded" anim="ripple" onclick="disableTabCloak()">Disable</div></div><div class="context-menu-item themesExcluded" id="contextItem" onclick="visitSite()"><i class="bi bi-clock-history"></i> Last Visited Site</div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openWindow()"><i class="bi bi-box-arrow-up-right"></i> About:Blank Cloak</div><div class="context-menu-item themesExcluded" id="contextItem" onclick="openSettings()"><i class="bi bi-gear"></i> View all Settings</div></div>
-<nav id="mytopnav">
-  <button class="btn-main" anim="ripple" onclick="send('/settings.html')"><i class="bi bi-gear" style="font-size:30px;"></i>Settings</button>
-  <button class="btn-main" anim="ripple" onclick="send('/gms')"><i class="bi bi-joystick" style="font-size:30px;"></i>Games</button>
-  <button class="btn-main" anim="ripple" onclick="send('/apps')"><i class="bi bi-grid-fill" style="font-size:30px;"></i>Apps</button><br>
-  <a href="#" class="title" anim="ripple"><img src="/assets/img/doge2.jpg" style="width:22px;height:22px;" id="logo"> Doge Unblocker</a>    
-</nav>
-  <div style="text-align:center;color:white;margin-top: 80px;z-index:1;" class="themesExcluded">
-    <div class="themesExcluded">
-      <i class="bi bi-search search" id="search"></i>
-      <form method="POST" id="uform" autocomplete="off" class="themesExcluded" style="z-index:1;">
-        <input type="text" name="url" class="browse-input themesExcluded" style="font-family:poppins;font-size:20px;z-index:1;" placeholder="Type URL or search query"><p class="splashText themesExcluded" id="placeholder"></p>
-      </form>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" id="icon" href="/assets/img/salyte.jpg" />
+    <script src="/assets/js/cdn-rocket.js?v=3" defer></script>
+    <link rel="stylesheet" href="/assets/css/app.css?v=3" />
+    <link rel="stylesheet" href="/assets/css/menu.css?v=3" />
+    <script
+      rel="preload"
+      src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js?v=3"
+    ></script>
+    <script src="/assets/js/anym.js?v=3"></script>
+    <title>Dashboard | Salyte</title>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6YEQ7Q0XRC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-6YEQ7Q0XRC");
+    </script>
+  </head>
+  <body>
+    <script src="/baremux/index.js?v=3"></script>
+    <script src="/wk/wk2.js?v=3"></script>
+    <script src="/wk/wk3.js?v=3"></script>
+    <div
+      id="contextMenu"
+      class="context-menu themesExcluded"
+      style="--ripple-duration: 300ms"
+    >
+      <div
+        class="context-menu-item with-submenu themesExcluded"
+        id="contextItem"
+        anim="ripple"
+        onclick="toggleSubmenu(event)"
+      >
+        <i class="bi bi-file-spreadsheet"></i> Tab Cloak
+      </div>
+      <div class="context-submenu themesExcluded" id="contextItem">
+        <div
+          class="context-menu-item themesExcluded"
+          id="contextItem"
+          anim="ripple"
+          onclick="tabCloak()"
+        >
+          Enable
+        </div>
+        <div
+          class="context-menu-item themesExcluded"
+          anim="ripple"
+          onclick="disableTabCloak()"
+        >
+          Disable
+        </div>
+      </div>
+      <div
+        class="context-menu-item themesExcluded"
+        id="contextItem"
+        onclick="visitSite()"
+      >
+        <i class="bi bi-clock-history"></i> Last Visited Site
+      </div>
+      <div
+        class="context-menu-item themesExcluded"
+        id="contextItem"
+        onclick="openWindow()"
+      >
+        <i class="bi bi-box-arrow-up-right"></i> About:Blank Cloak
+      </div>
+      <div
+        class="context-menu-item themesExcluded"
+        id="contextItem"
+        onclick="openSettings()"
+      >
+        <i class="bi bi-gear"></i> View all Settings
+      </div>
     </div>
-    <div class="footer themesExcluded" style="text-align:right;">
-      <a href="https://discord.gg/sWPHCdxCPU" target="new"><i class="bi bi-discord"></i></a>
-      <a href="https://github.com/dogenetwork/v4" target="new"><i class="bi bi-github"></i></a>
+    <nav id="mytopnav">
+      <button class="btn-main" anim="ripple" onclick="send('/settings.html')">
+        <i class="bi bi-gear" style="font-size: 30px"></i>Settings
+      </button>
+      <button class="btn-main" anim="ripple" onclick="send('/gms')">
+        <i class="bi bi-joystick" style="font-size: 30px"></i>Games
+      </button>
+      <button class="btn-main" anim="ripple" onclick="send('/apps')">
+        <i class="bi bi-grid-fill" style="font-size: 30px"></i>Apps</button
+      ><br />
+      <a href="#" class="title" anim="ripple"
+        ><img
+          src="/assets/img/doge2.jpg"
+          style="width: 22px; height: 22px"
+          id="logo"
+        />
+        Doge Unblocker</a
+      >
+    </nav>
+    <div
+      style="text-align: center; color: white; margin-top: 80px; z-index: 1"
+      class="themesExcluded"
+    >
+      <div class="themesExcluded">
+        <i class="bi bi-search search" id="search"></i>
+        <form
+          method="POST"
+          id="uform"
+          autocomplete="off"
+          class="themesExcluded"
+          style="z-index: 1"
+        >
+          <input
+            type="text"
+            name="url"
+            class="browse-input themesExcluded"
+            style="font-family: poppins; font-size: 20px; z-index: 1"
+            placeholder="Type URL or search query"
+          />
+          <p class="splashText themesExcluded" id="placeholder"></p>
+        </form>
+      </div>
+      <div class="footer themesExcluded" style="text-align: right">
+        <a href="https://discord.gg/sWPHCdxCPU" target="new"
+          ><i class="bi bi-discord"></i
+        ></a>
+        <a href="https://github.com/dogenetwork/v4" target="new"
+          ><i class="bi bi-github"></i
+        ></a>
+      </div>
+      <div class="bottom-right-content themesExcluded">
+        <a href="/info">Site Info</a>
+      </div>
+      <script src="/assets/js/main.js?v=3"></script>
+      <script src="/assets/js/index.js?v=3"></script>
+      <script src="/assets/js/themes.js?v=3"></script>
+      <script src="/assets/js/particles.js?v=3"></script>
+      <script src="/assets/js/register.js?v=3" defer></script>
+      <!--<script type='text/javascript' src='//cogentselfish.com/cc/1e/f1/cc1ef15b8ddac4fa79288c68db740550.js'></script>-->
+      <script
+        type="text/javascript"
+        src="//frameworkilluminatedcredulity.com/be/50/e9/be50e9651922e58b7d310bf441ae50f3.js"
+      ></script>
+      <script
+        id="aclib"
+        type="text/javascript"
+        src="//acscdn.com/script/aclib.js"
+      ></script>
+      <script type="text/javascript">
+        aclib.runAutoTag({
+          zoneId: "hcvitnb9oe",
+        });
+      </script>
+      <!-- <script type='text/javascript' src='//cogentselfish.com/a1/87/68/a187684b9f023e7b2684450a755b623e.js'></script>-->
     </div>
-    <div class="bottom-right-content themesExcluded">
-    <a href="/info">Site Info</a>
-  </div>
-  <script src="/assets/js/main.js?v=3"></script>
-  <script src="/assets/js/index.js?v=3"></script>
-  <script src="/assets/js/themes.js?v=3"></script>
-  <script src="/assets/js/particles.js?v=3"></script>
-  <script src="/assets/js/register.js?v=3" defer></script>
-  <script type='text/javascript' src='//cogentselfish.com/cc/1e/f1/cc1ef15b8ddac4fa79288c68db740550.js'></script>
-  <script type='text/javascript' src='//frameworkilluminatedcredulity.com/be/50/e9/be50e9651922e58b7d310bf441ae50f3.js'></script>
-  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-<script type="text/javascript">
-    aclib.runAutoTag({
-        zoneId: 'hcvitnb9oe',
-    });
-</script>
- <!-- <script type='text/javascript' src='//cogentselfish.com/a1/87/68/a187684b9f023e7b2684450a755b623e.js'></script>-->
-</div>
-</body>
+  </body>
 </html>
