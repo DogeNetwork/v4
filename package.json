@@ -15,7 +15,7 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@cypress/request": "^3.0.0",
-    "@mercuryworkshop/bare-mux": "^2.1.7",
+    "@mercuryworkshop/bare-mux": "^2.0.4",
     "@mercuryworkshop/libcurl-transport": "1.3.10",
     "@mercuryworkshop/epoxy-transport": "^2.1.26",
     "@titaniumnetwork-dev/ultraviolet": "3.2.7",
