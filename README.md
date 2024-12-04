@@ -53,3 +53,6 @@ Or simply run the `start.sh` file
 
 ### Discord
 [![Join us on Discord](https://invidget.switchblade.xyz/sWPHCdxCPU?theme=dark)](https://discord.gg/unblocking)
+
+### Commercial Use and Licensing
+While this project is licensed under the AGPL, I (fowntain) retain the right to use, modify, and distribute the software for commercial purposes, including making proprietary changes without the obligation to release the source code. All other users must still comply with the AGPL terms.

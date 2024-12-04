@@ -1,14 +1,14 @@
 import express from 'express';
 import http from 'node:http';
 import path from 'node:path';
-import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
+import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 import { createBareServer } from "@tomphttp/bare-server-node";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import wisp from "wisp-server-node";
 import request from '@cypress/request';
 import chalk from 'chalk';
-import packageJson from './package.json' assert { type: 'json' };
+import packageJson from './package.json' with { type: 'json' };
 
 const __dirname = path.resolve();
 const server = http.createServer();
@@ -34,7 +34,7 @@ app.use(
 
 app.use(express.static(path.join(__dirname, 'static')));
 app.use("/uv/", express.static(uvPath));
-app.use("/libcurl/", express.static(libcurlPath));
+app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
 
 routes.forEach(({ route, file }) => {
