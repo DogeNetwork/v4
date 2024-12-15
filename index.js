@@ -7,7 +7,7 @@ import { createBareServer } from "@tomphttp/bare-server-node";
 import wisp from "wisp-server-node";
 import request from '@cypress/request';
 import chalk from 'chalk';
-import packageJson from './package.json' with { type: 'json' };
+import packageJson from './package.json' assert { type: 'json' };
 
 const __dirname = path.resolve();
 const server = http.createServer();
