@@ -20,7 +20,7 @@ YELLOW="\e[1;33m"
 BLUE="\e[1;34m"
 RESET="\e[0m"
 
-print_bold_with_outline "Welcome to Doge V4, user!"
+print_bold_with_outline "Welcome to Liberty Tabs V4, user!"
 
 if ! command -v git > /dev/null; then
     echo -e "${RED}[Error] Git is not installed. Please install Git and try again.${RESET}"
