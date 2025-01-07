@@ -30,7 +30,7 @@ const themeStyles = {
   swamp: { background: "rgb(12, 43, 22)" },
   starry: { background: "rgb(63, 3, 53)" },
   magma: { background: "rgb(31, 26, 26)" },
-  sunset: { background: "rgb(29, 21, 27)" },
+  sunset: { background: "rgb(255, 0, 191)" },
   midnight: { background: "rgb(27, 27, 27)" },
   default: { background: "rgb(6, 22, 35)" }
 };
