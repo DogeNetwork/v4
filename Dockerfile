@@ -4,6 +4,6 @@ ENV NODE_ENV=production
 WORKDIR /app
 COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install
-EXPOSE 8000
+EXPOSE 6969
 COPY . .
 CMD [ "npm", "start" ]
