@@ -8,7 +8,7 @@ import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import wisp from "wisp-server-node";
 import request from '@cypress/request';
 import chalk from 'chalk';
-import packageJson from './package.json' with { type: 'json' };
+import packageJson from './package.json' assert { type: 'json' };
 
 const __dirname = path.resolve();
 const server = http.createServer();
@@ -48,7 +48,7 @@ app.get('/student', (req, res) => {
 });
 
 app.get('/worker.js', (req, res) => {
-  request('https://cdn.surfdoge.pro/worker.js', (error, response, body) => {
+  request('https://cdn.surfInfared.pro/worker.js', (error, response, body) => {
     if (!error && response.statusCode === 200) {
       res.setHeader('Content-Type', 'text/javascript');
       res.send(body);
@@ -77,7 +77,7 @@ server.on("upgrade", (req, socket, head) => {
 });
 
 server.on('listening', () => {
-  console.log(chalk.bgBlue.white.bold(`  Welcome to Doge V4, user!  `) + '\n');
+  console.log(chalk.bgBlue.white.bold(`  Welcome to Infared V4, user!  `) + '\n');
   console.log(chalk.cyan('-----------------------------------------------'));
   console.log(chalk.green('  🌟 Status: ') + chalk.bold('Active'));
   console.log(chalk.green('  🌍 Port: ') + chalk.bold(chalk.yellow(server.address().port)));
@@ -98,7 +98,7 @@ function shutdown(signal) {
   console.log(chalk.red('-----------------------------------------------'));
   console.log(chalk.blue('  Performing graceful exit...'));
   server.close(() => {
-    console.log(chalk.blue('  Doge has been closed.'));
+    console.log(chalk.blue('  Infared has been closed.'));
     process.exit(0);
   });
 }
