@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex">
+<link rel="icon" id="icon" href="/assets/img/salyte.jpg">
+<link rel="stylesheet" href="/assets/css/app.css?v=3"/>
+<link rel="stylesheet" href="/assets/css/menu.css?v=3" />
+<script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js?v=3"></script>
+<script src="/assets/js/particles.js?v=3"></script>
+<script src="/assets/js/cdn-rocket.js?v=3"></script>
+<script src="/assets/js/anym.js?v=3"></script>
+<script>
+  // Register service worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful');
+        })
+        .catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+</script>
+<style>
+.centered-div {
+  position: absolute;
+  top: 50px;
+  color: #fff;
+  width: 850px;
+  height: 780px;
+  margin-bottom: 20px;
+  box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.4);
+  background-color: rgba(128, 128, 128, 0.162);
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%);
+  text-align: center;
+}
+
+.cookie-list {
+    max-height: 400px; /* Increased height to show more content */
+    overflow-y: auto;
+    margin: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: left;
+    position: relative;
+    cursor: pointer;
+}
+
+.blurred {
+    filter: blur(8px);
+    user-select: none;
+}
+
+.overlay-text {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.blurred + .overlay-text {
+    display: block;
+}
+
+.cookie-item {
+    padding: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cookie-item strong {
+    color: #64B5F6;
+}
+
+.cookie-item div {
+    margin: 2px 0;
+}
+
+.export-button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.export-button:hover {
+    background-color: #45a049;
+}
+
+#status-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.success {
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #4CAF50;
+}
+
+.error {
+    background-color: rgba(244, 67, 54, 0.3);
+    color: #f44336;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+.import-button {
+    background-color: #2196F3;
+}
+
+.import-button:hover {
+    background-color: #1976D2;
+}
+
+#fileInput {
+    display: none;
+}
+
+.storage-section {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.storage-section h3 {
+    margin: 10px 0;
+    color: #2196F3;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(33, 150, 243, 0.3);
+    padding-bottom: 5px;
+}
+</style>
+<title>Cookie Export | Salyte</title>
+</head>
+<body>
+ <div id="contextMenu" class="context-menu themesExcluded" style="--ripple-duration: 300ms;">
+   <!-- ...existing code... -->
+ </div>
+ <div class="centered-div">
+  <h1 style="font-size:68px;">Export</h1>
+  <div class="themesExcluded">
+    <p>Export your cookies from this site like game progress and accounts</p>
+    <p><strong>Disclaimer:</strong> The exported data contains personal information and should not be shared.</p>
+    
+    <div class="cookie-container">
+        <div id="cookieList" class="cookie-list blurred">
+            <!-- Cookies will be listed here -->
+        </div>
+        <div class="overlay-text">Press and hold to reveal private cookies</div>
+    </div>
+    <div class="button-group">
+        <button class="export-button" onclick="exportStorage()">Export Cookies</button>
+        <input type="file" id="fileInput" accept=".json" onchange="handleFileSelect(event)">
+        <button class="export-button import-button" onclick="document.getElementById('fileInput').click()">Import Cookies</button>
+    </div>
+    
+    <div id="status-message"></div>
+  </div>
+<script>
+    function displayCookies() {
+        const cookieList = document.getElementById('cookieList');
+        cookieList.innerHTML = '<div class="storage-section"><h3>Cookies:</h3>';
+        
+        document.cookie.split(';').forEach(cookie => {
+            if (cookie) {
+                const [name, value] = cookie.trim().split('=');
+                cookieList.innerHTML += `<div class="cookie-item">
+                    <strong>${name}</strong>: ${value}
+                </div>`;
+            }
+        });
+    }
+
+    function displayLocalStorage() {
+        const cookieList = document.getElementById('cookieList');
+        cookieList.innerHTML += '<div class="storage-section"><h3>Local Storage:</h3>';
+        
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            cookieList.innerHTML += `<div class="cookie-item">
+                <strong>${key}</strong>: ${localStorage.getItem(key)}
+            </div>`;
+        }
+    }
+
+    async function displayCacheStorage() {
+        const cookieList = document.getElementById('cookieList');
+        cookieList.innerHTML += '<div class="storage-section"><h3>Cache Storage:</h3>';
+        
+        try {
+            const cacheNames = await caches.keys();
+            for (const cacheName of cacheNames) {
+                const cache = await caches.open(cacheName);
+                const requests = await cache.keys();
+                const cacheDetails = requests.map(req => req.url).join(', ');
+                cookieList.innerHTML += `<div class="cookie-item">
+                    <strong>${cacheName}</strong>: ${requests.length} items<br>
+                    <small>${cacheDetails}</small>
+                </div>`;
+            }
+        } catch (error) {
+            console.error('Cache storage error:', error);
+            cookieList.innerHTML += `<div class="cookie-item">Error accessing cache: ${error.message}</div>`;
+        }
+    }
+
+    // Loading logic
+    document.addEventListener('DOMContentLoaded', async () => {
+        displayCookies();
+        displayLocalStorage();
+        await displayCacheStorage();
+    });
+
+    // Handle reveal on mouse press
+    const cookieList = document.getElementById('cookieList');
+    cookieList.addEventListener('mousedown', () => {
+        cookieList.classList.remove('blurred');
+    });
+    cookieList.addEventListener('mouseup', () => {
+        cookieList.classList.add('blurred');
+    });
+    cookieList.addEventListener('mouseleave', () => {
+        cookieList.classList.add('blurred');
+    });
+</script>
+  </script>
+  <script src="/assets/js/themes.js?v=3"></script>
+  <script src="/assets/js/main.js?v=3"></script>
+</body>
+</html>
