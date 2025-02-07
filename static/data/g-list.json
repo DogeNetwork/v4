@@ -20,7 +20,7 @@
     {
       "name": "Awesome Tanks 2",
       "imageUrl": "/assets/img/atanks2.webp",
-      "url": "openAg('https://derpman.codeberg.page/awesometanks2/')",
+      "url": "openAg('https://ubg98.github.io/AwesomeTanks2/')",
       "height": 135
     },
     {
@@ -79,7 +79,7 @@
     {
       "name": "Slope",
       "imageUrl": "/assets/img/slope.webp",
-      "url": "openAg('https://derpmandev.github.io/unblocked-games/slope')"
+      "url": "openAg('https://slopeio.org/slope.embed')"
     },
     {
       "name": "Boxel Rebound",
@@ -131,7 +131,7 @@
     {
       "name": "Subway Surfers",
       "imageUrl": "/assets/img/subway.webp",
-      "url": "openAg('https://derpman.codeberg.page/echo/@main/subway-surfers/index.html')",
+      "url": "openAg('https://szhong.4399.com/4399swf//upload_swf/ftp35/liuxinyu/20210324/jj01/index.html')",
       "height": 135
     },
     {
@@ -147,7 +147,7 @@
     {
       "name": "Vex 3",
       "imageUrl": "/assets/img/vex3.webp",
-      "url": "openAg('https://derpman.codeberg.page/vex3')"
+      "url": "openAg('https://vex-game.com/vex3/index.html')"
     },
     {
       "name": "Vex 8",
@@ -186,12 +186,12 @@
     {
       "name": "Bitlife",
       "imageUrl": "/assets/img/bitlife.webp",
-      "url": "openAg('https://derpman.codeberg.page/echo/@main/bitlife/index.html')"
+      "url": "openAg('https://bitlife-game.io/game/bitlife/')"
     },
     {
       "name": "2048",
       "imageUrl": "/assets/img/2048.webp",
-      "url": "openAg('https://derpmandev.github.io/unblocked-games/2048')"
+      "url": "openAg('https://ovolve.github.io/2048-AI/')"
     },
     {
       "name": "Pokemon 2048",
