@@ -107,5 +107,5 @@ process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('SIGINT', () => shutdown('SIGINT'));
 
 server.listen({
-  port: 8000,
+  port: 6969,
 });
