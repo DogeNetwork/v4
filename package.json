@@ -11,7 +11,7 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "50rb3t",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@cypress/request": "^3.0.0",
