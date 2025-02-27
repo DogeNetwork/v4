@@ -24,6 +24,26 @@
       "height": 135
     },
     {
+      "name": "Bounce Back",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/bounceback.jpg",
+      "url": "openAg('https://skoolcdn.github.io/gfiles/gfiles/html5/bounceback')"
+    },
+    {
+      "name": "BuildNow.GG",
+      "imageUrl": "/assets/img/buildnow.png",
+      "url": "openAg('https://games.crazygames.com/en_US/buildnow-gg/index.html')"
+    },
+    {
+      "name": "Counter Strike",
+      "imageUrl": "https://cdn2.iconfinder.com/data/icons/popular-games-1/50/csgo_squircle-512.png",
+      "url": "openAg('https://play-cs.com')"
+    },
+    {
+      "name": "Defly.io",
+      "imageUrl": "https://cdn.glitch.global/82c5292a-89b3-4a53-84e2-abbc0fa27724/defly_io.webp?v=1679319580067",
+      "url": "openAg('https://defly.io/')"
+    },
+    {
       "name": "Diep.io",
       "imageUrl": "https://play-lh.googleusercontent.com/6lO401fxwNTk919VwTKOdKGot82kf1WFBYGdhnVgDVsmkdK6Nv6d2ZDpmKBVO9CW2s8",
       "url": "openAg('https://diep.io/')"
@@ -32,6 +52,16 @@
       "name": "Florr.io",
       "imageUrl": "/assets/img/florr.webp",
       "url": "openAg('https://florr.io')"
+    },
+    {
+      "name": "Janissary Battles",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/janissary.png",
+      "url": "openAg('https://html5.gamedistribution.com/rvvASMiM/8b55f4f729be4e70b6155f27d2e04690/?gd_sdk_referrer_url=https://gamedistribution.com/games/janissary-battles')"
+    },
+    {
+      "name": "Kirka.io",
+      "imageUrl": "https://cdn.glitch.global/40d8a6f7-c124-43fe-8544-1617c1dcc948/download%20(1).jpeg?v=1680006191209",
+      "url": "openAg('https://kirka.io/')"
     },
     {
       "name": "Krunker.io",
@@ -55,12 +85,17 @@
     {
       "name": "Aquapark.io",
       "imageUrl": "/assets/img/aquapark.png",
-      "url": "openAg('https://html5.gamedistribution.com/rvvASMiM/ce67b95f0db44d66b8b0dc48ade7ce1a/index.html')"
+      "url": "openAg('https://classroom6x.gitlab.io/aquaparkio/')"
     },
     {
       "name": "Archery World Tour",
       "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/awt.jpg",
       "url": "openAg('https://gamesnacks.com/embed/games/archery')"
+    },
+    {
+      "name": "Basket Bros",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/basketbros.jpg",
+      "url": "openAg('https:https://assets.3kh0.net/basketbros-io/index.html')"
     },
     {
       "name": "Basket Random",
@@ -72,6 +107,11 @@
       "name": "BasketBros.io",
       "imageUrl": "/assets/img/basketbros.webp",
       "url": "openAg('https://basketbros.io')"
+    },
+    {
+      "name": "Basketball Stars",
+      "imageUrl": "https://img.gamedistribution.com/69d78d071f704fa183d75b4114ae40ec-512x512.jpeg",
+      "url": "openAg('https://html5.gamedistribution.com/rvvASMiM/69d78d071f704fa183d75b4114ae40ec/?gd_sdk_referrer_url=https://gamedistribution.com/games/basketball-stars')"
     },
     {
       "name": "Retro Bowl",
@@ -93,13 +133,28 @@
     },
     {
       "name": "Achievement Unlocked",
-      "imageUrl": "https://player.work/achievementunlocked/achievementunlocked.png",
-      "url": "openAg('https://player.work/achievementunlocked/index.html')"
+      "imageUrl": "https://assets.3kh0.net/achievementunlocked/achievementunlocked.png",
+      "url": "openAg('https://assets.3kh0.net/achievementunlocked/index.html')"
     },
     {
       "name": "Amidst The Clouds",
       "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/amidst-the-clouds/splash.png",
       "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/amidst-the-clouds/index.html')"
+    },
+    {
+      "name": "Big NEON Tower Tiny Square",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/bntts/icons/icon-256.png",
+      "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/bntts/index.html')"
+    },
+    {
+      "name": "Big Tower Tiny Square",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/btts/images.png",
+      "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/btts/index.html')"
+    },
+    {
+      "name": "Bob The Robber 2",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/btr2.jpeg",
+      "url": "openAg('https://assets.3kh0.net/bobtherobber2/index.html')"
     },
     {
       "name": "Boxel Rebound",
@@ -108,10 +163,35 @@
       "height": 135
     },
     {
+      "name": "Circlo",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/circlo/img/circlo.png",
+      "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/circlo/index.html')"
+    },
+    {
+      "name": "Cubeform",
+      "imageUrl": "https://www.coolmathgames.com/sites/default/files/styles/pwa_512x512/public/game_m_thumbnail/cubeform-game-icon.png?itok=RHIZMSy5",
+      "url": "openAg('https://www.mathplayground.com/cubeform/index.html')"
+    },
+    {
+      "name": "Doodle Jump",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/doodle-jump/doodle.png",
+      "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/doodle-jump/index.html')"
+    },
+    {
       "name": "Fireboy and Watergirl",
       "imageUrl": "/assets/img/fireboy-and-watergirl.webp",
       "url": "openAg('https://ubg100.github.io/games/fbwg1/index.html')",
       "height": 135
+    },
+    {
+      "name": "Geometry Dash",
+      "imageUrl": "/assets/img/geometrydash.webp",
+      "url": "openAg('https://lnageo.github.io/a77/geometry-dash/')"
+    },
+    {
+      "name": "Happy Wheels",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/happywheels.jpeg",
+      "url": "openAg('https://games-online.io/game/HappyWheels')"
     },
     {
       "name": "Run 3",
@@ -152,6 +232,11 @@
       "url": "openAg('https://ultimatemen.github.io/games/ashbelt/index.html')"
     },
     {
+      "name": "Genshin Impact",
+      "imageUrl": "https://cdn2.steamgriddb.com/icon_thumb/73e5080f0f3804cb9cf470a8ce895dac.png",
+      "url": "openAg('https://nowgg.nl/play/cognosphere-pte-ltd-/1773/genshin-impact.html')"
+    },
+    {
       "name": "Hole.io",
       "imageUrl": "/assets/img/hole-io.webp",
       "url": "openAg('https://hole-io.com')"
@@ -169,20 +254,60 @@
   ],
   "Running Games": [
     {
+      "name": "Backrooms",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/backrooms.jpg",
+      "url": "openAg('https://assets.3kh0.net/backrooms/index.html')"
+    },
+    {
+      "name": "Chrome Dino",
+      "imageUrl": "https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/9afd3b92ab41ffca7f368a8fcbd6d39a75894efe0edbc14cf1f067cf625e6678.png",
+      "url": "openAg('https://assets.3kh0.net/chrome-dino/index.html')"
+    },
+    {
+      "name": "Cluster Truck",
+      "imageUrl": "https://image.api.playstation.com/cdn/UP0097/CUSA06481_00/36sNa79pxV859fFg3CU7zFhQ34ThNx8z.png",
+      "url": "openAg('https://www.snake-games.io/localgames/cluster-rush/')"
+    },
+    {
+      "name": "Crossy Road",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/crossy-road/icon.png",
+      "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/crossy-road/index.html')"
+    },
+    {
+      "name": "Crowd Run 3D",
+      "imageUrl": "/assets/img/crowd-run-3d.webp",
+      "url": "openAg('https://games.cdn.famobi.com/html5games/c/crowd-run-3d/v040/')"
+    },
+    {
+      "name": "Getaway Shootout",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/getaway-shootout/img/index.jpg",
+      "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/getaway-shootout/index.html')"
+    },
+    {
+      "name": "Jetpack Joyride",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/jetpack-joyride/splash.jpg",
+      "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/jetpack-joyride/index.html')"
+    },
+    {
+      "name": "OvO",
+      "imageUrl": "/assets/img/ovo.webp",
+      "url": "openAg('https://ovo.onrender.com/versions/1.4.4b/index.html')"
+    },
+    {
       "name": "Subway Surfers",
       "imageUrl": "/assets/img/subway.webp",
       "url": "openAg('https://derpman.codeberg.page/echo/@main/subway-surfers/index.html')",
       "height": 135
     },
     {
+      "name": "Tall Man Run",
+      "imageUrl": "/assets/img/tall-man-run.webp",
+      "url": "openAg('https://html5.gamedistribution.com/rvvASMiM/7980c23fbbae4af6851e01052fce3cce/index.html')"
+    },
+    {
       "name": "Temple Run",
       "imageUrl": "/assets/img/temple-run.webp",
       "url": "openAg('https://burgerbounty.github.io/s8/temple-run-2/')"
-    },
-    {
-      "name": "OvO",
-      "imageUrl": "/assets/img/ovo.webp",
-      "url": "openAg('https://ovo.onrender.com/versions/1.4.4b/index.html')"
     },
     {
       "name": "Vex 3",
@@ -193,16 +318,6 @@
       "name": "Vex 8",
       "imageUrl": "/assets/img/vex8.webp",
       "url": "openAg('https://html5.gamedistribution.com/rvvASMiM/949009d40a2846f89f887de2285d6c28/index.html')"
-    },
-    {
-      "name": "Tall Man Run",
-      "imageUrl": "/assets/img/tall-man-run.webp",
-      "url": "openAg('https://html5.gamedistribution.com/rvvASMiM/7980c23fbbae4af6851e01052fce3cce/index.html')"
-    },
-    {
-      "name": "Crowd Run 3D",
-      "imageUrl": "/assets/img/crowd-run-3d.webp",
-      "url": "openAg('https://games.cdn.famobi.com/html5games/c/crowd-run-3d/v040/')"
     }
   ],
   "Car/Racing Games": [
@@ -210,6 +325,16 @@
       "name": "Asphalt Retro",
       "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/asr.jpg",
       "url": "openAg('https://html5.gamedistribution.com/rvvASMiM/2c122cee7ef04222a962449e32a34e98/?gd_sdk_referrer_url=https://gamedistribution.com/games/asphalt-retro')"
+    },
+    {
+      "name": "Draw the Hill",
+      "imageUrl": "https://www.coolmathgames.com/sites/default/files/styles/pwa_512x512/public/game_m_thumbnail/draw-the-hill-icon.png?itok=AHxVtxID",
+      "url": "openAg('https://www.mathplayground.com/draw-the-hill/index.html')"
+    },
+    {
+      "name": "Drift Boss",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/driftboss.png",
+      "url": "openAg('https://www.mathplayground.com/drift-boss-v3/index.html')"
     },
     {
       "name": "Drift Hunters",
@@ -229,20 +354,24 @@
   ],
   "Brain Games": [
     {
-      "name": "Bitlife",
-      "imageUrl": "/assets/img/bitlife.webp",
-      "url": "openAg('https://derpman.codeberg.page/echo/@main/bitlife/index.html')"
-    },
-    {
       "name": "2048",
       "imageUrl": "/assets/img/2048.webp",
       "url": "openAg('https://derpmandev.github.io/unblocked-games/2048')"
     },
     {
-      "name": "Pokemon 2048",
-      "imageUrl": "/assets/img/p2048.webp",
-      "url": "openAg('https://filipekiss.github.io/2048')",
-      "height": 135
+      "name": "Bitlife",
+      "imageUrl": "/assets/img/bitlife.webp",
+      "url": "openAg('https://derpman.codeberg.page/echo/@main/bitlife/index.html')"
+    },
+    {
+      "name": "Black Hole Square",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/blackholesquare.png",
+      "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/black-hole-square/index.html')"
+    },
+    {
+      "name": "Bloxorz",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/bloxorz.png",
+      "url": "openAg('https://raw.githack.com/Skoolgq/flashgamedump/main/bloxorz.html')"
     },
     {
       "name": "Chess.com",
@@ -250,9 +379,25 @@
       "url": "openAg('https://chess.com')"
     },
     {
+      "name": "Cut the Rope",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/ctr.png",
+      "url": "openAg('https://assets.3kh0.net/ctr/index.html')"
+    },
+    {
+      "name": "Hacker Tetris",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/hackertetris.png",
+      "url": "openAg('https://assets.3kh0.net/twitch-tetris/index.html')"
+    },
+    {
       "name": "Jstris",
       "imageUrl": "/assets/img/jstris.webp",
       "url": "openAg('https://jstris.jezevec10.com')"
+    },
+    {
+      "name": "Pokemon 2048",
+      "imageUrl": "/assets/img/p2048.webp",
+      "url": "openAg('https://filipekiss.github.io/2048')",
+      "height": 135
     },
     {
       "name": "Watermelon Game (Suika)",
@@ -274,9 +419,24 @@
       "url": "openAg('https://than1089.github.io/adventure-capitalist/')"
     },
     {
+      "name": "Candy Jump",
+      "imageUrl": "https://www.coolmathgames.com/sites/default/files/styles/pwa_512x512/public/game_m_thumbnail/candy-jump-game-icon.png",
+      "url": "openAg('https://candyjump.games235.com/')"
+    },
+    {
       "name": "Cookie Clicker",
       "imageUrl": "/assets/img/cookieclicker.webp",
       "url": "openAg('https://orteil.dashnet.org/cookieclicker')"
+    },
+    {
+      "name": "DogeMiner",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/dogeminer.png",
+      "url": "openAg('https://assets.3kh0.net/DogeMiner/index.html')"
+    },
+    {
+      "name": "Flappy Bird",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/fp.png",
+      "url": "openAg('https://assets.3kh0.net/flappybird/index.html')"
     },
     {
       "name": "Idle Breakout",
@@ -291,10 +451,19 @@
   ],
   "Sandbox/Arcade Games": [
     {
-      "name": "Minecraft (Java Edition)",
-      "imageUrl": "/assets/img/minecraft.webp",
-      "url": "openAg('https://mcraft.fun')",
-      "height": 135
+      "name": "Bloons TD 2",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/btd2.png",
+      "url": "openAg('https://assets.3kh0.net/bloonstd2/index.html')"
+    },
+    {
+      "name": "Bonk.io",
+      "imageUrl": "https://b.thumbs.redditmedia.com/9p8-wn2_KPdgjPTaR9fx-NIVgFhvsgBL0WPdbv5GMkA.png",
+      "url": "openAg('https://bonk.io')"
+    },
+    {
+      "name": "Dante",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/dante/splash.png",
+      "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/dante/index.html')"
     },
     {
       "name": "Eaglercraft (1.5)",
@@ -309,9 +478,40 @@
       "height": 135
     },
     {
+      "name": "Friday Night Funkin'",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/fnf.png",
+      "url": "openAg('https://raw.githack.com/Skoolgq/Polaris-Assets/main/fridaynightfunkin/index.html')"
+    },
+    {
+      "name": "Fruit Ninja",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/fruit-ninja/FruitNinjaTeaser.jpg",
+      "url": "openAg('https://assets.3kh0.net/fruitninja/index.html')"
+    },
+    {
+      "name": "GunSpin",
+      "imageUrl": "https://play-lh.googleusercontent.com/fLqvWSVq5rENEvu32xl0hf96wwSHVwQm-_9xc6KZg9Vgv9PbAtf1CyBYW7i1mlAXoSA",
+      "url": "openAg('https://ubg365.github.io/gunspin/play.html')"
+    },
+    {
       "name": "Kick The Buddy",
       "imageUrl": "/assets/img/super-buddy-kick.webp",
       "url": "openAg('https://html5.gamedistribution.com/rvvASMiM/09399bfcb6e8462b873a6154b506ea99/index.html?gdpr-targeting=1&gd_sdk_referrer_url=https%3A%2F%2Fwww.silvergames.com%2Fen%2Fsuper-buddy-kick&gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL3d3dy5zaWx2ZXJnYW1lcy5jb20vZW4vc3VwZXItYnVkZHkta2ljayIsInBhcmVudERvbWFpbiI6InNpbHZlcmdhbWVzLmNvbSIsInRvcERvbWFpbiI6InNpbHZlcmdhbWVzLmNvbSIsImhhc0ltcHJlc3Npb24iOmZhbHNlLCJsb2FkZXJFbmFibGVkIjp0cnVlLCJob3N0IjoiaHRtbDUuZ2FtZWRpc3RyaWJ1dGlvbi5jb20iLCJ2ZXJzaW9uIjoiMS41LjE3In0%253D')",
+      "height": 135
+    },
+    {
+      "name": "Learn To Fly",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/learntofly.png",
+      "url": "openAg('https://assets.3kh0.net/learntofly/index.html')"
+    },
+    {
+      "name": "Learn To Fly 2",
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/ltf2.jpg",
+      "url": "openAg('https://assets.3kh0.net/learntofly2/index.html')"
+    },
+    {
+      "name": "Minecraft (Java Edition)",
+      "imageUrl": "/assets/img/minecraft.webp",
+      "url": "openAg('https://mcraft.fun')",
       "height": 135
     },
     {

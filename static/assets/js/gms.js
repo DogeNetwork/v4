@@ -25,7 +25,7 @@ function addGms(name, imageUrl, gameUrl, width, height) {
   linkElement.onclick = function() {
     function launch() {
       eval(gameUrl); // apps and gms use own function
-   }
+    }
     launch();
   };
   if (width) {
@@ -54,16 +54,22 @@ fetch('/data/g-list.json').then(response => {
   return response.json();
 }).then(data => {
   const fetchMessage = document.getElementById('fetchMessage');
+  let totalGames = 0;
+
   for (let category in data) {
     if (data.hasOwnProperty(category)) {
       const games = data[category];
+      totalGames += games.length;
       games.forEach(game => {
         const { name, imageUrl, url, width, height } = game;
         addGms(name, imageUrl, url, width, height);
       });
     }
   }
-  // Hide msg after gs load
+
+  const searchBar = document.querySelector('.searchbar');
+  searchBar.placeholder = 'Search ' + totalGames + ' games';
+
   if (fetchMessage) {
     fetchMessage.style.display = 'none';
   }
@@ -76,7 +82,6 @@ fetch('/data/g-list.json').then(response => {
   }
 });
 
-/* Search Bar */
 document.getElementById('searchApps').addEventListener('input', function(event) {
   const query = this.value.toLowerCase();
   const links = document.getElementsByClassName('search-results')[0].getElementsByTagName('a');
@@ -104,13 +109,17 @@ document.getElementById('searchApps').addEventListener('input', function(event) 
 
 var searchBar = document.querySelector('.searchbar');
 var searchIcon = document.getElementById('search');
+
+const defaultPlaceholder = 'Search for games';
+
 searchBar.addEventListener('focus', () => {
   searchIcon.style.marginLeft = '20px';
   searchBar.placeholder = '';
   searchBar.style.textAlign = 'left';
 });
+
 searchBar.addEventListener('blur', () => {
   searchIcon.style.marginLeft = '140px';
-  searchBar.placeholder = 'Search for games';
+  searchBar.placeholder = defaultPlaceholder;
   searchBar.style.textAlign = 'center';
 });
