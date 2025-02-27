@@ -3,3 +3,5 @@ dist
 .DS_Store
 **/.DS_Store
 package-lock.json
+/static/data/games (1).json
+/static/data/updater.py
