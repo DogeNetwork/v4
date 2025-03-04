@@ -16,6 +16,11 @@ const bareServer = createBareServer('/seal/');
 const app = express(server);
 const version = packageJson.version;
 const discord = 'https://discord.gg/unblocking';
+
+// Message queue for long polling
+const messageQueues = new Map();
+let messageId = 0;
+
 const routes = [
   { route: '/mastery', file: './static/loader.html' },
   { route: '/apps', file: './static/apps.html' },
@@ -36,6 +41,65 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
+
+// Long polling endpoints
+app.post('/poll/connect', (req, res) => {
+  const clientId = Math.random().toString(36).substring(7);
+  messageQueues.set(clientId, []);
+  res.json({ clientId, status: 'connected' });
+});
+
+app.get('/poll/:clientId', (req, res) => {
+  const { clientId } = req.params;
+  const { lastEventId = 0 } = req.query;
+  
+  const queue = messageQueues.get(clientId);
+  if (!queue) {
+    return res.status(404).json({ error: 'Client not found' });
+  }
+
+  // Return any new messages
+  const newMessages = queue.filter(msg => msg.id > lastEventId);
+  if (newMessages.length > 0) {
+    res.json({ messages: newMessages });
+  } else {
+    // Hold the connection open for 30 seconds
+    const timeout = setTimeout(() => {
+      res.json({ messages: [] });
+    }, 30000);
+
+    // Clean up on client disconnect
+    req.on('close', () => {
+      clearTimeout(timeout);
+    });
+  }
+});
+
+app.post('/poll/:clientId/message', (req, res) => {
+  const { clientId } = req.params;
+  const { data } = req.body;
+  
+  const queue = messageQueues.get(clientId);
+  if (!queue) {
+    return res.status(404).json({ error: 'Client not found' });
+  }
+
+  messageId++;
+  queue.push({ id: messageId, data });
+  
+  // Keep only last 100 messages
+  if (queue.length > 100) {
+    queue.shift();
+  }
+  
+  res.json({ status: 'message sent', id: messageId });
+});
+
+app.post('/poll/:clientId/close', (req, res) => {
+  const { clientId } = req.params;
+  messageQueues.delete(clientId);
+  res.json({ status: 'disconnected' });
+});
 
 routes.forEach(({ route, file }) => {
   app.get(route, (req, res) => {
@@ -59,25 +123,20 @@ app.get('/worker.js', (req, res) => {
 });
 
 app.use((req, res) => {
-  res.statusCode = 404;
-  res.sendFile(path.join(__dirname, './static/404.html'));
+  if (bareServer.shouldRoute(req)) {
+    bareServer.routeRequest(req, res);
+  } else {
+    res.statusCode = 404;
+    res.sendFile(path.join(__dirname, './static/404.html'));
+  }
 });
 
 server.on("request", (req, res) => {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeRequest(req, res);
-  } else app(req, res);
-});
-server.on("upgrade", (req, socket, head) => {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeUpgrade(req, socket, head);
-  } else if (req.url.endsWith("/wisp/")) {
-    wisp.routeRequest(req, socket, head);
-  } else socket.end();
+  app(req, res);
 });
 
 server.on('listening', () => {
-  console.log(chalk.bgBlue.white.bold(`  Welcome to Doge V4, user!  `) + '\n');
+  console.log(chalk.bgBlue.white.bold(`  Welcome to ir V4, user!  `) + '\n');
   console.log(chalk.cyan('-----------------------------------------------'));
   console.log(chalk.green('  🌟 Status: ') + chalk.bold('Active'));
   console.log(chalk.green('  🌍 Port: ') + chalk.bold(chalk.yellow(server.address().port)));
@@ -98,7 +157,7 @@ function shutdown(signal) {
   console.log(chalk.red('-----------------------------------------------'));
   console.log(chalk.blue('  Performing graceful exit...'));
   server.close(() => {
-    console.log(chalk.blue('  Doge has been closed.'));
+    console.log(chalk.blue('  ir has been closed.'));
     process.exit(0);
   });
 }
