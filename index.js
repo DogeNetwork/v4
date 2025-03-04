@@ -12,14 +12,21 @@ import packageJson from './package.json' with { type: 'json' };
 
 const __dirname = path.resolve();
 const server = http.createServer();
-const bareServer = createBareServer('/seal/');
-const app = express(server);
+const app = express();
+
+// Create bare server with fallback to HTTP
+const bareServer = createBareServer('/bare/', {
+  maintainer: {
+    email: 'tomphttp@sys32.dev',
+    website: 'https://github.com/tomphttp/',
+  },
+  logErrors: false,
+  httpFallback: true,
+  followRedirects: true,
+});
+
 const version = packageJson.version;
 const discord = 'https://discord.gg/unblocking';
-
-// Message queue for long polling
-const messageQueues = new Map();
-let messageId = 0;
 
 const routes = [
   { route: '/mastery', file: './static/loader.html' },
@@ -31,76 +38,15 @@ const routes = [
 ];
 
 app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
+app.use(express.urlencoded({ extended: true }));
 
+// Static file serving
 app.use(express.static(path.join(__dirname, 'static')));
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
 
-// Long polling endpoints
-app.post('/poll/connect', (req, res) => {
-  const clientId = Math.random().toString(36).substring(7);
-  messageQueues.set(clientId, []);
-  res.json({ clientId, status: 'connected' });
-});
-
-app.get('/poll/:clientId', (req, res) => {
-  const { clientId } = req.params;
-  const { lastEventId = 0 } = req.query;
-  
-  const queue = messageQueues.get(clientId);
-  if (!queue) {
-    return res.status(404).json({ error: 'Client not found' });
-  }
-
-  // Return any new messages
-  const newMessages = queue.filter(msg => msg.id > lastEventId);
-  if (newMessages.length > 0) {
-    res.json({ messages: newMessages });
-  } else {
-    // Hold the connection open for 30 seconds
-    const timeout = setTimeout(() => {
-      res.json({ messages: [] });
-    }, 30000);
-
-    // Clean up on client disconnect
-    req.on('close', () => {
-      clearTimeout(timeout);
-    });
-  }
-});
-
-app.post('/poll/:clientId/message', (req, res) => {
-  const { clientId } = req.params;
-  const { data } = req.body;
-  
-  const queue = messageQueues.get(clientId);
-  if (!queue) {
-    return res.status(404).json({ error: 'Client not found' });
-  }
-
-  messageId++;
-  queue.push({ id: messageId, data });
-  
-  // Keep only last 100 messages
-  if (queue.length > 100) {
-    queue.shift();
-  }
-  
-  res.json({ status: 'message sent', id: messageId });
-});
-
-app.post('/poll/:clientId/close', (req, res) => {
-  const { clientId } = req.params;
-  messageQueues.delete(clientId);
-  res.json({ status: 'disconnected' });
-});
-
+// Route handlers
 routes.forEach(({ route, file }) => {
   app.get(route, (req, res) => {
     res.sendFile(path.join(__dirname, file));
@@ -111,28 +57,72 @@ app.get('/student', (req, res) => {
   res.redirect('/portal');
 });
 
-app.get('/worker.js', (req, res) => {
-  request('https://cdn.surfdoge.pro/worker.js', (error, response, body) => {
-    if (!error && response.statusCode === 200) {
+// Worker script with fallback
+app.get('/worker.js', async (req, res) => {
+  try {
+    const response = await fetch('https://cdn.surfdoge.pro/worker.js');
+    if (response.ok) {
+      const text = await response.text();
       res.setHeader('Content-Type', 'text/javascript');
-      res.send(body);
+      res.send(text);
     } else {
-      res.status(500).send('Error fetching worker script');
+      throw new Error('Failed to fetch worker script');
     }
-  });
-});
-
-app.use((req, res) => {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeRequest(req, res);
-  } else {
-    res.statusCode = 404;
-    res.sendFile(path.join(__dirname, './static/404.html'));
+  } catch (error) {
+    console.error('Worker script fetch error:', error);
+    // Serve local fallback
+    res.sendFile(path.join(__dirname, 'static/assets/js/worker-fallback.js'));
   }
 });
 
-server.on("request", (req, res) => {
-  app(req, res);
+// Handle bare server requests
+server.on('request', (req, res) => {
+  if (bareServer.shouldRoute(req)) {
+    bareServer.routeRequest(req, res);
+  } else {
+    app(req, res);
+  }
+});
+
+// Handle WebSocket connections with fallback
+server.on('upgrade', (req, socket, head) => {
+  if (bareServer.shouldRoute(req)) {
+    bareServer.routeUpgrade(req, socket, head);
+  } else if (req.url.startsWith('/bare/')) {
+    // Fallback for bare server WebSocket
+    try {
+      bareServer.routeRequest(req, {
+        setHeader: () => {},
+        writeHead: (status, headers) => {
+          socket.write(`HTTP/1.1 ${status} ${http.STATUS_CODES[status]}\r\n`);
+          for (const [key, value] of Object.entries(headers)) {
+            socket.write(`${key}: ${value}\r\n`);
+          }
+          socket.write('\r\n');
+        },
+        end: (data) => {
+          if (data) socket.write(data);
+          socket.end();
+        }
+      });
+    } catch (error) {
+      console.error('Bare server WebSocket fallback error:', error);
+      socket.end();
+    }
+  } else {
+    socket.end();
+  }
+});
+
+// Error handling
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, './static/404.html'));
 });
 
 server.on('listening', () => {
