@@ -1,5 +1,20 @@
 [
   {
+    "name": "CoolMathGames",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwROf_FVSh9WkFeG15X-kVysnKddaMHvxSEA&s",
+    "url": "openAg('https://cooolmathgames.com/')"
+  },
+  {
+    "name": "Yurk",
+    "imageUrl": "https://cdn-1.webcatalog.io/catalog/yurk/yurk-icon-filled-256.webp",
+    "url": "openAg('https://yurk.com/')"
+  },
+  {
+    "name": "Friv",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqIWg8s05IkqLvREoQXgmDSegESpSICv7ZiQ&s",
+    "url": "openAg('https://friv.com/')"
+  },
+  {
     "name": "Google",
     "imageUrl": "/assets/img/google-icon.webp",
     "url": "openAg('https://google.com')"
@@ -33,11 +48,6 @@
     "name": "Pinterest",
     "imageUrl": "/assets/img/pinterest.webp",
     "url": "openAg('https://reddit.com')"
-  },
-  {
-    "name": "CoolMath",
-    "imageUrl": "/assets/img/coolmathgames.webp",
-    "url": "openAg('https://coolmathgames.com')"
   },
   {
     "name": "CrazyGames",
