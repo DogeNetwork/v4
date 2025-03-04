@@ -12,10 +12,22 @@ import packageJson from './package.json' with { type: 'json' };
 
 const __dirname = path.resolve();
 const server = http.createServer();
-const bareServer = createBareServer('/seal/');
-const app = express(server);
+const app = express();
+
+// Create bare server with fallback to HTTP
+const bareServer = createBareServer('/bare/', {
+  maintainer: {
+    email: 'tomphttp@sys32.dev',
+    website: 'https://github.com/tomphttp/',
+  },
+  logErrors: false,
+  httpFallback: true,
+  followRedirects: true,
+});
+
 const version = packageJson.version;
 const discord = 'https://discord.gg/unblocking';
+
 const routes = [
   { route: '/mastery', file: './static/loader.html' },
   { route: '/apps', file: './static/apps.html' },
@@ -26,17 +38,15 @@ const routes = [
 ];
 
 app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
+app.use(express.urlencoded({ extended: true }));
 
+// Static file serving
 app.use(express.static(path.join(__dirname, 'static')));
 app.use("/uv/", express.static(uvPath));
 app.use("/epoxy/", express.static(epoxyPath));
 app.use("/baremux/", express.static(baremuxPath));
 
+// Route handlers
 routes.forEach(({ route, file }) => {
   app.get(route, (req, res) => {
     res.sendFile(path.join(__dirname, file));
@@ -47,37 +57,76 @@ app.get('/student', (req, res) => {
   res.redirect('/portal');
 });
 
-app.get('/worker.js', (req, res) => {
-  request('https://cdn.surfdoge.pro/worker.js', (error, response, body) => {
-    if (!error && response.statusCode === 200) {
+// Worker script with fallback
+app.get('/worker.js', async (req, res) => {
+  try {
+    const response = await fetch('https://cdn.surfdoge.pro/worker.js');
+    if (response.ok) {
+      const text = await response.text();
       res.setHeader('Content-Type', 'text/javascript');
-      res.send(body);
+      res.send(text);
     } else {
-      res.status(500).send('Error fetching worker script');
+      throw new Error('Failed to fetch worker script');
     }
-  });
+  } catch (error) {
+    console.error('Worker script fetch error:', error);
+    // Serve local fallback
+    res.sendFile(path.join(__dirname, 'static/assets/js/worker-fallback.js'));
+  }
 });
 
-app.use((req, res) => {
-  res.statusCode = 404;
-  res.sendFile(path.join(__dirname, './static/404.html'));
-});
-
-server.on("request", (req, res) => {
+// Handle bare server requests
+server.on('request', (req, res) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeRequest(req, res);
-  } else app(req, res);
+  } else {
+    app(req, res);
+  }
 });
-server.on("upgrade", (req, socket, head) => {
+
+// Handle WebSocket connections with fallback
+server.on('upgrade', (req, socket, head) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeUpgrade(req, socket, head);
-  } else if (req.url.endsWith("/wisp/")) {
-    wisp.routeRequest(req, socket, head);
-  } else socket.end();
+  } else if (req.url.startsWith('/bare/')) {
+    // Fallback for bare server WebSocket
+    try {
+      bareServer.routeRequest(req, {
+        setHeader: () => {},
+        writeHead: (status, headers) => {
+          socket.write(`HTTP/1.1 ${status} ${http.STATUS_CODES[status]}\r\n`);
+          for (const [key, value] of Object.entries(headers)) {
+            socket.write(`${key}: ${value}\r\n`);
+          }
+          socket.write('\r\n');
+        },
+        end: (data) => {
+          if (data) socket.write(data);
+          socket.end();
+        }
+      });
+    } catch (error) {
+      console.error('Bare server WebSocket fallback error:', error);
+      socket.end();
+    }
+  } else {
+    socket.end();
+  }
+});
+
+// Error handling
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, './static/404.html'));
 });
 
 server.on('listening', () => {
-  console.log(chalk.bgBlue.white.bold(`  Welcome to Doge V4, user!  `) + '\n');
+  console.log(chalk.bgBlue.white.bold(`  Welcome to ir V4, user!  `) + '\n');
   console.log(chalk.cyan('-----------------------------------------------'));
   console.log(chalk.green('  🌟 Status: ') + chalk.bold('Active'));
   console.log(chalk.green('  🌍 Port: ') + chalk.bold(chalk.yellow(server.address().port)));
@@ -98,7 +147,7 @@ function shutdown(signal) {
   console.log(chalk.red('-----------------------------------------------'));
   console.log(chalk.blue('  Performing graceful exit...'));
   server.close(() => {
-    console.log(chalk.blue('  Doge has been closed.'));
+    console.log(chalk.blue('  ir has been closed.'));
     process.exit(0);
   });
 }
