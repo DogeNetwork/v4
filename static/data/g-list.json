@@ -970,8 +970,8 @@
     },
     {
       "name": "DogeMiner",
-      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/dogeminer.png",
-      "url": "openAg('https://assets.3kh0.net/DogeMiner/index.html')"
+      "imageUrl": "https://raw.githack.com/Skoolgq/Polaris-Assets/main/images/irminer.png",
+      "url": "openAg('https://assets.3kh0.net/irMiner/index.html')"
     },
     {
       "name": "Flappy Bird",

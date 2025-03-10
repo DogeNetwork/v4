@@ -106,8 +106,8 @@ function tabCloak() {
 }
 
 function disableTabCloak() {
-  var newTitle = "Doge | V4";
-  var newIcon = "/assets/img/doge.jpg";
+  var newTitle = "ir | V4";
+  var newIcon = "/assets/img/ir.jpg";
 
   localStorage.setItem("tabTitle", newTitle);
   localStorage.setItem("tabIcon", newIcon);
