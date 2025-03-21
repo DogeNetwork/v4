@@ -1,5 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
+# Use the Bash function syntax (parentheses are allowed)
 print_bold_with_outline() {
     local msg="$1"
     local length=${#msg}
@@ -10,7 +11,7 @@ print_bold_with_outline() {
     done
 
     echo -e "\e[1m\e[44m$border\e[0m"
-    echo -e "\e[1m\e[44m# $msg #\e[0m
+    echo -e "\e[1m\e[44m# $msg #\e[0m"
     echo -e "\e[1m\e[44m$border\e[0m"
 }
 
