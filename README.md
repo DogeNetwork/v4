@@ -52,7 +52,7 @@ cd v4
 npm install
 npm start
 ```
-Or simply run the [`install.sh`](/DogeNetwork/v4/blob/main/install.sh) file
+Or simply run the [`install.sh`](install.sh) file
 
 ### Discord
 [![Join us on Discord](https://invidget.switchblade.xyz/sWPHCdxCPU?theme=dark)](https://discord.gg/unblocking)
