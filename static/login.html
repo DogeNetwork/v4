@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body { font-family: sans-serif; }
+        form { display: flex; flex-direction: column; width: 300px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; }
+        label { margin-bottom: 5px; }
+        input { padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; }
+        button { padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        p { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+        <p id="loginMessage"></p>
+    </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            const loginMessage = document.getElementById('loginMessage');
+
+            loginForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                try {
+                    const response = await fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ username, password }),
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        localStorage.setItem('authToken', data.token);
+                        window.location.href = '/mastery'; // Or any other protected route
+                    } else {
+                        loginMessage.textContent = data.message || 'Login failed.';
+                    }
+                } catch (error) {
+                    console.error('Login error:', error);
+                    loginMessage.textContent = 'An error occurred during login.';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
