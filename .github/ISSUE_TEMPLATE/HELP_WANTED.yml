@@ -1,0 +1,41 @@
+name: "Help Wanted"
+description: "Request general help or support with the product."
+title: "[HELP] <brief summary of your issue>"
+labels: ["help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Need help?
+        Please fill out the details below so we can assist you!
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What do you need help with?
+      description: Describe your question or the problem you are facing. If this is a bug, please use the bug report template
+      placeholder: "Describe your issue or question here."
+    validations:
+      required: true
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: What have you tried so far?
+      description: Let us know what steps you've already taken to solve the problem.
+      placeholder: "List any troubleshooting steps, documentation, or resources you've checked."
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Chrome version
+      description: "If you are on any chromium based browser (anything but firefox really), go to [chrome://version](chrome://version) and paste in your version number. Another way to find this is to go to your settings on your chromebook, then going into about ChromeOS at the bottom, and see your version number"
+      placeholder: "Version number"
+    validations:
+      required: false
+  - type: textarea
+    id: extra-info
+    attributes:
+      label: Additional information
+      description: "Add any other context, screenshots, or details that might help us understand your issue."
+    validations:
+      required: false
